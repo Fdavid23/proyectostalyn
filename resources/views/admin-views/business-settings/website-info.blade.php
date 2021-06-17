@@ -181,7 +181,7 @@
                             <input class="form-control" type="text" name="company_name"
                                    value="{{$company_name->value}}">
                         </div>
-                        <button type="submit" class="btn btn-success float-right" style="background: #258934">{{trans('messages.Update')}}</button>
+                        <button type="submit" class="btn btn-primary float-right">{{trans('messages.Update')}}</button>
                     </form>
                 </div>
             </div>
@@ -207,7 +207,7 @@
                             <input class="form-control" type="text" name="company_email"
                                    value="{{$company_email->value}}">
                         </div>
-                        <button type="submit" class="btn btn-success float-right" style="background: #258934">{{trans('messages.Update')}}</button>
+                        <button type="submit" class="btn btn-primary float-right">{{trans('messages.Update')}}</button>
                     </form>
                 </div>
             </div>
@@ -233,7 +233,7 @@
                             <input class="form-control" type="text" name="company_phone"
                                    value="{{$company_phone->value}}">
                         </div>
-                        <button type="submit" class="btn btn-success float-right" style="background: #258934">{{trans('messages.Update')}}</button>
+                        <button type="submit" class="btn btn-primary float-right">{{trans('messages.Update')}}</button>
                     </form>
                 </div>
             </div>
@@ -272,9 +272,9 @@
                                        required>
                             </div>
 
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Save')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Save')}}</button>
                         @else
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Configure')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Configure')}}</button>
                         @endif
                     </form>
                 </div>
@@ -311,9 +311,9 @@
                                        required>
                             </div>
 
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Save')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Save')}}</button>
                         @else
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Configure')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Configure')}}</button>
                         @endif
                     </form>
                 </div>
@@ -326,7 +326,7 @@
             <div class="card">
                 <div class="card-body" style="padding: 20px">
                     <h5>{{trans('messages.name')}} : {{$company_name->value}}</h5>
-                    <button type="submit" class="btn btn-success float-right" data-toggle="modal" style="background: #258934"
+                    <button type="submit" class="btn btn-primary float-right" data-toggle="modal"
                             data-target="#companyName">{{trans('messages.Edit')}}
                     </button>
                 </div>
@@ -336,7 +336,7 @@
             <div class="card">
                 <div class="card-body" style="padding: 20px">
                     <h5>{{trans('messages.Email')}}: {{$company_email->value}}</h5>
-                    <button type="submit" class="btn btn-success float-right" style="background: #258934" data-toggle="modal"
+                    <button type="submit" class="btn btn-primary float-right" data-toggle="modal"
                             data-target="#companyEmail">{{trans('messages.Edit')}}
                     </button>
                 </div>
@@ -349,7 +349,7 @@
             <div class="card">
                 <div class="card-body" style="padding: 20px">
                     <h5>{{trans('messages.Phone')}}: {{$company_phone->value}}</h5>
-                    <button type="submit" class="btn btn-success float-right" style="background: #258934" data-toggle="modal"
+                    <button type="submit" class="btn btn-primary float-right" data-toggle="modal"
                             data-target="#companyPhone">{{trans('messages.Edit')}}
                     </button>
                 </div>
@@ -390,7 +390,7 @@
             <div class="card">
                 <div class="card-body" style="padding: 20px">
                     <h5>{{trans('messages.copy_right')}} {{$company_copyright_text->value}}</h5>
-                    <button type="submit" class="btn btn-success float-right" style="background: #258934" data-toggle="modal"
+                    <button type="submit" class="btn btn-primary float-right" data-toggle="modal"
                             data-target="#companyCopyRight">{{trans('messages.Edit')}}
                     </button>
                 </div>
@@ -415,7 +415,7 @@
                           method="post" enctype="multipart/form-data">
                         @csrf
                         <button type="submit"
-                                class="btn btn-success float-right ml-3" style="background: #258934">{{trans('messages.Save')}}</button>
+                                class="btn btn-primary float-right ml-3">{{trans('messages.Save')}}</button>
                         <button type="button" class="btn btn-secondary text-light float-right" data-toggle="modal"
                                 data-target="#company-web-Logo" data-whatever="@mdo"
                                 id="image-count-company-Logo">
@@ -441,7 +441,7 @@
                           method="post" enctype="multipart/form-data">
                         @csrf
                         <button type="submit"
-                                class="btn btn-succes float-right ml-3" style="background: #258934; color: #ffff">{{trans('messages.Save')}}</button>
+                                class="btn btn-primary float-right ml-3">{{trans('messages.Save')}}</button>
                         <button type="button" class="btn btn-secondary text-light float-right" data-toggle="modal"
                                 data-target="#company-mobile-Logo" data-whatever="@mdo"
                                 id="image-count-company-mobile-Logo">
@@ -470,7 +470,7 @@
                           method="post" enctype="multipart/form-data">
                         @csrf
                         <button type="submit"
-                                class="btn btn-success float-right ml-3" style="background: #258934">{{trans('messages.save')}}</button>
+                                class="btn btn-primary float-right ml-3">{{trans('messages.save')}}</button>
                         <button type="button" class="btn btn-secondary text-light float-right" data-toggle="modal"
                                 data-target="#company-footer-Logo" data-whatever="@mdo"
                                 id="image-count-company-footer-Logo">
@@ -495,7 +495,7 @@
                           method="post" enctype="multipart/form-data">
                         @csrf
                         <button type="submit"
-                                class="btn btn-success float-right ml-3" style="background: #258934">{{trans('messages.save')}}</button>
+                                class="btn btn-primary float-right ml-3">{{trans('messages.save')}}</button>
                         <button type="button" class="btn btn-secondary float-right" data-toggle="modal"
                                 data-target="#company-fav-icon" data-whatever="@mdo"
                                 id="image-count-company-fav-icon">
@@ -539,7 +539,7 @@
                             <input type="color" name="secondary" value="{{ $data->secondary }}" class="form-control">
                         </div>
                         <button type="submit"
-                                class="btn btn-success float-right ml-3" style="background: #258934">{{trans('messages.Save')}}</button>
+                                class="btn btn-primary float-right ml-3">{{trans('messages.Save')}}</button>
                     </form>
                 </div>
             </div>
@@ -560,7 +560,7 @@
                                min="0" max="100">
                         <hr>
                         <button type="submit"
-                                class="btn btn-success float-right ml-3" style="background: #258934"> {{trans('messages.Save')}}</button>
+                                class="btn btn-primary float-right ml-3">{{trans('messages.Save')}}</button>
                     </form>
                 </div>
             </div>
@@ -592,14 +592,14 @@
     @include('shared-partials.image-process._script',[
         'id'=>'company-web-Logo',
         'height'=>200,
-        'width'=>1000,
+        'width'=>784,
         'multi_image'=>false,
         'route'=>route('image-upload')
         ])
     @include('shared-partials.image-process._script',[
         'id'=> 'company-footer-Logo',
         'height'=>200,
-        'width'=>1000,
+        'width'=>784,
         'multi_image'=>false,
         'route' => route('image-upload')
 
@@ -615,7 +615,7 @@
     @include('shared-partials.image-process._script',[
        'id'=>'company-mobile-Logo',
        'height'=>200,
-       'width'=>1000,
+       'width'=>784,
        'multi_image'=>false,
        'route'=>route('image-upload')
        ])

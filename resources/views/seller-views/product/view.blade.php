@@ -4,7 +4,7 @@
 
 @push('css_or_js')
 <style>
-
+  
 .checkbox-color label {
     width: 2.25rem;
     height: 2.25rem;
@@ -156,7 +156,7 @@
                     <div class="col-4 pt-2">
                         <h4 class="border-bottom">{{$product['name']}}</h4>
                         <span>Price :
-                            <span>{{\App\CPU\BackEndHelper::usd_to_currency($product['unit_price'])}}
+                            <span>{{\App\CPU\BackEndHelper::usd_to_currency($product['unit_price'])}} 
                             </span>
                         </span><br>
                         <span>TAX :
@@ -166,12 +166,12 @@
                             <span> {{ $product->discount_type=='amount'?\App\CPU\BackEndHelper::usd_to_currency($product->discount): $product->discount}}</span>
                         </span><br>
                         <span>Current Stock :
-                            <span>{{ $product->current_stock }}</span>
+                            <span>{{ $product->current_stock }}</span> 
                          </span>
                     </div>
 
                     <div class="col-8 pt-2 border-left">
-
+                        
                         <span> @if (count(json_decode($product->colors)) > 0)
                             <div class="row no-gutters">
                                 <div class="col-2">
@@ -182,7 +182,7 @@
                                     <ul class="list-inline checkbox-color mb-1">
                                         @foreach (json_decode($product->colors) as $key => $color)
                                             <li>
-
+                                                
                                                 <label style="background: {{ $color }};"
                                                        for="{{ $product->id }}-color-{{ $key }}"
                                                        data-toggle="tooltip"></label>
@@ -194,7 +194,7 @@
                         @endif</span><br>
                    <span>
                         Product Image
-
+                 
                      <div class="row">
                          @foreach (json_decode($product->images) as $key => $photo)
                              <div class="col-md-3">
@@ -203,7 +203,7 @@
                                          <img style="width: 100%"
                                               onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
                                               src="{{asset("storage/app/public/product/$photo")}}" alt="Product image">
-
+                                 
                                      </div>
                                  </div>
                              </div>
@@ -313,7 +313,7 @@
                             </select>
                             <!-- End Select -->
 
-                            <span class="text-secondary mr-2">de</span>
+                            <span class="text-secondary mr-2">of</span>
 
                             <!-- Pagination Quantity -->
                             <span id="datatableWithPaginationInfoTotalQty"></span>

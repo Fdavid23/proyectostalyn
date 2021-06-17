@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Metodo de Pago')
+@section('title','Payment Method')
 @push('css_or_js')
     <!-- Custom styles for this page -->
     <link href="{{asset('public/assets/back-end')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -42,11 +42,11 @@
         }
 
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #2196F3;
         }
 
         input:focus + .slider {
-            box-shadow: 0 0 1px #258934;
+            box-shadow: 0 0 1px #2196F3;
         }
 
         input:checked + .slider:before {
@@ -105,15 +105,15 @@
                                     style="padding-left: 10px">{{trans('messages.Inactive')}}</label>
                                 <br>
                             </div>
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Save')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Save')}}</button>
                         @else
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Configure')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Configure')}}</button>
                         @endif
                     </form>
                 </div>
             </div>
         </div>
-        {{-- <div class="col-md-6">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-body" style="padding: 20px">
                     <h5 class="text-center">{{trans('messages.SSLCOMMERZ')}}</h5>
@@ -144,14 +144,14 @@
                                 <input type="text" class="form-control" name="store_password"
                                        value="{{$config['store_password']}}">
                             </div>
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Save')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Save')}}</button>
                         @else
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Configure')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Configure')}}</button>
                         @endif
                     </form>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 
     <div class="row" style="padding-bottom: 20px">
@@ -187,15 +187,15 @@
                                 <input type="text" class="form-control" name="paypal_secret"
                                        value="{{$config['paypal_secret']}}">
                             </div>
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Save')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Save')}}</button>
                         @else
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Configure')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Configure')}}</button>
                         @endif
                     </form>
                 </div>
             </div>
         </div>
-        {{-- <div class="col-md-6">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-body" style="padding: 20px">
                     <h5 class="text-center">{{trans('messages.Stripe')}}</h5>
@@ -228,16 +228,16 @@
                                 <input type="text" class="form-control" name="api_key"
                                        value="{{$config['api_key']}}">
                             </div>
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Save')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Save')}}</button>
                         @else
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Configure')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Configure')}}</button>
                         @endif
                     </form>
                 </div>
             </div>
-        </div> --}}
+        </div>
 
-        {{-- <div class="col-md-6 pt-4">
+        <div class="col-md-6 pt-4">
             <div class="card">
                 <div class="card-body" style="padding: 20px">
                     <h5 class="text-center">{{trans('messages.razor_pay')}}</h5>
@@ -270,14 +270,14 @@
                                 <input type="text" class="form-control" name="razor_secret"
                                        value="{{$config['razor_secret']}}">
                             </div>
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Save')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Save')}}</button>
                         @else
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Configure')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Configure')}}</button>
                         @endif
                     </form>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 
     {{--<div class="row" style="padding-bottom: 20px">

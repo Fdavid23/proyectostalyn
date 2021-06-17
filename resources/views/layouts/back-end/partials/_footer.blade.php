@@ -19,11 +19,11 @@
                 <!-- List Dot -->
                 <ul class="list-inline list-separator">
                     <li class="list-inline-item">
-                        <a class="list-separator-link" href="{{route('admin.business-settings.web-config.index')}}"> Configuración</a>
+                        <a class="list-separator-link" href="{{route('admin.business-settings.web-config.index')}}"> Settings</a>
                     </li>
 
                     <li class="list-inline-item">
-                        <a class="list-separator-link"href="{{route('admin.helpTopic.list')}}">Preguntas Frecuentes</a>
+                        <a class="list-separator-link"href="{{route('admin.helpTopic.list')}}">FAQ</a>
                     </li>
 
                     <li class="list-inline-item">

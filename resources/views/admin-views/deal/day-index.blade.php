@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Página de oferta')
+@section('title','Deal Page')
 @push('css_or_js')
     <link href="{{asset('public/assets/back-end/css/tags-input.min.css')}}" rel="stylesheet">
     <link href="{{ asset('public/assets/select2/css/select2.min.css')}}" rel="stylesheet">
@@ -45,11 +45,11 @@
         }
 
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #377dff;
         }
 
         input:focus + .slider {
-            box-shadow: 0 0 1px #258934;
+            box-shadow: 0 0 1px #377dff;
         }
 
         input:checked + .slider:before {
@@ -121,7 +121,7 @@
 
                         <div class="card-footer pl-0">
                             <button type="submit"
-                                    class="btn btn-success " style="background: #258934">{{ trans('messages.save')}}</button>
+                                    class="btn btn-primary ">{{ trans('messages.save')}}</button>
                         </div>
                     </form>
                 </div>
@@ -166,12 +166,12 @@
                                     </td>
                                     <td>
                                         <a href="{{route('admin.deal.day-update',[$deal['id']])}}"
-                                           class="btn btn-success btn-sm" style="background: #258934">
-                                           {{ trans ('Editar')}}
+                                           class="btn btn-primary btn-sm">
+                                           {{ trans ('Edit')}}
                                         </a>
                                         <a href="{{route('admin.deal.day-delete',[$deal['id']])}}"
                                            class="btn btn-danger btn-sm">
-                                           {{ trans ('Borrar')}}
+                                           {{ trans ('Delete')}}
                                         </a>
                                     </td>
                                 </tr>
@@ -230,7 +230,7 @@
                     status: status
                 },
                 success: function () {
-                    toastr.success('Estado actualizado con éxito');
+                    toastr.success('Status updated successfully');
                     location.reload();
                 }
             });

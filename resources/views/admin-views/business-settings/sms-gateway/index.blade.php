@@ -42,11 +42,11 @@
         }
 
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #2196F3;
         }
 
         input:focus + .slider {
-            box-shadow: 0 0 1px #258934;
+            box-shadow: 0 0 1px #2196F3;
         }
 
         input:checked + .slider:before {
@@ -110,9 +110,9 @@
                                 <input type="text" class="form-control" name="nexmo_secret"
                                        value="{{$config['nexmo_secret']}}">
                             </div>
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Save')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Save')}}</button>
                         @else
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Configure')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Configure')}}</button>
                         @endif
                     </form>
                 </div>

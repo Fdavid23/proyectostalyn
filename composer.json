@@ -51,7 +51,7 @@
             "app/CPU/helpers.php",
             "app/CPU/image-manager.php",
             "app/CPU/category-manager.php",
-            "app/CPU/-manager.php",
+            "app/CPU/brand-manager.php",
             "app/CPU/product-manager.php",
             "app/CPU/cart-manager.php",
             "app/CPU/order-manager.php",

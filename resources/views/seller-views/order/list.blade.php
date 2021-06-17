@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app-seller')
-@section('title','Lista de Pedidos')
+@section('title','Order List')
 
 @push('css_or_js')
     <!-- Custom styles for this page -->
@@ -54,11 +54,11 @@
                                         <td>
                                             @if($detail->order->payment_status=='paid')
                                                 <span class="badge badge-soft-success">
-                                      <span class="legend-indicator bg-success"></span>Pagado
+                                      <span class="legend-indicator bg-success"></span>Paid
                                     </span>
                                             @else
                                                 <span class="badge badge-soft-danger">
-                                      <span class="legend-indicator bg-danger"></span>Sin pagar
+                                      <span class="legend-indicator bg-danger"></span>Unpaid
                                     </span>
                                             @endif
                                         </td>
@@ -96,10 +96,10 @@
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                     <a class="dropdown-item"
                                                        href="{{route('seller.orders.details',[$detail['order_id']])}}"><i
-                                                            class="tio-visible"></i> Ver</a>
+                                                            class="tio-visible"></i> View</a>
                                                     <a class="dropdown-item" target="_blank"
                                                        href="{{route('seller.orders.generate-invoice',[$detail['order_id']])}}"><i
-                                                            class="tio-download"></i> Factura</a>
+                                                            class="tio-download"></i> Invoice</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -115,7 +115,7 @@
                         <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
                             {{--<div class="col-sm mb-2 mb-sm-0">
                                 <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
-                                    <span class="mr-2">Mostrar:</span>
+                                    <span class="mr-2">Showing:</span>
 
                                     <!-- Select -->
                                     <select id="datatableEntries" class="js-select2-custom"
@@ -132,7 +132,7 @@
                                     </select>
                                     <!-- End Select -->
 
-                                    <span class="text-secondary mr-2">de</span>
+                                    <span class="text-secondary mr-2">of</span>
 
                                     <!-- Pagination Quantity -->
                                     <span id="datatableWithPaginationInfoTotalQty"></span>

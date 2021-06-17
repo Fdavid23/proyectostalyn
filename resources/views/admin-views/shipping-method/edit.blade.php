@@ -8,8 +8,8 @@
 <div class="content container-fluid">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Panel de control</a></li>
-            <li class="breadcrumb-item" aria-current="page">Actualización del método de envío</li>
+            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item" aria-current="page">Shipping Method Update</li>
         </ol>
     </nav>
 
@@ -57,7 +57,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-success " style="background: #258934">{{trans('messages.Update')}}</button>
+                            <button type="submit" class="btn btn-primary ">{{trans('messages.Update')}}</button>
                         </div>
                     </form>
                 </div>

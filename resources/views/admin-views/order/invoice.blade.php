@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Factura</title>
+    <title>Invoice</title>
     <meta http-equiv="Content-Type" content="text/html;"/>
     <meta charset="UTF-8">
     <style media="all">
@@ -189,7 +189,7 @@
 
 
 <div style="background:{{$web_config['primary_color']}};padding: 0.5rem; color:none">
-
+    sjfkldfj
 
 </div>
 <div class="first" style="display: block; height:auto !important;">
@@ -200,12 +200,12 @@
                     <div style="float: left;padding: 15px">
                         <img height="70" width="200" src="{{asset("storage/app/public/company/$company_web_logo")}}"
                              alt="">
-                        <p style="margin-bottom: 0px;">Celular:{{$company_phone}}</p>
+                        <p style="margin-bottom: 0px;">Ph:{{$company_phone}}</p>
                         <p style="margin-top: 5px; margin-bottom: 0px;" >Email:{{$company_email}}</p>
                     </div>
                     <div style="float: right;padding: 0 15px 15px 15px">
-                        <h1 style="color: #030303; margin-bottom: 0px; margin-left:40%;">Factura Nº:</h1>
-
+                        <h1 style="color: #030303; margin-bottom: 0px; margin-left:40%;">INVOICE</h1>
+                        <h3 style="color: #030303; margin-top: 4px; margin-bottom:2px; margin-left:40%;">Invoice id</h3>
                         <div style=" font-size:20px;">
                             <strong style="color:{{$web_config['primary_color']}}; margin-top:4px;  margin-left:40%;">{{ $order->id }}</strong>
                         </div>
@@ -222,12 +222,12 @@
                 <tr>
                     <td style="width: 41%">
                         <div style="float: left">
-                            <h4 style="margin: 0px;">Factura para:</h4>
+                            <h4 style="margin: 0px;">Invoice To,</h4>
                             <p style=" margin-top: 6px; margin-bottom:0px;">{{$order->customer['f_name'].' '.$order->customer['l_name']}}</p>
                             <p style=" margin-top: 6px; margin-bottom:0px;">{{$order->customer['email']}}</p>
                             <p style=" margin-top: 6px; margin-bottom:0px;">{{$order->customer['phone']}}</p>
-                            <p style=" margin-top: 6px; margin-bottom:0px;">{{$order->shipping ? $order->shipping['city'] : ""}} {{date('y-m-d',strtotime($order['created_at']))}}</p>
-
+                            <p style=" margin-top: 6px; margin-bottom:0px;">{{$order->shipping ? $order->shipping['city'] : ""}} {{$order->shipping ? $order->shipping['zip'] : ""}}</p>
+                            <p style=" margin-top: 6px; margin-bottom:0px;">{{$order->shipping ? $order->shipping['country'] : ""}}</p>
                         </div>
                     </td>
                     {{-- <td>
@@ -240,18 +240,9 @@
                     </td> --}}
                     <td>
                         <div style="float:right ">
-                            <h4 style="color: #130505 !important; margin:0px;">Detalles de pagos</h4>
+                            <h4 style="color: #130505 !important; margin:0px;">Payments Details</h4>
                             <h5 style="color: #414141 !important ; margin-top:4px; margin-bottom:0px;">{{ $order->payment_method }}</h5>
-                            @if($order['payment_status']=='paid')
-                            <span class="badge badge-soft-success ml-sm-3">
-                                <span class="legend-indicator bg-success"></span>{{trans('messages.Paid')}}
-                            </span>
-                        @else
-                            <span class="badge badge-soft-danger ml-sm-3">
-                                <span class="legend-indicator bg-danger"></span>{{trans('messages.Unpaid')}}
-                            </span>
-                        @endif
-
+                            <p>{{$order->payment_status}}, {{date('y-m-d',strtotime($order['created_at']))}}</p>
                         </div>
                     </td>
                 </tr>
@@ -267,10 +258,10 @@
         <table class="customers">
             <tr class="for-th">
                 <th class="for-th">No.</th>
-                <th class="for-th">Detalle</th>
-
-                <th class="for-th">Precio Unitario</th>
-                <th class="for-th">Cantidad</th>
+                <th class="for-th">Item Description</th>
+                <th class="for-th">Variation</th>
+                <th class="for-th">Unit Price</th>
+                <th class="for-th">Qty</th>
 
                 <th class="for-th">Total</th>
             </tr>
@@ -287,7 +278,7 @@
                 <tr class="for-tb" style=" border: 1px solid #D8D8D8;">
                     <td class="for-tb">{{$key+1}}</td>
                     <td class="for-tb">{{$details['product']?$details['product']->name:''}}</td>
-                    {{-- <td class="for-tb" style="color:{{$web_config['primary_color']}};">{{$details['variant'] }}</td> --}}
+                    <td class="for-tb" style="color:{{$web_config['primary_color']}};">{{$details['variant'] }}</td>
                     <td class="for-tb">{{\App\CPU\BackEndHelper::usd_to_currency($details['price'])}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
                     <td class="for-tb">{{$details->qty}}</td>
                     <td class="for-tb">{{\App\CPU\BackEndHelper::usd_to_currency($subtotal)}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
@@ -315,20 +306,20 @@
             <td>{{\App\CPU\BackEndHelper::usd_to_currency($sub_total)}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
 
         </tr>
-        {{-- <tr>
+        <tr>
             <th class="gry-color text-left strong bold">TAX</th>
             <td>{{\App\CPU\BackEndHelper::usd_to_currency($total_tax)}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
-        </tr> --}}
+        </tr>
         <tr>
-            <th class="gry-color text-left strong bold">Recarga De Envio</th>
+            <th class="gry-color text-left strong bold">Shipping</th>
             <td>{{\App\CPU\BackEndHelper::usd_to_currency($total_shipping_cost)}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
         </tr>
         <tr>
-            <th class="gry-color text-left strong bold">Descuento por Cupón</th>
+            <th class="gry-color text-left strong bold">Coupon Discount</th>
             <td>- {{\App\CPU\BackEndHelper::usd_to_currency($order->discount)}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
         </tr>
         <tr class="border-bottom">
-            <th class="gry-color text-left strong bold">Descuento en el producto</th>
+            <th class="gry-color text-left strong bold">Discount on Product</th>
             <td>- {{\App\CPU\BackEndHelper::usd_to_currency($total_discount_on_product)}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
         </tr>
         <tr>
@@ -350,13 +341,13 @@
                 <tr>
                     <td style="width: 33%">
                         <div>
-                            <p style="font-size: 12px"> Celular: {{\App\Model\BusinessSetting::where('type','company_phone')->first()->value}}</p>
+                            <p style="font-size: 12px"> Phone : {{\App\Model\BusinessSetting::where('type','company_phone')->first()->value}}</p>
                         </div>
                     </td>
                     <td style="width: 33%">
                         <div>
                             <p style="font-size: 12px">
-                              Sitio Web: {{url('/')}}
+                                Website : {{url('/')}}
                             </p>
                         </div>
                     </td>

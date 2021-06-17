@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title -->
-    <title>Vendedor | Login</title>
+    <title>Seller | Login</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -56,8 +56,8 @@
 
                             <div class="text-center">
                                 <div class="mb-5">
-                                    <h1 class="display-4">Registrarse</h1>
-                                    <center><h1 class="h4 text-gray-900 mb-4">Bienvenido</h1></center> 
+                                    <h1 class="display-4">Sign in</h1>
+                                    <center><h1 class="h4 text-gray-900 mb-4">Welcome Back! ( Seller Login )</h1></center> 
                                     {{--<p>Don't have an account yet?
                                         <a href="authentication-signup-basic.html">
                                             Sign up here
@@ -76,10 +76,10 @@
 
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
-                                <label class="input-label" for="signinSrEmail">Ingrese Su Email</label>
+                                <label class="input-label" for="signinSrEmail">Your email</label>
 
                                 <input type="email" class="form-control form-control-lg" name="email" id="signinSrEmail"
-                                       tabindex="1" placeholder="email@address.com" aria-label="@email.com"
+                                       tabindex="1" placeholder="email@address.com" aria-label="email@address.com"
                                        required data-msg="Please enter a valid email address.">
                             </div>
                             <!-- End Form Group -->
@@ -88,15 +88,15 @@
                             <div class="js-form-message form-group">
                                 <label class="input-label" for="signupSrPassword" tabindex="0">
                                     <span class="d-flex justify-content-between align-items-center">
-                                    Contraseña
-                                      <a class="input-label-secondary" href="javascript:">Olvido su Contraseña</a>
+                                      Password
+                                      <a class="input-label-secondary" href="javascript:">Forgot Password?</a>
                                     </span>
                                 </label>
 
                                 <div class="input-group input-group-merge">
                                     <input type="password" class="js-toggle-password form-control form-control-lg"
                                            name="password" id="signupSrPassword" placeholder="8+ characters required"
-                                           aria-label="8+ caracteres requeridos" required
+                                           aria-label="8+ characters required" required
                                            data-msg="Your password is invalid. Please try again."
                                            data-hs-toggle-password-options='{
                                                      "target": "#changePassTarget",
@@ -119,13 +119,13 @@
                                     <input type="checkbox" class="custom-control-input" id="termsCheckbox"
                                            name="remember">
                                     <label class="custom-control-label text-muted" for="termsCheckbox">
-                                        Recuerdame
+                                        Remember me
                                     </label>
                                 </div>
                             </div>
                             <!-- End Checkbox -->
 
-                            <button type="submit" class="btn btn-lg btn-block btn-primary">Iniciar Seción</button>
+                            <button type="submit" class="btn btn-lg btn-block btn-primary">Sign in</button>
                         </form>
                         <!-- End Form -->
                     </div>

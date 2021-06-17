@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Añadir un producto')
+@section('title','Product Add')
 @push('css_or_js')
     <link href="{{asset('public/assets/back-end/css/croppie.css')}}" rel="stylesheet">
     <link href="{{asset('public/assets/back-end/css/tags-input.min.css')}}" rel="stylesheet">
@@ -333,7 +333,7 @@
                 </div>
                 <div class="card mt-2">
                     <div class="card-header">
-                        <h4>Detalles de Producto </h4>
+                        <h4>Product Details</h4>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
@@ -384,7 +384,7 @@
                                 </div>--}}
 
                                 <div class="col-md-12" style="padding-top: 20px">
-                                    <button type="submit" class="btn btn-success" style="background: #258934">Enviar</button>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -545,7 +545,7 @@
                             });
                         }
                     } else {
-                        toastr.success('Producto cargado correctamente!', {
+                        toastr.success('product uploaded successfully!', {
                             CloseButton: true,
                             ProgressBar: true
                         });

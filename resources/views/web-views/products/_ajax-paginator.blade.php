@@ -6,7 +6,7 @@
                 <a class="page-link"
                    href="{{route('products',['id'=> $data['id'],'data_from'=>$data['data_from'],'sort_by'=>$data['sort_by'],'min_price'=>$data['min_price'],'max_price'=>$data['max_price'],'page'=>$data['page_no']-1])}}">
                     <i class="czi-arrow-left mr-2"></i>
-                    Atrás
+                    Prev
                 </a>
             </li>
         @endif
@@ -27,7 +27,7 @@
                 <a class="page-link"
                    href="{{route('products',['id'=> $data['id'],'data_from'=>$data['data_from'],'sort_by'=>$data['sort_by'],'min_price'=>$data['min_price'],'max_price'=>$data['max_price'],'page'=>$data['page_no']+1])}}"
                    aria-label="Next">
-                    Siguiente<i class="czi-arrow-right ml-2"></i>
+                    Next<i class="czi-arrow-right ml-2"></i>
                 </a>
             </li>
         @endif
@@ -41,7 +41,7 @@
                 <a class="page-link"
                    href="{{route('products',['name'=> $data['name'],'data_from'=>$data['data_from'],'sort_by'=>$data['sort_by'],'min_price'=>$data['min_price'],'max_price'=>$data['max_price'],'page'=>$data['page_no']-1])}}">
                     <i class="czi-arrow-left mr-2"></i>
-                    Atrás
+                    Prev
                 </a>
             </li>
         @endif
@@ -62,7 +62,7 @@
                 <a class="page-link"
                    href="{{route('products',['name'=> $data['name'],'data_from'=>$data['data_from'],'sort_by'=>$data['sort_by'],'min_price'=>$data['min_price'],'max_price'=>$data['max_price'],'page'=>$data['page_no']+1])}}"
                    aria-label="Next">
-                   Siguiente<i class="czi-arrow-right ml-2"></i>
+                    Next<i class="czi-arrow-right ml-2"></i>
                 </a>
             </li>
         @endif

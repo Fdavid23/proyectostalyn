@@ -78,7 +78,7 @@ class ShippingMethodController extends Controller
             'updated_at'   => now(),
         ]);
 
-        Toastr::success('Actualizado exitosamente.');
+        Toastr::success('Successfully updated.');
         return redirect()->route('admin.business-settings.shipping-method.add');
     }
 

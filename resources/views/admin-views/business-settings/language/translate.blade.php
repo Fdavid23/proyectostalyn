@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Traducir Idioma')
+@section('title','Language Translate')
 @push('css_or_js')
     <!-- Custom styles for this page -->
     <link href="{{asset('public/assets/back-end')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -16,9 +16,7 @@
             width: 0;
             height: 0;
         }
-        .page-item.active .page-link {
-    background-color: #258934 !important;
-}
+
         .slider {
             position: absolute;
             cursor: pointer;
@@ -86,9 +84,9 @@
             </div>
 
             <div class="col-md-4">
-                <a href="{{route('admin.business-settings.language.index')}}" class="btn btn-sm btn-dark btn-icon-split float-right">
+                <a href="{{route('admin.business-settings.language.index')}}" class="btn btn-sm btn-primary btn-icon-split float-right">
 
-
+                    
                     <span class="text">{{trans('messages.back')}}</span>
                 </a>
             </div>
@@ -138,7 +136,7 @@
 
                     <div class="card-footer">
                         <center>
-                            <button class="btn btn-success pull-right btn-block"  style="background: #258934" type="submit">Actualizar</button>
+                            <button class="btn btn-primary pull-right btn-block" type="submit">Update</button>
                         </center>
                     </div>
                 </form>

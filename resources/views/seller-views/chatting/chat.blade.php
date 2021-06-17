@@ -1,6 +1,6 @@
 @extends('layouts.back-end.app-seller')
 
-@section('title','Página de Chat')
+@section('title','Chating Page')
 
 @push('css_or_js')
     <style>
@@ -263,7 +263,7 @@
     <div class="content container-fluid">
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-2">
-            <h1 class="h3 mb-0 text-black-50">Lista de chat</h1>
+            <h1 class="h3 mb-0 text-black-50">Chatting List</h1>
         </div>
 
         <!-- Page Content-->
@@ -370,7 +370,7 @@
 
             @else
                 <div class="offset-md-1 col-md-10" style="display:flex; justify-content: center; align-items: center;">
-                    <p>No se encontró ninguna conversación</p>
+                    <p>No conversetion found</p>
                 </div>
             @endif
 

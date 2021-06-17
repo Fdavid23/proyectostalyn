@@ -49,7 +49,7 @@
                             <span class="badge badge-danger ml-2 ml-sm-3 text-capitalize">
                               <span class="legend-indicator bg-info"></span>{{str_replace('_',' ',$order['order_status'])}}
                             </span>
-                        @elseif($order['order_status']=='processed')
+                        @elseif($order['order_status']=='processing')
                             <span class="badge badge-soft-warning ml-2 ml-sm-3 text-capitalize">
                               <span class="legend-indicator bg-warning"></span>{{str_replace('_',' ',$order['order_status'])}}
                             </span>
@@ -75,7 +75,7 @@
                     </div>
 
                     <!-- Unfold -->
-{{--
+{{-- 
                     <div class="hs-unfold float-right">
                         <div class="dropdown">
                             <select name="order_status" class="status form-control" data-id="{{$order['id']}}">
@@ -204,7 +204,7 @@
                                     <div class="media-body">
                                         <div class="row">
                                             <div class="col-md-3 mb-3 mb-md-0 product-name">
-                                                <p>
+                                                <p> 
                                                     @if($detail->seller_id!=0)
                                                     Seller
                                                     : {{$detail->seller->f_name.' '.$detail->seller->l_name.' ( ID : '.$detail['seller_id'].' )'}}
@@ -212,7 +212,7 @@
                                                     Seller : Admin
                                                 @endif
                                                 <br>
-
+                                             
                                                     {{substr($detail->product['name'],0,10)}}{{strlen($detail->product['name'])>10?'...':''}}</p>
                                                 <strong><u>{{trans('messages.Variation')}} : </u></strong>
 
@@ -245,7 +245,7 @@
                                                     <option
                                                         value="pending" {{$detail->delivery_status == 'pending'?'selected':''}} >{{trans('messages.Pending')}} </option>
                                                     <option
-                                                        value="processed" {{$detail->delivery_status == 'processed'?'selected':''}} > {{trans('messages.Processing')}}</option>
+                                                        value="processing" {{$detail->delivery_status == 'processing'?'selected':''}} > {{trans('messages.Processing')}}</option>
                                                     <option
                                                         value="delivered" {{$detail->delivery_status == 'delivered'?'selected':''}} >{{trans('messages.Delivered')}} </option>
                                                     <option

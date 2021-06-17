@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Lista de Productos')
+@section('title','Product List')
 @push('css_or_js')
     <!-- Custom styles for this page -->
     <link href="{{asset('public/assets/back-end')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -42,11 +42,11 @@
         }
 
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #377dff;
         }
 
         input:focus + .slider {
-            box-shadow: 0 0 1px #258934;
+            box-shadow: 0 0 1px #377dff;
         }
 
         input:checked + .slider:before {
@@ -65,7 +65,7 @@
         }
 
     </style>
-
+     
 @endpush
 
 @section('content')
@@ -84,7 +84,7 @@
             </div>
 
             <div class="col-md-4">
-                <a href="{{route('admin.product.add-new')}}" class="btn btn-success  float-right" style="background: #258934">
+                <a href="{{route('admin.product.add-new')}}" class="btn btn-primary  float-right">
                     <i class="tio-add-circle"></i>
                     <span class="text">{{trans('messages.Add new product')}}</span>
                 </a>
@@ -210,7 +210,7 @@
                     status: status
                 },
                 success: function () {
-                    toastr.success('Estado actualizado con éxito');
+                    toastr.success('Status updated successfully');
                 }
             });
         });
@@ -228,7 +228,7 @@
                     id: id
                 },
                 success: function () {
-                    toastr.success('Estado destacado actualizado correctamente');
+                    toastr.success('Featured status updated successfully');
                 }
             });
         }

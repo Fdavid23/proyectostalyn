@@ -1,7 +1,7 @@
 {{-- <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-        <span>Copyright &copy; Garage&Republik</span>
+            <span>Copyright &copy; Your Website 2020</span>
         </div>
     </div>
 </footer> --}}
@@ -18,7 +18,7 @@
             <div class="d-flex justify-content-end">
                 <!-- List Dot -->
                 <ul class="list-inline list-separator">
-                    <span>Copyright &copy; Garage&Republik</span>
+                    <span>Copyright &copy; Your Website 2020</span>
                   
                 </ul>
                 <!-- End List Dot -->

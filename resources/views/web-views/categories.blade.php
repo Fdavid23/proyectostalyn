@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Todas/Categorías')
+@section('title','All Category Page')
 
 @push('css_or_js')
     <meta property="og:image" content="{{asset('storage/app/public/company')}}/{{$web_config['web_logo']->value}}"/>
@@ -51,7 +51,7 @@
                 <!-- Products grid-->
                 <hr>
                 <div class="row" id="ajax-categories">
-                    <label class="col-md-12 text-center mt-5">Seleccione la categoría de su deseo.</label>
+                    <label class="col-md-12 text-center mt-5">Select your desire category.</label>
                 </div>
                 <!-- Pagination-->
             </div>

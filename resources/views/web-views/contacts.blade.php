@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Contáctanos')
+@section('title','Contact Us')
 
 @push('css_or_js')
     <meta property="og:image" content="{{asset('storage/app/public/company')}}/{{$web_config['web_logo']->value}}"/>
@@ -87,41 +87,41 @@
                           <div class="col-sm-6">
                               <div class="form-group">
                                 <label >{{trans('messages.your_name')}}</label>
-                                <input class="form-control name" name="name" type="text" placeholder="Nombre" required>
+                                <input class="form-control name" name="name" type="text" placeholder="John Doe" required>
 
                               </div>
                             </div>
                           <div class="col-sm-6">
                               <div class="form-group">
                                 <label for="cf-email">{{trans('messages.email_address')}}</label>
-                                <input class="form-control email" name="email" type="email" placeholder="@email.com" required >
+                                <input class="form-control email" name="email" type="email" placeholder="johndoe@email.com" required >
 
                               </div>
                             </div>
                             <div class="col-sm-6">
                               <div class="form-group">
                                 <label for="cf-phone">{{trans('messages.your_phone')}}</label>
-                                <input class="form-control mobile_number"  type="text" name="mobile_number" placeholder="+593" required>
+                                <input class="form-control mobile_number"  type="text" name="mobile_number" placeholder="+088" required>
 
                               </div>
                             </div>
                             <div class="col-sm-6">
                               <div class="form-group">
                                 <label for="cf-subject">{{trans('messages.Subject')}}:</label>
-                                <input class="form-control subject" type="text" name="subject"  placeholder="Asunto" required>
+                                <input class="form-control subject" type="text" name="subject"  placeholder="Provide short title of your request" required>
 
                               </div>
                             </div>
                              <div class="col-md-12">
                             <div class="form-group">
                               <label for="cf-message">{{trans('messages.Message')}}</label>
-                              <textarea class="form-control message" name="message"  rows="6" placeholder="Detalle su mensaje" required></textarea>
+                              <textarea class="form-control message" name="message"  rows="6" placeholder="Please describe in detail your request" required></textarea>
 
                             </div>
                           </div>
                         </div>
                         <div class=" ">
-                          <button class="btn btn-primary" type="submit"  id="submit">Enviar mensaje</button>
+                          <button class="btn btn-primary" type="submit"  id="submit">Send message</button>
                       </div>
                     </form>
             </div>

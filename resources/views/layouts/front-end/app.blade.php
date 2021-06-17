@@ -70,12 +70,12 @@
         }
 
         .search_button {
-            background-color: {{$web_config['secondary_color']}};
+            background-color: {{$web_config['primary_color']}};
             border: none;
         }
 
         .search_form {
-            border: 2px solid{{$web_config['secondary_color']}};
+            border: 1px solid{{$web_config['primary_color']}};
             border-radius: 5px;
         }
 
@@ -356,7 +356,7 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: {{$web_config['secondary_color']}}    !important;
+            background: {{$web_config['primary_color']}}    !important;
             border-radius: 5px;
         }
 

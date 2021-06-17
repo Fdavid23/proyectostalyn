@@ -37,7 +37,7 @@
                             <i class="tio-search"></i>
                           </div>
                         </div>
-                        <input type="search" class="js-form-search form-control" id="search-bar-input" placeholder="Buscar " aria-label="Search in front" data-hs-form-search-options="{
+                        <input type="search" class="js-form-search form-control" id="search-bar-input" placeholder="Search in front" aria-label="Search in front" data-hs-form-search-options="{
                                  &quot;clearIcon&quot;: &quot;#clearSearchResultsIcon&quot;,
                                  &quot;dropMenuElement&quot;: &quot;#searchDropdownMenu&quot;,
                                  &quot;dropMenuOffset&quot;: 20,
@@ -135,27 +135,27 @@
                                 <div class="dropdown-divider"></div>
 
                                 <a class="dropdown-item" href="{{route('admin.profile.update',auth('admin')->user()->id)}}">
-                                    <span class="text-truncate pr-2" title="Settings">Configuración</span>
+                                    <span class="text-truncate pr-2" title="Settings">Settings</span>
                                 </a>
 
                                 <div class="dropdown-divider"></div>
 
                                 <a class="dropdown-item" href="javascript:" onclick="Swal.fire({
-                                    title: '¿Quieres cerrar sesión?',
+                                    title: 'Do you want to logout?',
                                     showDenyButton: true,
                                     showCancelButton: true,
-                                    confirmButtonColor: '#',
-                                    cancelButtonColor: 'dark',
-                                    confirmButtonText: `Si`,
-                                    denyButtonText: `No cierre la sesión`,
+                                    confirmButtonColor: '#FC6A57',
+                                    cancelButtonColor: '#363636',
+                                    confirmButtonText: `Yes`,
+                                    denyButtonText: `Don't Logout`,
                                     }).then((result) => {
                                     if (result.value) {
                                     location.href='{{route('admin.auth.logout')}}';
                                     } else{
-                                    Swal.fire('Cancelado', '', 'info')
+                                    Swal.fire('Canceled', '', 'info')
                                     }
                                     })">
-                                    <span class="text-truncate pr-2" title="Sign out">Salir</span>
+                                    <span class="text-truncate pr-2" title="Sign out">Sign out</span>
                                 </a>
                             </div>
                         </div>

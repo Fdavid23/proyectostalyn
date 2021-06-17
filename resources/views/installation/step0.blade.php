@@ -4,7 +4,7 @@
         <div class="row pt-5">
             <div class="col-md-12">
                 <div class="mar-ver pad-btm text-center">
-                    <h1 class="h3">Garage_Republik</h1>
+                    <h1 class="h3">Sixvalley Software Installation</h1>
                     <p>Provide information which is required.</p>
                 </div>
                 <ol class="list-group">

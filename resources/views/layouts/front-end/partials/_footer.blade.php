@@ -181,7 +181,19 @@
                              alt="{{ $web_config['name']->value }}"/>
                     </a>
                 </div>
-
+                @php
+                    $social_media = \App\Model\SocialMedia::where('active_status', 1)->get();
+                @endphp
+                <center>
+                @if(isset($social_media))
+                    @foreach ($social_media as $item)
+                    <span class="social-media">
+                        <a class="social-btn sb-light sb-{{$item->name}} ml-2 mb-2" href="{{$item->link}}"><i
+                                class="{{$item->icon}}" aria-hidden="true"></i></a>
+                                </span>
+                    @endforeach
+                @endif
+            </center>
 
                 <div class="widget mb-4 for-margin">
                     <h6 class="text-uppercase mb-4 font-weight-bold footer-heder">
@@ -190,9 +202,9 @@
                         </center>
                     </h6>
                     <div class="row">
-                        {{-- <div class="col-6 apple_app">
+                        <div class="col-6 apple_app">
                             @php($config = \App\CPU\Helpers::get_business_settings('download_app_apple_stroe'))
-                            {{-- {{ $config['link'] }}
+                            {{-- {{ $config['link'] }} --}}
                             @if($config['status'])
                                 <div class="mr-2 mb-2 pull-right">
                                     <a class="" href="{{ $config['link'] }}" role="button"><img
@@ -202,8 +214,8 @@
                                     </a>
                                 </div>
                             @endif
-                        </div> --}}
-                        <div class="col-6 goole_app" style="text-align: center">
+                        </div>
+                        <div class="col-6 goole_app">
                             @php($config = \App\CPU\Helpers::get_business_settings('download_app_google_stroe'))
                             @if($config['status'])
                                 <div class="mr-2 mb-2 pull-left">
@@ -213,16 +225,6 @@
                                             alt=""></a>
                                 </div>
                             @endif
-                        </div>
-                        <div class="col-6 " style="text-align: center">
-
-                                <div class="mr-2 mb-2 pull-left">
-                                    <a class="fa fa-facebook-square" href="https://www.facebook.com/Garage-Republik--2287929074604611" role="button"  style="font-size:36px;   color:#ffffff; "><img
-
-
-                                            alt=""></a>
-                                </div>
-
                         </div>
                     </div>
                 </div>
@@ -368,7 +370,7 @@
     <div class="container text-center">
         <div class="row d-flex align-items-center footer-end">
             <!-- Grid column -->
-            {{-- <div class="col-md-6 col-lg-6 ml-lg-0">
+            <div class="col-md-6 col-lg-6 ml-lg-0">
                 <!-- Social buttons -->
                 <div style="padding: 30px 16px;" class="text-center text-md-right">
                     <div class="row for-mobile-delivery">
@@ -401,9 +403,9 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
             <!-- Grid column -->
-            {{-- <div class="col-md-6">
+            <div class="col-md-6">
                 <div class="row" >
                     <div class="col-3" style="padding-right: 5px;padding-left: 5px;">
                         <div style="background: white; border-radius: 5px">
@@ -427,13 +429,12 @@
                     </div>
                 </div>
                 <!--Copyright-->
-            </div> --}}
+            </div>
             <!-- Grid column -->
             {{-- <hr> --}}
 
             <div class="col-md-12 mt-2">
-                <p class="text-center" style="font-size: 12px;">{{ $web_config['copyright_text']->value }}  </p>
-               <p style="font-size: 12px;"> Dirección Julio Cesar Cañar y Segundo Cueva</p>
+                <p class="text-center" style="font-size: 12px;">{{ $web_config['copyright_text']->value }}</p>
             </div>
         </div>
         <!-- Grid row -->

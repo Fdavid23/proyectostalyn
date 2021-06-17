@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Inicio pago')
+@section('title','Checkout Process Start')
 
 @push('css_or_js')
     <link rel="stylesheet" href="{{asset('public/assets/front-end')}}/css/checkout-details.css"/>
@@ -52,12 +52,12 @@
                                 <ul class="nav nav-tabs mt-2 d-flex justify-content-between" role="tablist">
                                     <li class="nav-item d-inline-block">
                                         <a class="nav-link active" href="#signin" data-toggle="tab" role="tab">
-                                            Iniciar Seción
+                                            Sign In
                                         </a>
                                     </li>
                                     <li class="nav-item d-inline-block">
                                         <a class="nav-link" href="#signup" data-toggle="tab" role="tab">
-                                           Registrarse
+                                            Sign Up
                                         </a>
                                     </li>
                                 </ul>
@@ -76,7 +76,7 @@
                                                             for="si-email">{{trans('messages.email_address')}}</label>
                                                         <input class="form-control" type="email" name="email"
                                                                id="si-email" value="{{old('email')}}"
-                                                               placeholder="@gmail.com"
+                                                               placeholder="johndoe@example.com"
                                                                required>
                                                         <div class="invalid-feedback">Please provide a valid email
                                                             address.
@@ -92,7 +92,7 @@
                                                             <label class="password-toggle-btn">
                                                                 <input class="custom-control-input" type="checkbox"><i
                                                                     class="czi-eye password-toggle-indicator"></i><span
-                                                                    class="sr-only">Mostrar contraseña</span>
+                                                                    class="sr-only">Show password</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -135,16 +135,16 @@
                                                     <div class="form-group">
                                                         <label for="su-name">{{trans('messages.first_name')}}</label>
                                                         <input class="form-control" type="text" name="f_name"
-                                                               placeholder="" required>
-                                                        <div class="invalid-feedback">Por favor, ponga su nombre.</div>
+                                                               placeholder="John" required>
+                                                        <div class="invalid-feedback">Please fill in your name.</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label for="su-name">{{trans('messages.last_name')}} </label>
                                                         <input class="form-control" type="text" name="l_name"
-                                                               placeholder="" required>
-                                                        <div class="invalid-feedback">Por favor, ponga su segundo nombre</div>
+                                                               placeholder="Doe" required>
+                                                        <div class="invalid-feedback">Please fill in your name.</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,7 +155,7 @@
                                                             for="su-email">{{trans('messages.email_address')}}</label>
                                                         <input class="form-control" name="email" type="email"
                                                                id="su-email"
-                                                               placeholder="@gmail.com"
+                                                               placeholder="johndoe@example.com"
                                                                required>
                                                         <div class="invalid-feedback">Please provide a valid email
                                                             address.
@@ -166,7 +166,7 @@
                                                     <div class="form-group">
                                                         <label for="su-email">{{trans('messages.Phone')}}</label>
                                                         <input class="form-control" name="phone" type="number"
-                                                               id="su-phone" placeholder="+593*********"
+                                                               id="su-phone" placeholder="017********"
                                                                required>
                                                         <div class="invalid-feedback">Please provide a valid phone
                                                             number.
@@ -227,7 +227,7 @@
                         <a class="btn btn-secondary btn-block" href="{{route('shop-cart')}}">
                             <i class="czi-arrow-left mt-sm-0 mr-1"></i>
                             <span
-                                class="d-none d-sm-inline">{{trans('messages.Back')}}   {{trans('messages.Cart')}} </span>
+                                class="d-none d-sm-inline">{{trans('messages.Back')}} {{trans('messages.to')}}  {{trans('messages.Cart')}} </span>
                             <span class="d-inline d-sm-none">{{trans('messages.Back')}}</span>
                         </a>
                     </div>

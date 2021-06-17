@@ -39,7 +39,7 @@
                                     <th>{{trans('messages.Phone')}}</th>
                                     <th>{{trans('messages.Status')}} </th>
                                     <th>{{trans('messages.Payment')}}</th>
-
+                                    
                                     <th style="width: 30px">{{trans('messages.Action')}}</th>
                                 </tr>
                                 </thead>
@@ -57,7 +57,7 @@
                                     <td class="text-capitalize ">
                                         @if($order->order_status=='pending')
                                             <label class="badge badge-primary">{{$order->order_status}}</label>
-                                        @elseif($order->order_status=='processed')
+                                        @elseif($order->order_status=='processing')
                                             <label class="badge badge-warning">{{$order->order_status}}</label>
                                         @elseif($order->order_status=='processed')
                                             <label class="badge badge-warning">{{$order->order_status}}</label>
@@ -111,7 +111,7 @@
                 <div class="card-footer">
                     <!-- Pagination -->
                     <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
-
+                       
 
                         <div class="col-sm-auto">
                             <div class="d-flex justify-content-center justify-content-sm-end">

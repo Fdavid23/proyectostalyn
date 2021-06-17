@@ -1,6 +1,6 @@
 @extends('layouts.back-end.app')
 
-@section('title','Reporte de Pedido')
+@section('title','Order Report')
 
 @push('css_or_js')
 
@@ -87,8 +87,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Mostrar datos por fecha
-                                    rango</label>
+                                <label for="exampleInputEmail1" class="form-label">Show data by date
+                                    range</label>
                             </div>
                         </div>
                         <div class="col-4">
@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-4">
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-success btn-block" style="background: #258934">{{trans('messages.Show')}}</button>
+                                <button type="submit" class="btn btn-primary btn-block">{{trans('messages.Show')}}</button>
                             </div>
                         </div>
                     </div>
@@ -269,7 +269,7 @@
 
             <div class="col-sm-6 col-lg-3 mb-3 mb-lg-6">
             @php
-                $canceled=\App\Model\Order::where(['order_status'=>'processed'])->whereBetween('created_at', [$from, $to])->count()
+                $canceled=\App\Model\Order::where(['order_status'=>'processing'])->whereBetween('created_at', [$from, $to])->count()
             @endphp
             <!-- Card -->
                 <div class="card card-sm">
@@ -504,12 +504,12 @@
                             <li class="nav-item">
                                 <a class="nav-link active" id="this-week-tab" data-toggle="tab" href="#this-week"
                                    role="tab">
-                                   {{trans('messages.This')}} {{trans('messages.week')}}
+                                   {{trans('messages.This')}} {{trans('messages.week')}} 
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="last-week-tab" data-toggle="tab" href="#last-week" role="tab">
-                                    {{trans('messages.Last')}} {{trans('messages.week')}}
+                                    {{trans('messages.Last')}} {{trans('messages.week')}} 
                                 </a>
                             </li>
                         </ul>
@@ -528,7 +528,7 @@
                                  aria-labelledby="this-week-tab">
                                 <!-- Card -->
                                 @foreach($orders as $order)
-                                    <a class="card card-border-left border-left-success shadow-none rounded-0"
+                                    <a class="card card-border-left border-left-primary shadow-none rounded-0"
                                        href="{{route('admin.orders.details',['id'=>$order['id']])}}">
                                         <div class="card-body py-0">
                                             <div class="row">
@@ -572,7 +572,7 @@
                                                     <h2 class="font-weight-normal mb-1">#{{$order['id']}} <small
                                                             class="font-size-sm text-body text-uppercase">{{trans('messages.ID')}}</small>
                                                     </h2>
-                                                    <h5 class="text-hover-primary mb-0">{{trans('messages.Order')}} {{trans('messages.Amount')}}
+                                                    <h5 class="text-hover-primary mb-0">{{trans('messages.Order')}} {{trans('messages.Amount')}} 
                                                         : {{\App\CPU\BackEndHelper::usd_to_currency($order['order_amount'])}} {{\App\CPU\BackEndHelper::currency_symbol()}}</h5>
                                                     <small
                                                         class="text-body">{{date('d M Y',strtotime($order['created_at']))}}</small>

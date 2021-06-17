@@ -1,6 +1,6 @@
 @extends('layouts.back-end.app')
 
-@section('title','Notificaciones ')
+@section('title','FCM Settings')
 
 @push('css_or_js')
 
@@ -12,7 +12,7 @@
         <div class="page-header">
             <div class="row align-items-center">
                 <div class="col-sm mb-2 mb-sm-0">
-                    <h1 class="page-header-title">Configuración de notificaciones push de Firebase</h1>
+                    <h1 class="page-header-title">Firebase Push Notification Setup</h1>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-success" style="background: #258934">Enviar</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -53,12 +53,13 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h2>Mensajes push</h2>
+                        <h2>Push Messages</h2>
                     </div>
                     <div class="card-body">
                         <form action="{{route('admin.business-settings.update-fcm-messages')}}" method="post"
                               enctype="multipart/form-data">
                             @csrf
+
                             <div class="row">
                                 @php($opm=\App\Model\BusinessSetting::where('type','order_pending_message')->first()->value)
                                 @php($data=json_decode($opm,true))
@@ -72,7 +73,7 @@
                                                 <span class="toggle-switch-indicator"></span>
                                               </span>
                                             <span class="toggle-switch-content">
-                                            <span class="d-block">Orden pendiente mensaje</span>
+                                            <span class="d-block">Order Pending Message</span>
                                           </span>
                                         </label>
                                         <textarea name="pending_message"
@@ -92,7 +93,7 @@
                                                 <span class="toggle-switch-indicator"></span>
                                               </span>
                                             <span class="toggle-switch-content">
-                                                <span class="d-block"> Mensaje de pedido fallido</span>
+                                                <span class="d-block"> Order Failed Message</span>
                                               </span>
                                         </label>
 
@@ -114,7 +115,7 @@
                                                 <span class="toggle-switch-indicator"></span>
                                               </span>
                                             <span class="toggle-switch-content">
-                                                <span class="d-block">Mensaje de procesamiento de pedidos</span>
+                                                <span class="d-block">Order Processing Message</span>
                                               </span>
                                         </label>
 
@@ -136,7 +137,7 @@
                                                 <span class="toggle-switch-indicator"></span>
                                               </span>
                                             <span class="toggle-switch-content">
-                                                <span class="d-block">Mensaje de orden devuelta</span>
+                                                <span class="d-block">Order Returned Message</span>
                                               </span>
                                         </label>
                                         <textarea name="out_for_delivery_message"
@@ -157,7 +158,7 @@
                                                 <span class="toggle-switch-indicator"></span>
                                               </span>
                                             <span class="toggle-switch-content">
-                                                <span class="d-block">Mensaje de pedido entregado</span>
+                                                <span class="d-block">Order Delivered Message</span>
                                               </span>
                                         </label>
 
@@ -166,13 +167,13 @@
                                     </div>
                                 </div>
 
+                              
 
 
-
-
+                            
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-success" style="background: #258934">Submit</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>

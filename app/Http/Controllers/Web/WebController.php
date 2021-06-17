@@ -81,7 +81,7 @@ class WebController extends Controller
         if (isset($deal)) {
             return view('web-views.deals', compact('deal', 'discountPrice'));
         }
-        Toastr::warning('no se encontró tal trato!');
+        Toastr::warning('no such deal found!');
         return back();
     }
 
@@ -110,7 +110,7 @@ class WebController extends Controller
         $request->validate([
             'name' => 'required',
         ], [
-            'name.required' => '¡El nombre del producto es obligatorio!',
+            'name.required' => 'Product name is required!',
         ]);
 
         $result = ProductManager::search_products($request['name']);
@@ -124,35 +124,35 @@ class WebController extends Controller
     public function checkout_details()
     {
         if (session()->has('shipping_method_id') == false) {
-            Toastr::info('¡Seleccione primero el método de envío!');
+            Toastr::info('Select shipping method first!');
             return redirect('shop-cart');
         }
 
         if (session()->has('cart') && count(session('cart')) > 0) {
             return view('web-views.checkout-details');
         }
-        Toastr::info('¡No hay artículos en su cesta!');
+        Toastr::info('No items in your basket!');
         return redirect('/');
     }
 
     public function checkout_shipping(Request $request)
     {
         if (session()->has('shipping_method_id') == false) {
-            Toastr::info('¡Seleccione primero el método de envío!');
+            Toastr::info('Select shipping method first!');
             return redirect('shop-cart');
         }
 
         if (session()->has('cart') && count(session('cart')) > 0) {
             return view('web-views.checkout-shipping');
         }
-        Toastr::info('¡No hay artículos en su cesta!');
+        Toastr::info('No items in your basket!');
         return redirect('/');
     }
 
     public function checkout_payment()
     {
         if (session()->has('shipping_method_id') == false) {
-            Toastr::info('¡Seleccione primero el método de envío!');
+            Toastr::info('Select shipping method first!');
             return redirect('shop-cart');
         }
 
@@ -167,12 +167,12 @@ class WebController extends Controller
     public function checkout_review()
     {
         if (session()->has('shipping_method_id') == false) {
-            Toastr::info('¡Seleccione primero el método de envío!');
+            Toastr::info('Select shipping method first!');
             return redirect('shop-cart');
         }
 
         if (session()->has('customer_info') == false) {
-            Toastr::error('¡Información incompleta!');
+            Toastr::error('Incomplete info!');
             return back();
         }
 
@@ -187,19 +187,19 @@ class WebController extends Controller
             }
             return view('web-views.checkout-review', compact('data'));
         }
-        Toastr::info('¡No hay artículos en su cesta!');
+        Toastr::info('No items in your basket!');
         return redirect('/');
     }
 
     public function checkout_complete()
     {
         if (session()->has('shipping_method_id') == false) {
-            Toastr::info('¡Seleccione primero el método de envío!');
+            Toastr::info('Select shipping method first!');
             return redirect('shop-cart');
         }
 
         if (session()->has('cart') == false || count(session('cart')) == 0) {
-            Toastr::info('Tu carrito esta vacío.');
+            Toastr::info('Your cart is empty.');
             return redirect()->route('home');
         }
 
@@ -315,7 +315,7 @@ class WebController extends Controller
         if (session()->has('cart') && count(session('cart')) > 0) {
             return view('web-views.shop-cart');
         }
-        Toastr::info('¡No hay artículos en su cesta!');
+        Toastr::info('No items in your basket!');
         return redirect('/');
     }
 
@@ -360,7 +360,7 @@ class WebController extends Controller
             return view('web-views.products.details', compact('product', 'countWishlist', 'countOrder', 'relatedProducts', 'deal_of_the_day'));
         }
 
-        Toastr::error('¡Producto no encontrado!');
+        Toastr::error('Product not found!');
         return back();
     }
 

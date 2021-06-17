@@ -19,8 +19,8 @@
             max-width: 20rem;
         }
 
-
-
+        
+     
 
         .custom-control-label {
             cursor: pointer;
@@ -41,9 +41,9 @@
 
 }
 .font-nameA{
-
+  
    display: inline-block;
-
+  
     font-size: 13px;
     color: #030303;
 }
@@ -58,7 +58,7 @@
    color: #FFFFFF;
     font-weight: 600;
     font-size: 14px;
-
+    
 }
 /* .modal-header{
         border-top: 20px solid #4884ea;
@@ -259,7 +259,7 @@ border: 1px solid #92C6FF !important;
         width: 350px;
     margin-right: 30px;
     margin-bottom: 10px;
-
+    
     }
     .div-secon{
         margin-top:2rem;
@@ -277,11 +277,11 @@ border: 1px solid #92C6FF !important;
                     </div>
                         <div class="mt-3">
                             <button type="submit" class="btn btn-p btn-b float-right"  data-toggle="modal" data-target="#exampleModal">Add New Address</button>
-                            </div>
+                            </div>    
             </div>
-
+           
         </div>
-
+     
 
     </div>
 
@@ -293,12 +293,12 @@ border: 1px solid #92C6FF !important;
                 <!--Price Sidebar-->
                 <div class="price_sidebar rounded-lg box-shadow-sm" id="shop-sidebar" style="margin-bottom: -10px;">
                     <div class="box-shadow-sm">
-
+                       
                     </div>
                     <div class="pb-0" style="padding-top: 12px;">
                         <!-- Filter by price-->
                         <div class="sidebarL">
-                            <h3 class="widget-title btnF" style="font-weight: 700;"><a href="{{ route('orderList') }}" style="color: #1B7FED">Mis  Pedidos</a></h3>
+                            <h3 class="widget-title btnF" style="font-weight: 700;"><a href="{{ route('orderList') }}" style="color: #1B7FED">My Orders</a></h3>
                             <div class="divider-role"
                                  style="border: 1px solid whitesmoke; margin-bottom: 14px;  margin-top: -6px;"></div>
 
@@ -307,7 +307,7 @@ border: 1px solid #92C6FF !important;
                        <div class="pb-0" style="padding-top: 12px;">
                         <!-- Filter by price-->
                         <div class="sidebarL ">
-                            <h3 class="widget-title btnF" style="font-weight: 700;"> <a href="{{ route('wishList') }}"> Lista de deseos </a></h3>
+                            <h3 class="widget-title btnF" style="font-weight: 700;"> <a href="{{ route('wishList') }}"> Wish List </a></h3>
                             <div class="divider-role"
                                  style="border: 1px solid whitesmoke; margin-bottom: 14px;  margin-top: -6px;"></div>
 
@@ -316,7 +316,7 @@ border: 1px solid #92C6FF !important;
                       <div class="pb-0" style="padding-top: 12px;">
                         <!-- Filter by price-->
                         <div class=" sidebarL">
-                            <h3 class="widget-title btnF" style="font-weight: 700;"> <a href=""> Chatear con vendedores </a></h3>
+                            <h3 class="widget-title btnF" style="font-weight: 700;"> <a href=""> Chat With Sellers </a></h3>
                             <div class="divider-role"
                                  style="border: 1px solid whitesmoke; margin-bottom: 14px;  margin-top: -6px;"></div>
 
@@ -325,7 +325,7 @@ border: 1px solid #92C6FF !important;
                       <div class="pb-0" style="padding-top: 12px;">
                         <!-- Filter by price-->
                         <div class=" sidebarL">
-                            <h3 class="widget-title btnF" style="font-weight: 700;"> <a href="{{ route('profile') }}"> Información de perfil </a></h3>
+                            <h3 class="widget-title btnF" style="font-weight: 700;"> <a href="{{ route('profile') }}"> Profile Info </a></h3>
                             <div class="divider-role"
                                  style="border: 1px solid whitesmoke; margin-bottom: 14px;  margin-top: -6px;"></div>
 
@@ -334,7 +334,7 @@ border: 1px solid #92C6FF !important;
                       <div class="pb-0" style="padding-top: 12px;">
                         <!-- Filter by price-->
                         <div class=" sidebarL">
-                            <h3 class="widget-title btnF" style="font-weight: 700;"> <a href="">Dirección </a></h3>
+                            <h3 class="widget-title btnF" style="font-weight: 700;"> <a href="">Address </a></h3>
                             <div class="divider-role"
                                  style="border: 1px solid whitesmoke; margin-bottom: 14px;  margin-top: -6px;"></div>
 
@@ -343,7 +343,7 @@ border: 1px solid #92C6FF !important;
                       <div class="pb-0" style="padding-top: 12px;">
                         <!-- Filter by price-->
                         <div class=" sidebarL">
-                            <h3 class="widget-title btnF" style="font-weight: 700;"> <a href="{{ route('support-ticket') }}">Ticket de soporte </a></h3>
+                            <h3 class="widget-title btnF" style="font-weight: 700;"> <a href="{{ route('support-ticket') }}">Support ticket </a></h3>
                             <div class="divider-role"
                                  style="border: 1px solid whitesmoke; margin-bottom: 14px;  margin-top: -6px;"></div>
 
@@ -352,7 +352,7 @@ border: 1px solid #92C6FF !important;
                       <div class="pb-0" style="padding-top: 12px;">
                         <!-- Filter by price-->
                         <div class="sidebarL ">
-                            <h3 class="widget-title btnF" style="font-weight: 700;"><a href="">Historial de transacciones</a></h3>
+                            <h3 class="widget-title btnF" style="font-weight: 700;"><a href="">Transaction history </a></h3>
                             <div class="divider-role"
                                  style="border: 1px solid whitesmoke; margin-bottom: 14px;  margin-top: -6px;"></div>
 
@@ -361,7 +361,7 @@ border: 1px solid #92C6FF !important;
                        <div class="pb-1" style="padding-top: 12px;">
                         <!-- Filter by price-->
                         <div class="sidebarL ">
-                            <h3 class="widget-title btnF" style="font-weight: 700;"><a href="">Método de pago</a></h3>
+                            <h3 class="widget-title btnF" style="font-weight: 700;"><a href="">Payment method </a></h3>
                             <div class="divider-role"
                                  style="border: 1px solid whitesmoke; margin-bottom: 14px;  margin-top: -6px;"></div>
 
@@ -371,31 +371,31 @@ border: 1px solid #92C6FF !important;
             </div>
 
             <section class="col-lg-9 mt-3">
-
+                 
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog  modal-lg" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
                           <div class="row">
-
-                                    <div class="col-md-12"> <h5 class="modal-title font-nameA ">Añadir una nueva dirección</h5></div>
-
-
+                              
+                                    <div class="col-md-12"> <h5 class="modal-title font-nameA ">Add a new address</h5></div>  
+                                 
+                                
                           </div>
-
-
-
-
+                         
+                          
+                         
+                       
                         </div>
                         <div class="modal-body">
-
-                     <form class="">
+                                        
+                     <form class=""> 
                             <div class="col-md-12">
                                 <!-- Nav pills -->
                                 <ul class="donate-now">
                                     <li>
                                       <input type="radio" id="a25" name="amount" />
-                                      <label for="a25">Permanente</label>
+                                      <label for="a25">permanent</label>
                                     </li>
                                     <li>
                                       <input type="radio" id="a50" name="amount" />
@@ -403,98 +403,98 @@ border: 1px solid #92C6FF !important;
                                     </li>
                                     <li>
                                       <input type="radio" id="a75" name="amount" checked="checked" />
-                                      <label for="a75">Oficina</label>
+                                      <label for="a75">Office</label>
                                     </li>
-
+                                 
                                   </ul>
-                                </div>
+                                </div>  
                                 <!-- Tab panes -->
-
-
+                                
+                    
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                              <label for="firstName">Nombre del Contacto</label>
+                              <label for="firstName">Contact person name</label>
                               <input type="text" class="form-control" id="firstName" placeholder="">
                             </div>
                             <div class="form-group col-md-6">
-                              <label for="lastName">Piso, Suite</label>
+                              <label for="lastName">Floor,Suite</label>
                               <input type="text" class="form-control" id="lastName" placeholder="">
                             </div>
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-6">
-                              <label for="firstName">Ciudad</label>
+                              <label for="firstName">City</label>
                               <input type="text" class="form-control" id="firstName" placeholder="">
                             </div>
                             <div class="form-group col-md-6">
-                              <label for="lastName">Codigo Postal</label>
+                              <label for="lastName">Zip code</label>
                               <input type="text" class="form-control" id="lastName" placeholder="">
                             </div>
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-6">
-                              <label for="firstName">Estado</label>
+                              <label for="firstName">State</label>
                               <input type="text" class="form-control" id="firstName" placeholder="">
                             </div>
                             <div class="form-group col-md-6">
-                              <label for="lastName">Pais</label>
+                              <label for="lastName">Country</label>
                               <input type="text" class="form-control" id="lastName" placeholder="">
                             </div>
                           </div>
                    <div class="form-row">
                 <div class="form-group col-md-12">
-                  <label for="firstName">Celular</label>
+                  <label for="firstName">Phone</label>
                   <input type="text" class="form-control" id="firstName" placeholder="">
                 </div>
-
+              
               </div>
                  <div class="form-row">
                      <div class="form-group col-md-6">
-
+                  
                      </div>
-
+                 
               </div>
-
+             
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="closeB" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-p">Actualizar Información</button>
+        <button type="button" class="closeB" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-p"> Update Information</button>
       </div>
     </form>
        </div>
-
-
+                              
+                              
                               </div>
-
+                       
                       </div>
                     </div>
-                  </div>
+                  </div>  
              <div class="row">
-
+               
                  <div class="col-md-6">
                     <div class="card cardColor">
                         <div class="card-header">
 
                             <i class="fa fa-thumb-tack fa-2x iconHad"  aria-hidden="true"></i>
-                           <span class="namHad">Dirección permanente</span>
+                           <span class="namHad">Permanent Address</span>
                            <span class="float-right iconSp">
                             <i class="fa fa-edit fa-lg"></i>
                             <i class="fa fa-trash fa-lg"></i>
-                        </span>
+                        </span> 
                         </div>
                         <div class="card-body">
-                           <div class="font-name"><span > Garage&Republik</span></div>
+                           <div class="font-name"><span > Abdur Rahim</span></div>
                            <div><span class="font-nameA">3rd Floor,D block</span></div>
                            <div><span class="font-nameA">Dhaka 1100</span></div>
                            <div><span class="font-nameA">Bangladsh</span></div>
-                           <div><span class="font-nameA">+88 01251548524</span></div>
+                           <div><span class="font-nameA">+88 01251548524</span></div> 
 
                         </div>
                     </div>
                  </div>
-
+                 
                  <div class="col-md-6 div-secon">
                     <div class="card cardColor">
                         <div class="card-header ">
@@ -510,12 +510,12 @@ border: 1px solid #92C6FF !important;
                             <div><span class="font-nameA">3rd Floor,D block</span></div>
                             <div><span class="font-nameA">Dhaka 1100</span></div>
                             <div><span class="font-nameA">Bangladsh</span></div>
-                            <div><span class="font-nameA">+88 01251548524</span></div>
-
+                            <div><span class="font-nameA">+88 01251548524</span></div> 
+ 
                          </div>
                     </div>
                  </div>
-
+               
              </div>
              <br>
              <div class="row">
@@ -523,7 +523,7 @@ border: 1px solid #92C6FF !important;
                    <div class="card cardColor">
                        <div class="card-header">
                         <i class="fa fa-briefcase fa-2x iconHad"></i>
-                      <span class="namHad"> Office Address</span>
+                      <span class="namHad"> Office Address</span>  
                       <span class="float-right iconSp">
                             <i class="fa fa-edit fa-lg"></i>
                             <i class="fa fa-trash fa-lg"></i>
@@ -534,22 +534,23 @@ border: 1px solid #92C6FF !important;
                         <div><span class="font-nameA">3rd Floor,D block</span></div>
                         <div><span class="font-nameA">Dhaka 1100</span></div>
                         <div><span class="font-nameA">Bangladsh</span></div>
-                        <div><span class="font-nameA">+88 01251548524</span></div>
+                        <div><span class="font-nameA">+88 01251548524</span></div> 
 
                      </div>
                    </div>
                 </div>
-
+            
             </div>
-
+           
             </section>
 
-
+           
                 </div>
-
-
+     
+          
         </div>
     </div>
 
 @endsection
 
+ 

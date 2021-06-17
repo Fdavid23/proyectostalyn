@@ -14,10 +14,10 @@
             height: 23px;
         }
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #377dff;
         }
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #377dff;
         }
 
         .slider.round {
@@ -65,7 +65,7 @@
 <div class="content container-fluid">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Panel de control</a></li>
+            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
             <li class="breadcrumb-item" aria-current="page">Social Media</li>
         </ol>
     </nav>
@@ -114,8 +114,8 @@
                                     {{-- <label for="icon">{{ trans('messages.social_media_icon')}}</label>
                                     <input type="text" name="icon" class="form-control" id="icon"
                                            placeholder="Enter Social Media Icon" required> --}}
-
-
+                                         
+                                            
                                 </div>
 
                             </div>
@@ -125,8 +125,8 @@
                         {{-- @include('shared-partials.image-process._image-crop-modal',['modal_id'=>'social-media-icon-modal']) --}}
                         <!--modal-->
                         <div class="card-footer">
-                            <a id="add" class="btn btn-success" style="color: white; background: #258934;">{{ trans('messages.save')}}</a>
-                            <a id="update" class="btn btn-success" style="display: none; color: #fff; background: #258934;">{{ trans('messages.update')}}</a>
+                            <a id="add" class="btn btn-primary" style="color: white">{{ trans('messages.save')}}</a>
+                            <a id="update" class="btn btn-primary" style="display: none; color: #fff;">{{ trans('messages.update')}}</a>
                         </div>
                     </form>
                 </div>
@@ -175,7 +175,7 @@
         // $(".js-example-theme-single").select2({
         //     theme: "classic"
         // });
-
+        
         fetch_social_media();
 
         function fetch_social_media() {
@@ -203,7 +203,7 @@
                                 </label>
                             </td>`;
                             // html += '<td><a type="button" class="btn btn-primary btn-xs edit" id="' + data[count].id + '"><i class="fa fa-edit text-white"></i></a> <a type="button" class="btn btn-danger btn-xs delete" id="' + data[count].id + '"><i class="fa fa-trash text-white"></i></a></td></tr>';
-                            html += '<td><a type="button" style="background:#258934" class="btn btn-success btn-xs edit" id="' + data[count].id + '">Edit</a> </td></tr>';
+                            html += '<td><a type="button" class="btn btn-primary btn-xs edit" id="' + data[count].id + '">Edit</a> </td></tr>';
                         }
                         $('tbody').html(html);
                     }
@@ -216,11 +216,11 @@
             var name = $('#name').val();
             var link = $('#link').val();
             if (name == "") {
-                toastr.error('Se requiere el nombre social.');
+                toastr.error('Social Name Is Requeired.');
                 return false;
             }
             if (link == "") {
-                toastr.error('Se requiere un enlace social.');
+                toastr.error('Social Link Is Requeired.');
                 return false;
             }
             $.ajaxSetup({
@@ -237,9 +237,9 @@
                 },
                 success: function (response) {
                     if (response.error == 1) {
-                        toastr.error('Redes sociales ya utilizadas');
+                        toastr.error('Social Media Already taken');
                     }else{
-                        toastr.success('Las redes sociales se insertaron correctamente.');
+                        toastr.success('Social Media inserted Successfully.');
                     }
                     $('#name').val('');
                     $('#link').val('');
@@ -272,8 +272,8 @@
                     $('#name').val('');
                     $('#link').val('');
                     $('#icon').val('');
-
-                    toastr.success('Categoría actualizada correctamente.');
+                    
+                    toastr.success('Category updated Successfully.');
                     $('#update').hide();
                     $('#add').show();
                     fetch_social_media();
@@ -284,7 +284,7 @@
         });
         $(document).on('click', '.delete', function () {
             var id = $(this).attr("id");
-            if (confirm("¿Estás seguro de eliminar esta red social?")) {
+            if (confirm("Are you sure delete this social media?")) {
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
@@ -296,7 +296,7 @@
                     data: {id: id},
                     success: function (data) {
                         fetch_social_media();
-                        toastr.success('Las redes sociales se eliminaron correctamente.');
+                        toastr.success('Social media deleted Successfully.');
                     }
                 });
             }
@@ -323,7 +323,7 @@
                 }
             });
         });
-
+        
         $(document).on('change','.status',function () {
             var id = $(this).attr("id");
             if($(this).prop("checked") == true){
@@ -346,7 +346,7 @@
                     status:status
                 },
                 success:function () {
-                    toastr.success('Estado actualizado con éxito');
+                    toastr.success('Status updated successfully');
                 }
             });
         });

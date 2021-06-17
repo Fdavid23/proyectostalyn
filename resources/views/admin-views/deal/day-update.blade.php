@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Actualizar oferta')
+@section('title','Deal Update')
 @push('css_or_js')
     <link href="{{asset('public/assets/back-end/css/tags-input.min.css')}}" rel="stylesheet">
     <link href="{{ asset('public/assets/select2/css/select2.min.css')}}" rel="stylesheet">
@@ -14,11 +14,11 @@
         }
 
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #377dff;
         }
 
         input:focus + .slider {
-            box-shadow: 0 0 1px #258934;
+            box-shadow: 0 0 1px #377dff;
         }
 
         input:checked + .slider:before {
@@ -30,12 +30,12 @@
 @endpush
 
 @section('content')
-<div class="content container-fluid">
+<div class="content container-fluid"> 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Panel de control</a></li>
-            <li class="breadcrumb-item" aria-current="page">Oferta del día</li>
-            <li class="breadcrumb-item">Actualizar oferta</li>
+            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item" aria-current="page">Deal of the Day</li>
+            <li class="breadcrumb-item">Update Deal</li>
         </ol>
     </nav>
 
@@ -98,7 +98,7 @@
 
                         <div class="card-footer pl-0">
                             <button type="submit"
-                                    class="btn btn-success float-right" style="background: #258934">{{ trans('messages.update')}}</button>
+                                    class="btn btn-primary float-right">{{ trans('messages.update')}}</button>
                         </div>
                     </form>
                 </div>

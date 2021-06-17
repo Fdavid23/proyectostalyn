@@ -75,7 +75,7 @@ class ShippingMethodController extends Controller
             'updated_at' => now()
         ]);
 
-        Toastr::success('Actualizado exitosamente.');
+        Toastr::success('Successfully updated.');
         return redirect()->route('seller.business-settings.shipping-method.add');
     }
 
@@ -86,7 +86,7 @@ class ShippingMethodController extends Controller
         } catch (\Exception $e) {
 
         }
-        Toastr::success('Eliminado con éxito.');
+        Toastr::success('Successfully removed.');
         return back();
     }
 }

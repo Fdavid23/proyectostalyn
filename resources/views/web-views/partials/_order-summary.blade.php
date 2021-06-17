@@ -55,26 +55,26 @@
             </span>
         </div>
         <div class="d-flex justify-content-between">
-            <span class="cart_title">Impuesto</span>
+            <span class="cart_title">Tax</span>
             <span class="cart_value">
                 {{\App\CPU\Helpers::currency_converter($total_tax)}}
             </span>
         </div>
         <div class="d-flex justify-content-between">
-            <span class="cart_title">Recargo de Envío</span>
+            <span class="cart_title">Shipping</span>
             <span class="cart_value">
                 {{\App\CPU\Helpers::currency_converter($total_shipping_cost)}}
             </span>
         </div>
         <div class="d-flex justify-content-between">
-            <span class="cart_title">Descuento en el producto</span>
+            <span class="cart_title">Discount on Product</span>
             <span class="cart_value">
                 - {{\App\CPU\Helpers::currency_converter($total_discount_on_product)}}
             </span>
         </div>
         @if(session()->has('coupon_discount'))
             <div class="d-flex justify-content-between">
-                <span class="cart_title">Cupón de descuento</span>
+                <span class="cart_title">Coupon Discount</span>
                 <span class="cart_value" id="coupon-discount-amount">
                     - {{session()->has('coupon_discount')?\App\CPU\Helpers::currency_converter(session('coupon_discount')):0}}
                 </span>
@@ -86,9 +86,9 @@
                     <div class="form-group">
                         <input class="form-control input_code" type="text" name="code" placeholder="Coupon code"
                                required>
-                        <div class="invalid-feedback">Proporcione el código de cupón.</div>
+                        <div class="invalid-feedback">Please provide coupon code.</div>
                     </div>
-                    <button class="btn btn-primary btn-block" type="button" onclick="couponCode()">Aplica el código
+                    <button class="btn btn-primary btn-block" type="button" onclick="couponCode()">Apply Code
                     </button>
                 </form>
             </div>
@@ -108,25 +108,25 @@
             </span>
         </div>
     </div>
-    {{-- <div class="container mt-3">
+    <div class="container mt-3">
         <div class="row p-0">
             <div class="col-md-3 p-0 text-center mobile-padding">
                 <img style="height: 29px;" src="{{asset("storage/app/public/png/delivery.png")}}" alt="">
-                <div class="deal-title">3 a 10 días <br><span>Entrega rápida</span></div>
+                <div class="deal-title">3 Days <br><span>Fast Delivery</span></div>
             </div>
 
             <div class="col-md-3 p-0 text-center">
                 <img style="height: 29px;" src="{{asset("storage/app/public/png/money.png")}}" alt="">
-                <div class="deal-title">Devolución de dinero <br><span>Garantía</span></div>
+                <div class="deal-title">Money Back <br><span>Gurrantey</span></div>
             </div>
             <div class="col-md-3 p-0 text-center">
                 <img style="height: 29px;" src="{{asset("storage/app/public/png/Genuine.png")}}" alt="">
-                <div class="deal-title">100% Auténtico<br><span>Producto</span></div>
+                <div class="deal-title">100% Genuine<br><span>Product</span></div>
             </div>
             <div class="col-md-3 p-0 text-center">
                 <img style="height: 29px;" src="{{asset("storage/app/public/png/Payment.png")}}" alt="">
-                <div class="deal-title">Auténtico<br><span>Pago</span></div>
+                <div class="deal-title">Authentic<br><span>Payment</span></div>
             </div>
         </div>
-    </div> --}}
+    </div>
 </aside>

@@ -1,18 +1,24 @@
 @extends('layouts.back-end.app')
-@section('title','Lista de Pedido')
+
+@section('title','Order List')
+
 @push('css_or_js')
+
 @endpush
+
 @section('content')
     <div class="content container-fluid">
         <!-- Page Header -->
         <div class="page-header">
             <div class="row align-items-center mb-3">
                 <div class="col-sm">
-                    <h1 class="page-header-title">{{trans('messages.Orders')}}s <span
+                    <h1 class="page-header-title">{{trans('messages.Orders')}} <span
                             class="badge badge-soft-dark ml-2">{{\App\Model\Order::count()}}</span></h1>
+
                 </div>
             </div>
             <!-- End Row -->
+
             <!-- Nav Scroller -->
             <div class="js-nav-scroller hs-nav-scroller-horizontal">
             <span class="hs-nav-scroller-arrow-prev" style="display: none;">
@@ -20,15 +26,17 @@
                 <i class="tio-chevron-left"></i>
               </a>
             </span>
+
                 <span class="hs-nav-scroller-arrow-next" style="display: none;">
               <a class="hs-nav-scroller-arrow-link" href="javascript:;">
                 <i class="tio-chevron-right"></i>
               </a>
             </span>
+
                 <!-- Nav -->
                 <ul class="nav nav-tabs page-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Lista de Pedidos</a>
+                        <a class="nav-link active" href="#">Order List</a>
                     </li>
                     {{--<li class="nav-item">
                         <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Open</a>
@@ -61,11 +69,12 @@
                                     </div>
                                 </div>
                                 <input id="datatableSearch" type="search" class="form-control"
-                                       placeholder="Buscar Pedido" aria-label="Search orders">
+                                       placeholder="Search orders" aria-label="Search orders">
                             </div>
                             <!-- End Search -->
                         </form>
                     </div>
+
                     <div class="col-lg-6">
                         <div class="d-sm-flex justify-content-sm-end align-items-sm-center">
                             <!-- Datatable Info -->
@@ -138,16 +147,20 @@
                                      "target": "#showHideDropdown",
                                      "type": "css-animation"
                                    }'>
-                                    <i class="tio-table mr-1"></i> Columnas <span
+                                    <i class="tio-table mr-1"></i> Columns <span
                                         class="badge badge-soft-dark rounded-circle ml-1">7</span>
                                 </a>
+
                                 <div id="showHideDropdown"
                                      class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right dropdown-card"
                                      style="width: 15rem;">
                                     <div class="card card-sm">
                                         <div class="card-body">
+
+
                                             <div class="d-flex justify-content-between align-items-center mb-3">
                                                 <span class="mr-2">{{trans('messages.Order')}}</span>
+
                                                 <!-- Checkbox Switch -->
                                                 <label class="toggle-switch toggle-switch-sm" for="toggleColumn_order">
                                                     <input type="checkbox" class="toggle-switch-input"
@@ -171,8 +184,10 @@
                                                 </label>
                                                 <!-- End Checkbox Switch -->
                                             </div>
+
                                             <div class="d-flex justify-content-between align-items-center mb-3">
                                                 <span class="mr-2">{{trans('messages.Date')}}</span>
+
                                                 <!-- Checkbox Switch -->
                                                 <label class="toggle-switch toggle-switch-sm"
                                                        for="toggleColumn_date">
@@ -184,6 +199,7 @@
                                                 </label>
                                                 <!-- End Checkbox Switch -->
                                             </div>
+
                                             <div class="d-flex justify-content-between align-items-center mb-3">
                                                 <span class="mr-2">{{trans('messages.Payment')}} {{trans('messages.Status')}}</span>
 
@@ -392,7 +408,7 @@
 
                         <th>{{trans('messages.Payment')}}</th>
                         <th>{{trans('messages.Total')}}</th>
-                        <th>{{trans('messages.Status')}} DE {{trans('messages.Order')}}  </th>
+                        <th>{{trans('messages.Order')}} {{trans('messages.Status')}} </th>
                         <th>{{trans('messages.Action')}}</th>
                     </tr>
                     </thead>
@@ -413,17 +429,17 @@
                                     <a class="text-body text-capitalize"
                                        href="{{route('admin.orders.details',['id'=>$order['id']])}}">{{$order->customer['f_name'].' '.$order->customer['l_name']}}</a>
                                 @else
-                                    <label class="badge badge-danger">Datos de cliente no válidos</label>
+                                    <label class="badge badge-danger">Invalid Customer data</label>
                                 @endif
                             </td>
                             <td>
                                 @if($order->payment_status=='paid')
                                     <span class="badge badge-soft-success">
-                                      <span class="legend-indicator bg-success"></span>Pagado
+                                      <span class="legend-indicator bg-success"></span>Paid
                                     </span>
                                 @else
                                     <span class="badge badge-soft-danger">
-                                      <span class="legend-indicator bg-danger"></span>Sin Pagar
+                                      <span class="legend-indicator bg-danger"></span>Unpaid
                                     </span>
                                 @endif
                             </td>
@@ -436,25 +452,24 @@
                               <td class="text-capitalize">
                                   @if($order['order_status']=='pending')
                                       <span class="badge badge-soft-info ml-2 ml-sm-3">
-                                        <span class="legend-indicator bg-info"></span>
-                                        Pendiente
+                                        <span class="legend-indicator bg-info"></span>{{str_replace('_',' ',$order['order_status'])}}
                                       </span>
 
-                                  @elseif($order['order_status']=='processed')
+                                  @elseif($order['order_status']=='processing')
                                       <span class="badge badge-soft-warning ml-2 ml-sm-3">
-                                        <span class="legend-indicator bg-warning"></span>Procesando
+                                        <span class="legend-indicator bg-warning"></span>{{str_replace('_',' ',$order['order_status'])}}
                                       </span>
                                   @elseif($order['order_status']=='failed')
                                       <span class="badge badge-danger ml-2 ml-sm-3">
-                                        <span class="legend-indicator bg-warning"></span>Fállo
+                                        <span class="legend-indicator bg-warning"></span>{{str_replace('_',' ',$order['order_status'])}}
                                       </span>
                                   @elseif($order['order_status']=='delivered')
                                       <span class="badge badge-soft-success ml-2 ml-sm-3">
-                                        <span class="legend-indicator bg-success"></span>Entregado
+                                        <span class="legend-indicator bg-success"></span>{{str_replace('_',' ',$order['order_status'])}}
                                       </span>
                                   @else
                                       <span class="badge badge-soft-danger ml-2 ml-sm-3">
-                                        <span class="legend-indicator bg-danger"></span>Devuelto
+                                        <span class="legend-indicator bg-danger"></span>{{str_replace('_',' ',$order['order_status'])}}
                                       </span>
                                   @endif
                               </td>
@@ -468,10 +483,10 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item"
                                            href="{{route('admin.orders.details',['id'=>$order['id']])}}"><i
-                                                class="tio-visible"></i> Ver</a>
+                                                class="tio-visible"></i> View</a>
                                         <a class="dropdown-item" target="_blank"
                                            href="{{route('admin.orders.generate-invoice',[$order['id']])}}"><i
-                                                class="tio-download"></i> Factura</a>
+                                                class="tio-download"></i> Invoice</a>
                                     </div>
                                 </div>
                             </td>

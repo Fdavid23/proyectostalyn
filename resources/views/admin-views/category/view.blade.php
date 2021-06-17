@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Categorías')
+@section('title','Category')
 @push('css_or_js')
     <!-- Custom styles for this page -->
     <link href="{{asset('public/assets/back-end')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -11,7 +11,7 @@
               width: 367px !important;
             margin-left: 0 !important;
         }
-
+       
         }
 
    @media(max-width:500px){
@@ -19,8 +19,8 @@
               width: 400px !important;
             margin-left: 0 !important;
         }
-
-
+      
+      
    }
     </style>
 @endpush
@@ -54,22 +54,22 @@
                                     <input type="hidden" id="id">
                                     <label for="name">{{ trans('messages.name')}}</label>
                                     <input type="text" name="name" class="form-control" id="name"
-                                           placeholder="Ingrese una Categoría" required>
+                                           placeholder="Enter Category Name" required>
                                 </div>
                                 <div class="col-md-2">
                                     <label>{{ trans('messages.icon')}}</label><br>
                                     <button type="button" class="btn bg-secondary text-light btn-sm" data-toggle="modal"
                                             data-target="#category-icon-modal" data-whatever="@mdo"
                                             id="image-count-category-icon-modal">
-                                            <i class="tio-add-circle"></i>Subir
+                                            <i class="tio-add-circle"></i> Upload
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a id="add" class="btn btn-success" style="color: white; background: #258934">{{ trans('messages.save')}}</a>
-                            <a id="update" class="btn btn-success"
-                               style="display: none; color: #fff; background: #258934">{{ trans('messages.update')}}</a>
+                            <a id="add" class="btn btn-primary" style="color: white">{{ trans('messages.save')}}</a>
+                            <a id="update" class="btn btn-primary"
+                               style="display: none; color: #fff;">{{ trans('messages.update')}}</a>
                         </div>
                     </form>
                 </div>
@@ -91,7 +91,7 @@
                                class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
                             <thead class="thead-light">
                             <tr>
-                                <th>ID</th>
+                                <th>{{ trans('messages.sl')}}</th>
                                 <th>{{ trans('messages.name')}}</th>
                                 <th>{{ trans('messages.slug')}}</th>
                                 <th>{{ trans('messages.icon')}}</th>
@@ -172,7 +172,7 @@
                             html += '<td class="column_name" data-column_name="name" data-id="' + data[count].id + '">' + data[count].name + '</td>';
                             html += '<td class="column_name" data-column_name="slug" data-id="' + data[count].id + '">' + data[count].slug + '</td>';
                             html += '<td class="column_name" data-column_name="icon" data-id="' + data[count].id + '"><img src="{{asset('storage/app/public/category/')}}/' + data[count].icon + '" class="img-thumbnail" height="40" width="40" alt=""></td>';
-                            html += '<td><a type="button"   class="btn btn-success btn-xs edit" id="' + data[count].id + '"><i class="fa fa-edit text-white"></i></a> <a type="button" class="btn btn-danger btn-xs delete" id="' + data[count].id + '"><i class="fa fa-trash text-white"></i></a></td></tr>';
+                            html += '<td><a type="button" class="btn btn-primary btn-xs edit" id="' + data[count].id + '"><i class="fa fa-edit text-white"></i></a> <a type="button" class="btn btn-danger btn-xs delete" id="' + data[count].id + '"><i class="fa fa-trash text-white"></i></a></td></tr>';
                         }
                         $('tbody').html(html);
                     }
@@ -184,7 +184,7 @@
             $('#add').attr("disabled", true);
             var name = $('#name').val();
             if (name == "") {
-                toastr.error('');
+                toastr.error('Category Name Is Requeired.');
                 return false;
             }
             $.ajaxSetup({
@@ -199,7 +199,7 @@
                     name: name,
                 },
                 success: function () {
-                    toastr.success('Categoría insertada correctamente.');
+                    toastr.success('Category inserted Successfully.');
                     $('#name').val('');
                     $('#image-set').val('');
                     $('.call-when-done').click();
@@ -245,7 +245,7 @@
                             }
                         },
                     });
-                    toastr.success('Categoría actualizada correctamente.');
+                    toastr.success('Category updated Successfully.');
                     $('#update').hide();
                     $('#cate-table').show();
                     $('#add').show();
@@ -260,12 +260,12 @@
         $(document).on('click', '.delete', function () {
             var id = $(this).attr("id");
             Swal.fire({
-                title: 'Estas seguro',
-                text: "¡No podrás revertir esto!",
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
                 showCancelButton: true,
-                confirmButtonColor: '#258934',
-                cancelButtonColor: 'dark',
-                confirmButtonText: '¡Sí, bórralo!'
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.value) {
                     $.ajaxSetup({
@@ -279,7 +279,7 @@
                         data: {id: id},
                         success: function () {
                             fetch_category();
-                            toastr.success('Categoría eliminada correctamente.');
+                            toastr.success('Category deleted Successfully.');
                             location.reload();
                         }
                     });

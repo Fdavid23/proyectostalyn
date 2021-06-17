@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Sub Categoría')
+@section('title','Sub Category')
 @push('css_or_js')
     <!-- Custom styles for this page -->
     <link href="{{asset('public/assets/back-end')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
                             <input type="hidden" id="id">
                             <label for="name">{{ trans('messages.select_category_name')}}</label>
                             <select name="parent_id" id="parent_id" class="form-control">
-                                <option value="0" selected disabled>Selecccione Categoría</option>
+                                <option value="0" selected disabled>Select Category</option>
                                 @foreach (App\Model\Category::where('position',0)->get() as $category)
                                     <option value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach
@@ -43,13 +43,13 @@
                             <input type="hidden" id="id">
                             <label for="name">{{ trans('messages.name')}}</label>
                             <input type="text" name="name" class="form-control" id="name" required
-                                   placeholder="Ingrese la categoría">
+                                   placeholder="Enter Category Name">
                         </div>
 
                         <div class="card-footer">
-                            <a id="add" class="btn btn-success" style="color: white ; background: #258934">{{ trans('messages.save')}}</a>
-                            <a id="update" class="btn btn-success"
-                               style="display: none; color: #fff  ; background: #258934">{{ trans('messages.update')}}</a>
+                            <a id="add" class="btn btn-primary" style="color: white">{{ trans('messages.save')}}</a>
+                            <a id="update" class="btn btn-primary"
+                               style="display: none; color: #fff;">{{ trans('messages.update')}}</a>
                         </div>
                     </form>
                 </div>
@@ -69,7 +69,7 @@
                                class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
                             <thead class="thead-light">
                             <tr>
-                                <th scope="col">ID</th>
+                                <th scope="col">{{ trans('messages.sl')}}</th>
                                 <th scope="col">{{ trans('messages.name')}}</th>
                                 <th scope="col">{{ trans('messages.slug')}}</th>
                                 {{--                                <th scope="col">icon</th>--}}
@@ -158,7 +158,7 @@
             var name = $('#name').val();
             var parent_id = $('#parent_id').val();
             if (name == "" || parent_id == null) {
-                toastr.error('El nombre de la categoría es obligatorio.');
+                toastr.error('Category Name Is Requeired.');
                 return false;
             }
             $.ajaxSetup({
@@ -176,7 +176,7 @@
                 success: function () {
                     $('#name').val('');
                     document.getElementById('parent_id').value = 0;
-                    toastr.success('Subcategoría insertada correctamente.');
+                    toastr.success('Sub Category inserted Successfully.');
                     fetch_category();
                 }
             });
@@ -189,7 +189,7 @@
             var parent_id = $('#parent_id').val();
             if (name == "" || parent_id == null) {
 
-                toastr.error('El nombre de la categoría es obligatorio.');
+                toastr.error('Category Name Is Requeired.');
                 return false;
             }
             $.ajaxSetup({
@@ -208,7 +208,7 @@
                 success: function () {
                     $('#name').val('');
                     document.getElementById('parent_id').value = 0;
-                    toastr.success('Subcategoría actualizada correctamente.');
+                    toastr.success('Sub Category updated Successfully.');
                     $('#update').hide();
                     $('#add').show();
                     fetch_category();
@@ -222,12 +222,12 @@
         $(document).on('click', '.delete', function () {
             var id = $(this).attr("id");
             Swal.fire({
-                title: '¿Estás seguro de eliminar esta subcategoría?',
-                text: "¡No podrás revertir esto!",
+                title: 'Are you sure to delete this sub category?',
+                text: "You won't be able to revert this!",
                 showCancelButton: true,
-                confirmButtonColor: '#258934',
-                cancelButtonColor: 'Dark',
-                confirmButtonText: '¡Sí, bórralo!'
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.value) {
                     $.ajaxSetup({
@@ -241,7 +241,7 @@
                         data: {id: id},
                         success: function () {
                             fetch_category();
-                            toastr.success('Subcategoría eliminada correctamente.');
+                            toastr.success('Sub Category deleted Successfully.');
 
                         }
                     });

@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Oferta Flash')
+@section('title','Flash Deal')
 @push('css_or_js')
     <link href="{{asset('public/assets/back-end/css/croppie.css')}}" rel="stylesheet">
     <link href="{{asset('public/assets/back-end/css/tags-input.min.css')}}" rel="stylesheet">
@@ -46,11 +46,11 @@
         }
 
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #377dff;
         }
 
         input:focus + .slider {
-            box-shadow: 0 0 1px #258934;
+            box-shadow: 0 0 1px #377dff;
         }
 
         input:checked + .slider:before {
@@ -67,26 +67,26 @@
         .slider.round:before {
             border-radius: 50%;
         }
-
+      
      #banner-image-modal .modal-content{
               width: 1116px !important;
             margin-left: -264px !important;
         }
-
+       
         @media(max-width:768px){
             #banner-image-modal .modal-content{
                 width: 698px !important;
     margin-left: -75px !important;
         }
-
-
+        
+      
         }
         @media(max-width:375px){
             #banner-image-modal .modal-content{
               width: 367px !important;
             margin-left: 0 !important;
         }
-
+       
         }
 
    @media(max-width:500px){
@@ -94,8 +94,8 @@
               width: 400px !important;
             margin-left: 0 !important;
         }
-
-
+      
+      
    }
 
 
@@ -133,7 +133,7 @@
                                 <div class="col-md-12">
                                     <label for="name">{{ trans('messages.Title')}}</label>
                                     <input type="text" name="title" required class="form-control" id="title"
-                                           placeholder="">
+                                           placeholder="Ex : LUX">
                                 </div>
                             </div>
                             <div class="row">
@@ -164,7 +164,7 @@
 
                         <div class="card-footer pl-0">
                             <button type="submit"
-                                    class="btn btn-success " style="background: #258934">{{ trans('messages.save')}}</button>
+                                    class="btn btn-primary ">{{ trans('messages.save')}}</button>
                         </div>
                     </form>
                 </div>
@@ -206,8 +206,8 @@
                                     <td>{{$deal['end_date']}}</td>
                                     <td>
                                         <a href="{{route('admin.deal.add-product',[$deal['id']])}}"
-                                           class="btn btn-success btn-sm" style="background: #258934">
-                                           Añadir Producto
+                                           class="btn btn-primary btn-sm">
+                                            Add Product
                                         </a>
                                     </td>
                                     <td>
@@ -219,8 +219,8 @@
                                     </td>
                                     <td>
                                         <a href="{{route('admin.deal.update',[$deal['id']])}}"
-                                           class="btn btn-success btn-sm" style="background:#258934">
-                                           {{ trans ('Editar')}}
+                                           class="btn btn-primary btn-sm">
+                                           {{ trans ('Edit')}}
                                         </a>
                                     </td>
                                 </tr>
@@ -280,7 +280,7 @@
                     status: status
                 },
                 success: function () {
-                    toastr.success('Estado actualizado con éxito');
+                    toastr.success('Status updated successfully');
                     location.reload();
                 }
             });

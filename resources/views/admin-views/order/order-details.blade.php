@@ -1,6 +1,6 @@
 @extends('layouts.back-end.app')
 
-@section('title','Detalle de Pedidos')
+@section('title','Order Details')
 
 @push('css_or_js')
     <style>
@@ -49,7 +49,7 @@
                             <span class="badge badge-danger ml-2 ml-sm-3 text-capitalize">
                               <span class="legend-indicator bg-info"></span>{{str_replace('_',' ',$order['order_status'])}}
                             </span>
-                        @elseif($order['order_status']=='processed')
+                        @elseif($order['order_status']=='processing')
                             <span class="badge badge-soft-warning ml-2 ml-sm-3 text-capitalize">
                               <span class="legend-indicator bg-warning"></span>{{str_replace('_',' ',$order['order_status'])}}
                             </span>
@@ -165,10 +165,10 @@
                                     </div>
 
                                     <div class="col col-md-1 align-self-center">
-                                        <p>Cnt</p>
+                                        <p>Q</p>
                                     </div>
                                     <div class="col col-md-1 align-self-center  p-0 product-name">
-                                        <p> Imp</p>
+                                        <p> {{trans('messages.TAX')}}</p>
                                     </div>
                                     <div class="col col-md-2 align-self-center  p-0 product-name">
                                         <p> {{trans('messages.Discount')}}</p>
@@ -204,7 +204,7 @@
                                     <div class="media-body">
                                         <div class="row">
                                             <div class="col-md-3 mb-3 mb-md-0 product-name">
-                                                <p>
+                                                <p> 
                                                     {{substr($detail->product['name'],0,10)}}{{strlen($detail->product['name'])>10?'...':''}}</p>
                                                 <strong><u>{{trans('messages.Variation')}} : </u></strong>
 
@@ -237,7 +237,7 @@
                                                     <option
                                                         value="pending" {{$detail->delivery_status == 'pending'?'selected':''}} >{{trans('messages.Pending')}} </option>
                                                     <option
-                                                        value="processed" {{$detail->delivery_status == 'processed'?'selected':''}} > {{trans('messages.Processing')}}</option>
+                                                        value="processing" {{$detail->delivery_status == 'processing'?'selected':''}} > {{trans('messages.Processing')}}</option>
                                                     <option
                                                         value="delivered" {{$detail->delivery_status == 'delivered'?'selected':''}} >{{trans('messages.Delivered')}} </option>
                                                     <option
@@ -325,7 +325,7 @@
                                     <i class="tio-shopping-basket-outlined"></i>
                                 </div>
                                 <div class="media-body">
-                                    <span class="text-body text-hover-primary"> {{\App\Model\Order::where('customer_id',$order['customer_id'])->count()}} Pedidos</span>
+                                    <span class="text-body text-hover-primary"> {{\App\Model\Order::where('customer_id',$order['customer_id'])->count()}} orders</span>
                                 </div>
                                 <div class="media-body text-right">
                                     {{--<i class="tio-chevron-right text-body"></i>--}}
@@ -387,12 +387,12 @@
             var id = $(this).attr("data-id");
             var value = $(this).val();
             Swal.fire({
-                title: '¿Estás seguro de cambiar esto?',
-                text: "¡No podrás revertir esto!",
+                title: 'Are you sure Change this?',
+                text: "You won't be able to revert this!",
                 showCancelButton: true,
-                confirmButtonColor: '#258934',
+                confirmButtonColor: '#377dff',
                 cancelButtonColor: 'secondary',
-                confirmButtonText: '¡Sí, cámbialo!'
+                confirmButtonText: 'Yes, Change it!'
             }).then((result) => {
                 if (result.value) {
                     $.ajaxSetup({
@@ -408,7 +408,7 @@
                             "payment_status": value
                         },
                         success: function (data) {
-                            toastr.success('Cambio de estado exitoso');
+                            toastr.success('Status Change successfully');
                             location.reload();
                         }
                     });
@@ -420,12 +420,12 @@
             var id = $(this).attr("data-id");
             var value = $(this).val();
             Swal.fire({
-                title: '¿Estás seguro de cambiar esto?',
-                text: "¡No podrás revertir esto!",
+                title: 'Are you sure Change this?',
+                text: "You won't be able to revert this!",
                 showCancelButton: true,
-                confirmButtonColor: '#258934',
+                confirmButtonColor: '#377dff',
                 cancelButtonColor: 'secondary',
-                confirmButtonText: '¡Sí, cámbialo!'
+                confirmButtonText: 'Yes, Change it!'
             }).then((result) => {
                 if (result.value) {
                     $.ajaxSetup({
@@ -453,12 +453,12 @@
             var id = $(this).attr("data-id");
             var value = $(this).val();
             Swal.fire({
-                title: '¿Estás seguro de cambiar esto?',
-                text: "¡No podrás revertir esto!",
+                title: 'Are you sure Change this?',
+                text: "You won't be able to revert this!",
                 showCancelButton: true,
-                confirmButtonColor: '#258934',
+                confirmButtonColor: '#377dff',
                 cancelButtonColor: 'secondary',
-                confirmButtonText: '¡Sí, cámbialo!'
+                confirmButtonText: 'Yes, Change it!'
             }).then((result) => {
                 if (result.value) {
                     $.ajaxSetup({
@@ -477,7 +477,7 @@
                             if (data.success == 0) {
                                 toastr.warning(data.message);
                             } else {
-                                toastr.success('Estado del producto actualizado correctamente');
+                                toastr.success('Product Status updated successfully');
                                 location.reload();
                             }
                         }

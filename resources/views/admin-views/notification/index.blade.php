@@ -1,6 +1,6 @@
 @extends('layouts.back-end.app')
 
-@section('title','Agregar nueva notificación')
+@section('title','Add new notification')
 
 @push('css_or_js')
 <style>
@@ -42,11 +42,11 @@
     }
 
     input:checked + .slider {
-        background-color: #258934;
+        background-color: #377dff;
     }
 
     input:focus + .slider {
-        box-shadow: 0 0 1px #258934;
+        box-shadow: 0 0 1px #377dff;
     }
 
     input:checked + .slider:before {
@@ -84,7 +84,7 @@
                     @csrf
                     <div class="form-group">
                         <label class="input-label" for="exampleFormControlInput1">{{trans('messages.Title')}} </label>
-                        <input type="text" name="title" class="form-control" placeholder="" required>
+                        <input type="text" name="title" class="form-control" placeholder="New notification" required>
                     </div>
                     <div class="form-group">
                         <label class="input-label" for="exampleFormControlInput1">{{trans('messages.Description')}} </label>
@@ -95,7 +95,7 @@
                         <div class="custom-file">
                             <input type="file" name="image" id="customFileEg1" class="custom-file-input"
                                    accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" required>
-                            <label class="custom-file-label" for="customFileEg1">Elija el archivo</label>
+                            <label class="custom-file-label" for="customFileEg1">Choose file</label>
                         </div>
                         <hr>
                         <center>
@@ -104,7 +104,7 @@
                         </center>
                     </div>
                     <hr>
-                    <button type="submit" class="btn btn-success" style="background: #258934">{{trans('messages.Send')}}  {{trans('messages.Notification')}}  </button>
+                    <button type="submit" class="btn btn-primary">{{trans('messages.Send')}}  {{trans('messages.Notification')}}  </button>
                 </form>
             </div>
 
@@ -124,7 +124,7 @@
                                }'>
                             <thead class="thead-light">
                             <tr>
-                                <th>{{trans('messages.sl')}} </th>
+                                <th>#{{trans('messages.sl')}} </th>
                                 <th style="width: 50%">{{trans('messages.Title')}} </th>
                                 <th>{{trans('messages.Description')}} </th>
                                 <th>{{trans('messages.Image')}} </th>
@@ -135,7 +135,7 @@
                                 <th></th>
                                 <th>
                                     <input type="text" id="column1_search" class="form-control form-control-sm"
-                                           placeholder="Buscar">
+                                           placeholder="Search notification">
                                 </th>
                                 <th></th>
                                 <th></th>
@@ -184,7 +184,7 @@
                                                    href="{{route('admin.notification.edit',[$notification['id']])}}">{{trans('messages.Edit')}} </a>
                                                 <a class="dropdown-item delete" href="javascript:"
                                                    id="{{$notification['id']}}')">{{trans('messages.Delete')}} </a>
-
+                                               
                                             </div>
                                         </div>
                                         <!-- End Dropdown -->
@@ -238,7 +238,7 @@
                 var select2 = $.HSCore.components.HSSelect2.init($(this));
             });
         });
-
+        
         $(document).on('change', '.status', function () {
             var id = $(this).attr("id");
             if ($(this).prop("checked") == true) {
@@ -259,7 +259,7 @@
                     status: status
                 },
                 success: function () {
-                    toastr.success('Estado actualizado con éxito');
+                    toastr.success('Status updated successfully');
                     location.reload();
                 }
             });
@@ -267,12 +267,12 @@
         $(document).on('click', '.delete', function () {
             var id = $(this).attr("id");
             Swal.fire({
-                title: '¿Estás seguro de eliminar esto?',
-                text: "¡No podrás revertir esto!",
+                title: 'Are you sure delete this ?',
+                text: "You won't be able to revert this!",
                 showCancelButton: true,
-                confirmButtonColor: '#258934',
-                cancelButtonColor: 'dark',
-                confirmButtonText: '¡Sí, bórralo!'
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.value) {
                     $.ajaxSetup({
@@ -285,7 +285,7 @@
                         method: 'POST',
                         data: {id: id},
                         success: function () {
-                            toastr.success('Notificación eliminada con éxito');
+                            toastr.success('notification deleted successfully');
                             location.reload();
                         }
                     });

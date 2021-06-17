@@ -1,6 +1,6 @@
 @extends('layouts.back-end.app')
 
-@section('title','Lista de Clientes')
+@section('title','Customer List')
 
 @push('css_or_js')
 
@@ -12,7 +12,7 @@
         <div class="page-header">
             <div class="row align-items-center mb-3">
                 <div class="col-sm">
-                    <h1 class="page-header-title">Clientes
+                    <h1 class="page-header-title">Customer
                         <span class="badge badge-soft-dark ml-2">{{\App\User::count()}}</span>
                     </h1>
                 </div>
@@ -36,7 +36,7 @@
                 <!-- Nav -->
                 <ul class="nav nav-tabs page-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"> {{trans('messages.List')}} de Clientes </a>
+                        <a class="nav-link active" href="#">Customer {{trans('messages.List')}} </a>
                     </li>
                     {{--<li class="nav-item">
                         <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Open</a>
@@ -69,7 +69,7 @@
                                     </div>
                                 </div>
                                 <input id="datatableSearch" type="search" class="form-control"
-                                       placeholder="Buscar" aria-label="Search customer">
+                                       placeholder="Search customer" aria-label="Search customer">
                             </div>
                             <!-- End Search -->
                         </form>
@@ -87,7 +87,7 @@
                                      "target": "#showHideDropdown",
                                      "type": "css-animation"
                                    }'>
-                                    <i class="tio-table mr-1"></i> Columnas <span
+                                    <i class="tio-table mr-1"></i> Columns <span
                                         class="badge badge-soft-dark rounded-circle ml-1">6</span>
                                 </a>
 
@@ -266,7 +266,7 @@
                 <div class="row justify-content-center justify-content-sm-between align-items-sm-center">
                     <div class="col-sm mb-2 mb-sm-0">
                         <div class="d-flex justify-content-center justify-content-sm-start align-items-center">
-                            <span class="mr-2">Mostrar:</span>
+                            <span class="mr-2">Showing:</span>
 
                             <!-- Select -->
                             <select id="datatableEntries" class="js-select2-custom"
@@ -283,7 +283,7 @@
                             </select>
                             <!-- End Select -->
 
-                            <span class="text-secondary mr-2">de</span>
+                            <span class="text-secondary mr-2">of</span>
 
                             <!-- Pagination Quantity -->
                             <span id="datatableWithPaginationInfoTotalQty"></span>

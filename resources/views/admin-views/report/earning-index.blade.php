@@ -1,6 +1,6 @@
 @extends('layouts.back-end.app')
 
-@section('title','Informe de ganancias')
+@section('title','Earning Report')
 
 @push('css_or_js')
 
@@ -45,7 +45,7 @@
 
                         <div class="col-lg-auto">
                             <div class="d-flex">
-                                <a class="btn btn-icon btn-success rounded-circle" href="{{route('admin.dashboard')}}">
+                                <a class="btn btn-icon btn-primary rounded-circle" href="{{route('admin.dashboard')}}">
                                     <i class="tio-home-outlined"></i>
                                 </a>
                             </div>
@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-4">
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-success btn-block" style="background: #258934"> {{trans('messages.Show')}}</button>
+                                <button type="submit" class="btn btn-primary btn-block">{{trans('messages.Show')}}</button>
                             </div>
                         </div>
                     </div>
@@ -230,7 +230,7 @@
                 @php
                     $total_sold=\App\Model\Order::where(['order_status'=>'delivered'])->whereBetween('created_at', [date('y-01-01'), date('y-12-31')])->sum('order_amount')
                 @endphp
-                <h6 class="card-subtitle mb-0">Venta total del {{date('Y')}} :<span
+                <h6 class="card-subtitle mb-0">Total sale of {{date('Y')}} :<span
                         class="h3 ml-sm-2"> {{\App\CPU\BackEndHelper::usd_to_currency($total_sold)." ".\App\CPU\BackEndHelper::currency_symbol()}}</span>
                 </h6>
 

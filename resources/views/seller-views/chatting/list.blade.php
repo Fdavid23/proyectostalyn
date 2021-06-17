@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app-seller')
-@section('title','Lista de Chat')
+@section('title','Chat List')
 @push('css_or_js')
     <!-- Custom styles for this page -->
     <link href="{{asset('public/assets/back-end')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -8,20 +8,20 @@
 @section('content')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
             <li class="breadcrumb-item" aria-current="page">Chattins</li>
         </ol>
     </nav>
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-        <h1 class="h3 mb-0 text-black-50">Lista de chat</h1>
+        <h1 class="h3 mb-0 text-black-50">Chatting List</h1>
     </div>
 
     <div class="row" style="margin-top: 20px">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>Tabla de chat</h5>
+                    <h5>Chatting Table</h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -29,10 +29,10 @@
                             <thead>
                             <tr>
                                 <th scope="col">SL#</th>
-                                <th scope="col">Imagen</th>
-                                <th scope="col">Nombre del cliente</th>
-                                <th scope="col">Mensaje</th>
-                                <th scope="col">Acción</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Customer Name</th>
+                                <th scope="col">Message</th>
+                                <th scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>

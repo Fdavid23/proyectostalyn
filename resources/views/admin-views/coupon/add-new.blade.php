@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Añadir Cupón')
+@section('title','Coupon Add')
 @push('css_or_js')
     <link href="{{asset('public/assets/back-end')}}/css/select2.min.css" rel="stylesheet"/>
     <!-- Custom styles for this page -->
@@ -45,11 +45,11 @@
         }
 
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #377dff;
         }
 
         input:focus + .slider {
-            background-color: #258934;
+            background-color: #377dff;
         }
 
         input:checked + .slider:before {
@@ -99,13 +99,13 @@
                                     <select class="js-example-responsive" name="coupon_type"
                                             style="width: 100%" required>
                                         {{--<option value="delivery_charge_free">Delivery Charge Free</option>--}}
-                                        <option value="discount_on_purchase">Descuento en la compra</option>
+                                        <option value="discount_on_purchase">Discount on Purchase</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="name">{{trans('messages.Title')}}</label>
                                     <input type="text" name="title" class="form-control" id="title"
-                                           placeholder="" required>
+                                           placeholder="Title" required>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                                 <div class="col-md-6">
                                     <label for="name">{{trans('messages.start_date')}}</label>
                                     <input type="date" name="start_date" class="form-control" id="start date"
-                                           placeholder=" " required>
+                                           placeholder="start date" required>
                                 </div>
                             </div>
                         </div>
@@ -131,12 +131,12 @@
                                 <div class="col-md-6">
                                     <label for="name">{{trans('messages.expire_date')}}</label>
                                     <input type="date" name="expire_date" class="form-control" id="expire date"
-                                           placeholder=" " required>
+                                           placeholder="expire date" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="name">{{trans('messages.minimum_purchase')}}</label>
                                     <input type="number" min="1" max="1000000" name="min_purchase" class="form-control" id="minimum purchase"
-                                           placeholder=" " required>
+                                           placeholder="minimum purchase" required>
                                 </div>
                             </div>
                         </div>
@@ -146,7 +146,7 @@
                                 <div class="col-md-6">
                                     <label for="name">{{trans('messages.Discount')}}</label>
                                     <input type="number" min="1" max="1000000" name="discount" class="form-control" id="discount"
-                                           placeholder="" required>
+                                           placeholder="discount" required>
                                 </div>
 
                                 <div class="col-md-6">
@@ -167,13 +167,13 @@
                                 <div class="col-md-6">
                                     <label for="name">{{trans('messages.maximum_discount')}}</label>
                                     <input type="number" min="1" max="1000000" name="max_discount" class="form-control" id="maximum discount"
-                                           placeholder=" " required>
+                                           placeholder="maximum discount" required>
                                 </div>
                             </div>
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-success" style="background: #258934">{{trans('messages.Submit')}}</button>
+                            <button type="submit" class="btn btn-primary">{{trans('messages.Submit')}}</button>
                         </div>
                     </form>
                 </div>
@@ -231,7 +231,7 @@
                    class="slider round"></span></label></td>
                                     <td>
                                         <a href="{{route('admin.coupon.update',[$c['id']])}}"
-                                           class="btn btn-success btn-sm" style="background: #258934">
+                                           class="btn btn-primary btn-sm">
                                            {{trans('messages.Update')}}
                                         </a>
                                     </td>

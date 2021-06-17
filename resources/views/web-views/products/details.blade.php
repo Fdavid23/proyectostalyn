@@ -315,7 +315,7 @@
 
                     <div class="mb-3">
                         <strong>
-                           Impuesto : {{ \App\CPU\Helpers::currency_converter(
+                            TAX : {{ \App\CPU\Helpers::currency_converter(
                                     \App\CPU\Helpers::tax_calculation($product->unit_price,$product->tax,$product->tax_type)
                                 )}}
                         </strong>
@@ -381,7 +381,7 @@
                     <!-- Quantity + Add to cart -->
                         <div class="row no-gutters">
                             <div class="col-2">
-                                <div class="product-description-label mt-2">Cantidad:</div>
+                                <div class="product-description-label mt-2">{{__('Quantity')}}:</div>
                             </div>
                             <div class="col-10">
                                 <div class="product-quantity d-flex align-items-center">
@@ -410,7 +410,7 @@
 
                         <div class="row no-gutters d-none mt-2" id="chosen_price_div">
                             <div class="col-5">
-                                <div class="product-description-label">{{__('Precio Total ')}}:</div>
+                                <div class="product-description-label">{{__('Total Price')}}:</div>
                             </div>
                             <div class="col-7">
                                 <div class="product-price for-total-price">
@@ -471,7 +471,7 @@
                                     onclick="addToCart()"
                                     type="button"
                                     style="width:37%; height: 45px">
-                                {{trans('messages.Add')}} a {{trans('messages.Cart')}}
+                                {{trans('messages.Add')}} {{trans('messages.To')}} {{trans('messages.Cart')}}
                             </button>
 
 
@@ -483,7 +483,7 @@
                         </div>
                     </form>
                     <hr style="padding-bottom: 10px">
-
+                    <div style="text-align:left;" class="sharethis-inline-share-buttons"></div>
                 </div>
             </div>
         </div>
@@ -566,7 +566,7 @@
                                     <textarea shop-id="{{$product->seller->shop->id}}" class="chatInputBox"
                                               id="chatInputBox" rows="5"> </textarea>
 
-                                    <button class="btn btn-secondary" style="color: white;" id="cancelBtn">Cancelar
+                                    <button class="btn btn-secondary" style="color: white;" id="cancelBtn">Cancel
                                     </button>
                                     <button class="btn btn-primary" style="color: white;" id="sendBtn">Send</button>
                                 </form>
@@ -590,12 +590,12 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="#overview" data-toggle="tab" role="tab"
                        style="color: black !important;">
-                       INFORMACIÓN GENERAL
+                        {{trans('messages.OVERVIEW')}}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#reviews" data-toggle="tab" role="tab" style="color: black !important;">
-                        OPINIONES
+                        {{trans('messages.REVIEWS')}}
                     </a>
                 </li>
             </ul>

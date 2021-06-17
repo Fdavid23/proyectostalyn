@@ -235,7 +235,7 @@ class CustomerController extends Controller
 
         User::where(['id' => $request->user()->id])->update($userDetails);
 
-        return response()->json(['message' => 'Actualizado exitosamente!'], 200);
+        return response()->json(['message' => 'successfully updated!'], 200);
     }
     public function update_cm_firebase_token(Request $request)
     {
@@ -251,6 +251,6 @@ class CustomerController extends Controller
             'cm_firebase_token' => $request['cm_firebase_token'],
         ]);
 
-        return response()->json(['message' => 'Actualizado exitosamente.!'], 200);
+        return response()->json(['message' => 'successfully updated!'], 200);
     }
 }

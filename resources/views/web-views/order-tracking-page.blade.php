@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Seguir Pedido')
+@section('title','Track Order Result')
 
 @push('css_or_js')
     <meta property="og:image" content="{{asset('storage/app/public/company')}}/{{$web_config['web_logo']->value}}"/>
@@ -21,7 +21,7 @@
             border-radius: 10px;
         }
        .closet{
-
+    
     float: right;
     font-size: 1.5rem;
     font-weight: 300;
@@ -31,7 +31,7 @@
     opacity: .5;
 }
         }
-
+     
     </style>
 @endpush
 
@@ -45,7 +45,7 @@
 
                     <div class="box-shadow-sm order-track">
                         <div style="margin: 0 auto; padding: 15px;">
-                            <h1 style="padding: 20px; text-align: center;">Seguir Pedido</h1>
+                            <h1 style="padding: 20px; text-align: center;">Track Order</h1>
 
                             <form action="{{route('track-order.result')}}" type="submit" method="post"
                                   style="padding: 15px;">
@@ -67,7 +67,7 @@
                                            placeholder="Enter Your Phone Number" required>
                                 </div>
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit" name="trackOrder">Ver Estado Pedido</button>
+                                    <button class="btn btn-primary" type="submit" name="trackOrder">Track Order</button>
                                 </div>
                             </form>
                         </div>

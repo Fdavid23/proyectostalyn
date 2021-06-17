@@ -42,11 +42,11 @@
         }
 
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #2196F3;
         }
 
         input:focus + .slider {
-            box-shadow: 0 0 1px #258934;
+            box-shadow: 0 0 1px #2196F3;
         }
 
         input:checked + .slider:before {
@@ -71,14 +71,14 @@
     <div class="content container-fluid">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Panel de control</a></li>
-            <li class="breadcrumb-item" aria-current="page">Configuración general</li>
+            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item" aria-current="page">General settings</li>
         </ol>
     </nav>
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-        <h4 class="mb-0 text-black-50">Configuración comercial general</h4>
+        <h4 class="mb-0 text-black-50">General Business Settings</h4>
     </div>
 
     <div class="row" style="margin-top: 20px">
@@ -87,7 +87,7 @@
                 <div class="card-header">
                     <div class="row justify-content-between pl-4 pr-4">
                         <div>
-                            <h5>Tabla de idiomas</h5>
+                            <h5>Language Table</h5>
                         </div>
                     </div>
                 </div>

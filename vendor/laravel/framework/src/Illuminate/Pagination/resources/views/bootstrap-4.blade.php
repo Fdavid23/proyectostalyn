@@ -1,8 +1,3 @@
-<style>
-    .page-item.active .page-link {
-    background-color: #258934 !important;
-}
-</style>
 @if ($paginator->hasPages())
     <nav>
         <ul class="pagination">
@@ -28,7 +23,7 @@
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
                         @if ($page == $paginator->currentPage())
-                            <li class="page-item active" aria-current="page" ><span class="page-link">{{ $page }}</span></li>
+                            <li class="page-item active" aria-current="page"><span class="page-link">{{ $page }}</span></li>
                         @else
                             <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
                         @endif

@@ -64,7 +64,7 @@
         if (file1 == 1) {
             $("#crop-{{$id}}").hide();
             $(this).val('');
-            toastr.error('Este no es un archivo de imagen.', {
+            toastr.error('This is not an image file.', {
                 CloseButton: true,
                 ProgressBar: true
             });
@@ -115,7 +115,7 @@
                         $("#crop-{{$id}}").hide();
                         $(".btn-upload-image-{{$id}}").hide();
                         $("#show-images-{{$id}}").html(data.images);
-                        $("#image-count-{{$id}}").text(data.count + ' ' + 'imagen seleccionada.');
+                        $("#image-count-{{$id}}").text(data.count + ' ' + 'image selected.');
                     } else if (data.success === 0) {
                         $("#img-suc-{{$id}}").hide();
                         $("#img-err-{{$id}}").show();

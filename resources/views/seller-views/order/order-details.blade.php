@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app-seller')
-@section('title','Detalle de Pedido')
+@section('title','Order Details')
 
 @push('css_or_js')
     <!-- Custom styles for this page -->
@@ -8,7 +8,7 @@
 @section('content')
     <!-- Page Heading -->
      <div class="content container-fluid">
-
+    
     <div class="page-header d-print-none">
         <div class="row align-items-center">
             <div class="col-sm mb-2 mb-sm-0">
@@ -47,7 +47,7 @@
                         <span class="badge badge-soft-warning ml-2 ml-sm-3 text-capitalize">
                           <span class="legend-indicator bg-warning"></span>{{str_replace('_',' ',$order['order_status'])}}
                         </span>
-
+                   
                     @elseif($order['order_status']=='delivered')
                         <span class="badge badge-soft-success ml-2 ml-sm-3 text-capitalize">
                           <span class="legend-indicator bg-success"></span>{{str_replace('_',' ',$order['order_status'])}}
@@ -72,9 +72,9 @@
                 </div>
             </div>
 
-
+          
         </div>
-
+    
 
     <div class="row" id="printableArea">
         <div class="col-lg-8 mb-3  mb-lg-0">
@@ -92,7 +92,7 @@
                         </div>
                         <div class="col-6 pt-2">
                             <h6 style="color: #8a8a8a;">
-
+                              
                             </h6>
                         </div>
                         <div class="col-6 pt-2">
@@ -100,7 +100,7 @@
                                 <h6 class="" style="color: #8a8a8a;">
                                     Payment Method : {{str_replace('_',' ',$order['payment_method'])}}
                                 </h6>
-
+                                
                             </div>
                         </div>
                     </div>
@@ -119,10 +119,10 @@
                                 <div class="col-md-3 product-name">
                                     <p> {{trans('messages.Name')}}</p>
 
-
-
-
-
+                                    
+                                
+                                     
+        
                                 </div>
 
                                 <div class="col col-md-1 align-self-center p-0 ">
@@ -143,9 +143,9 @@
                                 </div>
 
                                 <div class="col col-md-2 align-self-center text-right  ">
+                                    
 
-
-                                    <p> {{trans('messages.Subtotal')}}</p>
+                                    <p> {{trans('messages.Subtotal')}}</p>                                 
                                    </div>
                             </div>
                         </div>
@@ -155,36 +155,36 @@
                  @php($shipping=0)
                  @php($discount=0)
                  @php($tax=0)
-
+               
                 @foreach($order->details as $detail)
                     @if($detail->product)
-
+                      
                         <!-- Media -->
                             <div class="media">
                                 <div class="avatar avatar-xl mr-3">
                                     <img class="img-fluid" onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
                                     src="{{\App\CPU\ProductManager::product_image_path('thumbnail')}}/{{$detail->product['thumbnail']}}"
 
-
+                                
                                          alt="Image Description">
                                 </div>
 
                                 <div class="media-body">
                                     <div class="row">
                                         <div class="col-md-3 mb-3 mb-md-0 product-name">
-                                            <p>
+                                            <p> 
                                                 {{substr($detail->product['name'],0,10)}}{{strlen($detail->product['name'])>10?'...':''}}
                                             </p>
 
-
+                                            
                                                 <strong><u>Variation : </u></strong>
-
+                                              
                                                     <div class="font-size-sm text-body">
-
+                                                       
                                                         <span class="font-weight-bold">{{$detail['variant']}}</span>
                                                     </div>
-
-
+                                             
+                                                    
                                         </div>
 
                                         <div class="col col-md-1 align-self-center p-0 ">
@@ -192,15 +192,15 @@
                                         </div>
 
                                         <div class="col col-md-1 align-self-center">
-
+                                          
                                             <h5>{{$detail->qty}}</h5>
                                         </div>
                                         <div class="col col-md-1 align-self-center  p-0 product-name">
-
+                                          
                                             <h5>{{\App\CPU\BackEndHelper::usd_to_currency($detail['tax'])}}</h5>
                                         </div>
                                         <div class="col col-md-2 align-self-center  p-0 product-name">
-
+                                          
                                             <h5>- {{\App\CPU\BackEndHelper::usd_to_currency($detail['discount'])}}</h5>
                                         </div>
                                         <div class="col col-md-2 align-self-center  p-0">
@@ -209,7 +209,7 @@
                                         <option
                                             value="pending" {{$detail->delivery_status == 'pending'?'selected':''}} >{{trans('messages.pending')}} </option>
                                         <option
-                                            value="processed" {{$detail->delivery_status == 'processed'?'selected':''}} > {{trans('messages.Processing')}}</option>
+                                            value="processing" {{$detail->delivery_status == 'processing'?'selected':''}} > {{trans('messages.Processing')}}</option>
                                         <option
                                             value="delivered" {{$detail->delivery_status == 'delivered'?'selected':''}} >{{trans('messages.delivered')}} </option>
                                         <option
@@ -227,7 +227,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                        
                             @php($discount+=$detail['discount'])
                             @php($tax+=$detail['tax'])
                         @php($shipping+=$detail->shipping ? $detail->shipping->cost :0)
@@ -241,8 +241,8 @@
                     <div class="row justify-content-md-end mb-3">
                         <div class="col-md-9 col-lg-8">
                             <dl class="row text-sm-right">
-
-
+                               
+                               
 
 
                                 <dt class="col-sm-6">{{trans('messages.Shipping')}}</dt>
@@ -261,7 +261,7 @@
             </div>
             <!-- End Card -->
 
-
+        
         </div>
 
         <div class="col-lg-4">
@@ -275,7 +275,7 @@
 
                 <!-- Body -->
                 @if($order->customer)
-
+               
                     <div class="card-body">
                         <div class="media align-items-center" href="javascript:">
                             <div class="avatar avatar-circle mr-3">
@@ -327,13 +327,13 @@
 
                         <hr>
 
-
+                        
 
                         <div class="d-flex justify-content-between align-items-center">
                             <h5>{{trans('messages.shipping_address')}}</h5>
-
+                          
                         </div>
-
+                      
                             <span class="d-block">
                                 {{trans('messages.Name')}} :
                             <strong>{{$order->shipping ? $order->shipping['contact_person_name'] : "empty"}}</strong><br>
@@ -343,9 +343,9 @@
                             <strong>{{$order->shipping ? $order->shipping['zip']  : "Empty"}}</strong><br>
                             {{trans('messages.Phone')}}:
                             <strong>{{$order->shipping ? $order->shipping['phone']  : "Empty"}}</strong>
-
+                              
                             </span>
-
+                        
                     </div>
             @endif
             <!-- End Body -->
@@ -358,8 +358,8 @@
 @push('script')
     <script>
 
-
-
+       
+  
 $(document).on('change', '.product_status', function () {
             var id = $(this).attr("data-id");
             var value = $(this).val();
@@ -380,7 +380,7 @@ $(document).on('change', '.product_status', function () {
                     $.ajax({
                         url: "{{route('seller.orders.productStatus')}}",
                         method: 'POST',
-                        data: {
+                        data: { 
                             "id": id,
                     "delivery_status": value
                 },

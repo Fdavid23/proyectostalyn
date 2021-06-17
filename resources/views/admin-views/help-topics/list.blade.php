@@ -1,10 +1,10 @@
 @extends('layouts.back-end.app')
-@section('title','Preguntas Frecuentes')
+@section('title','FAQ')
 @push('css_or_js')
     <!-- Custom styles for this page -->
     <link href="{{asset('public/assets/back-end')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <style>
-
+        
         .switch {
             position: relative;
             display: inline-block;
@@ -43,11 +43,11 @@
         }
 
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #377dff;
         }
 
         input:focus + .slider {
-            background-color: #258934;
+            background-color: #377dff;
         }
 
         input:checked + .slider:before {
@@ -81,14 +81,14 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{trans('messages.Dashboard')}}</a></li>
-            <li class="breadcrumb-item" aria-current="page">{{trans('messages.help_topic')}}</li>
+            <li class="breadcrumb-item" aria-current="page">{{trans('messages.Dashboard')}}{{trans('messages.help_topic')}}</li>
         </ol>
     </nav>
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-2 mt-2">
         <h1 class="h3 mb-0 text-black-50">{{trans('messages.help_topic')}} {{trans('messages.List')}}  </h1>
-        <button  class="btn btn-success btn-icon-split for-addFaq"  style="background: #258934" data-toggle="modal" data-target="#addModal">
+        <button  class="btn btn-primary btn-icon-split for-addFaq" data-toggle="modal" data-target="#addModal">
             <i class="tio-add-circle"></i>
               <span class="text">{{trans('messages.Add')}} {{trans('messages.faq')}}  </span></button>
     </div>
@@ -138,8 +138,8 @@
                                             <i class="fa fa-sync"></i>
                                         </a>
                                         @endif --}}
-
-{{--
+                                        
+{{-- 
                                         <a href="{{ route('admin.helpTopic.delete',$help->id) }}" class="btn btn-danger btn-sm " onclick="alert('Are You sure to Delete')"  >
                                             <i class="fa fa-trash"></i> --}}
                                             <div class="dropdown">
@@ -152,7 +152,7 @@
                                                     <a class="dropdown-item edit" style="cursor: pointer;" data-toggle="modal" data-target="#editModal" data-id="{{ $help->id }}">
                                                         {{ trans('messages.Edit')}}
                                                     </a>
-                                                    <a class="dropdown-item delete" style="cursor: pointer;"
+                                                    <a class="dropdown-item delete" style="cursor: pointer;" 
                                                     id="{{$help['id']}}"> {{ trans('messages.Delete')}}</a>
                                                 </div>
                                             </div>
@@ -332,12 +332,12 @@
        $(document).on('click', '.delete', function () {
             var id = $(this).attr("id");
             Swal.fire({
-                title: '¿Estás seguro de eliminar estas preguntas frecuentes?',
-                text: "¡No podrás revertir esto!",
+                title: 'Are you sure delete this FAQ?',
+                text: "You won't be able to revert this!",
                 showCancelButton: true,
-                confirmButtonColor: '#258934',
-                cancelButtonColor: 'dark',
-                confirmButtonText: '¡Sí, bórralo!'
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.value) {
                     $.ajaxSetup({
@@ -350,7 +350,7 @@
                         method: 'POST',
                         data: {id: id},
                         success: function () {
-                            toastr.success('Preguntas frecuentes eliminadas con éxito');
+                            toastr.success('FAQ deleted successfully');
                             location.reload();
                         }
                     });

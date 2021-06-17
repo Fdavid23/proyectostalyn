@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Oferta Flash')
+@section('title','Flash Deal Products')
 
 @push('css_or_js')
     <meta property="og:image" content="{{asset('storage/app/public/company')}}/{{$web_config['web_logo']->value}}"/>
@@ -115,7 +115,7 @@
                 font-size: 14px;
             }
             .for-image {
-
+            
             height: 100px;
         }
         }

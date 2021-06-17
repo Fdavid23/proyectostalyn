@@ -9,22 +9,27 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+
 class ForgotPasswordController extends Controller
 {
     public function __construct()
     {
         $this->middleware('guest:customer', ['except' => ['logout']]);
     }
+    
     public function reset_password()
     {
         return view('customer-view.auth.recover-password');
     }
+
     public function reset_password_request(Request $request)
     {
         $request->validate([
             'email' => 'required|email',
         ]);
+
         $customer = User::Where(['email' => $request['email']])->first();
+
         if (isset($customer)) {
             $token = Str::random(120);
             DB::table('password_resets')->insert([

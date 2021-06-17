@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Dirección de envío')
+@section('title','Shipping Address Choose')
 
 @push('css_or_js')
 <style>
@@ -14,7 +14,7 @@
 .btn-outline:hover {
     color: white;
     background: {{$web_config['primary_color']}};
-
+    
 }
 .btn-outline:focus{
     border-color:{{$web_config['primary_color']}}  !important;
@@ -95,11 +95,9 @@
                                                         for="exampleInputPassword1">{{ trans('messages.address')}} {{ trans('messages.Type')}}</label>
                                                     <select class="form-control" name="address_type">
                                                         <option
-                                                            value="permanent">Sin dirección</option>
-                                                        <option value="home">Casa</option>
-                                                        <option value="oficce">Oficina</option>
+                                                            value="permanent">{{ trans('messages.Permanent')}}</option>
+                                                        <option value="home">{{ trans('messages.Home')}}</option>
                                                         <option value="others">{{ trans('messages.Others')}}</option>
-
                                                     </select>
                                                 </div>
                                                 <div class="form-group">

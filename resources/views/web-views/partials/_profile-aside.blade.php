@@ -144,7 +144,7 @@
             <!-- Filter by price-->
             <div class="sidebarL">
                 <h3 class="widget-title btnF" style="font-weight: 700;">
-                    <a class="{{Request::is('track-order*')?'active-menu':''}}" href="{{route('track-order.index') }} ">Seguir estado pedido</a>
+                    <a class="{{Request::is('track-order*')?'active-menu':''}}" href="{{route('track-order.index') }} ">Track Your Order</a>
                 </h3>
                 <div class="divider-role"
                      style="border: 1px solid whitesmoke; margin-bottom: 14px;  margin-top: -6px;">
@@ -163,7 +163,17 @@
         </div>
 
         {{--to do--}}
-
+        <div class="pb-0" style="padding-top: 12px;">
+            <!-- Filter by price-->
+            <div class="sidebarL">
+                <h3 class="widget-title btnF" style="font-weight: 700;">
+                    <a class="{{Request::is('chat*')?'active-menu':''}}" href="{{route('chat-with-seller')}}">Chat With Seller</a>
+                </h3>
+                <div class="divider-role"
+                     style="border: 1px solid whitesmoke; margin-bottom: 14px;  margin-top: -6px;">
+                </div>
+            </div>
+        </div>
 
         <div class="pb-0" style="padding-top: 12px;">
             <!-- Filter by price-->

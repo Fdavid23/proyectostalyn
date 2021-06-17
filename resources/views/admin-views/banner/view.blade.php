@@ -45,11 +45,11 @@
     }
 
     input:checked + .slider {
-        background-color: #258934;
+        background-color: #377dff;
     }
 
     input:focus + .slider {
-        box-shadow: 0 0 1px #258934;
+        box-shadow: 0 0 1px #377dff;
     }
 
     input:checked + .slider:before {
@@ -73,12 +73,12 @@
         }
 
     }
-
+    
         #main-banner-image-modal .modal-content{
                  width: 1116px !important;
                margin-left: -264px !important;
            }
-
+          
            #secondary-banner-image-modal .modal-content{
                  width: 1116px !important;
                margin-left: -264px !important;
@@ -100,8 +100,8 @@
                    width: 698px !important;
        margin-left: -75px !important;
            }
-
-
+           
+         
            }
            @media(max-width:375px){
                #main-banner-image-modal .modal-content{
@@ -116,9 +116,9 @@
                  width: 367px !important;
                margin-left: 0 !important;
            }
-
+          
            }
-
+    
       @media(max-width:500px){
        #main-banner-image-modal .modal-content{
                  width: 400px !important;
@@ -132,8 +132,8 @@
                  width: 400px !important;
                margin-left: 0 !important;
            }
-
-
+           
+         
           }
       }
     </style>
@@ -153,11 +153,11 @@
     </div>
     <div class="row">
         <div class="col-md-12" id="banner-btn">
-            <button id="main-banner-add" class="btn btn-success" style="background: #258934"><i class="tio-add-circle"></i> {{ trans('messages.add_main_banner')}}</button>
+            <button id="main-banner-add" class="btn btn-primary"><i class="tio-add-circle"></i> {{ trans('messages.add_main_banner')}}</button>
             <button id="secondary-banner-add"
-                    class="btn btn-success ml-2" style="background: #258934"><i class="tio-add-circle"></i> {{ trans('messages.add_secondary_banner')}}</button>
+                    class="btn btn-primary ml-2"><i class="tio-add-circle"></i> {{ trans('messages.add_secondary_banner')}}</button>
             <button id="popup-banner-add"
-                    class="btn btn-success ml-2 propup" style="background: #258934"><i class="tio-add-circle"></i>  {{ trans('messages.add_popup_banner')}}</button>
+                    class="btn btn-primary ml-2 propup"><i class="tio-add-circle"></i>  {{ trans('messages.add_popup_banner')}}</button>
         </div>
     </div>
     <!-- Content Row -->
@@ -191,9 +191,9 @@
 
                         <div class="card-footer">
                             <a class="btn btn-secondary text-white cancel">{{ trans('messages.Cancel')}}</a>
-                            <button id="add" type="submit" class="btn btn-success" style="background: #258934">{{ trans('messages.save')}}</button>
-                            <a id="update" class="btn btn-success"
-                            style="display: none; color: #fff; background: #258934;">{{ trans('messages.update')}}</a>
+                            <button id="add" type="submit" class="btn btn-primary">{{ trans('messages.save')}}</button>
+                            <a id="update" class="btn btn-primary"
+                            style="display: none; color: #fff;">{{ trans('messages.update')}}</a>
                         </div>
                     </form>
                 </div>
@@ -230,9 +230,9 @@
 
                         <div class="card-footer">
                             <a class="btn btn-secondary text-white cancel">{{ trans('messages.Cancel')}}</a>
-                            <button type="submit" id="addfooter" class="btn btn-success" style="background: #258934" >{{ trans('messages.save')}}</button>
-                            <a id="footerupdate" class="btn btn-success"
-                            style="display: none; color: #fff; background: #258934;">{{ trans('messages.update')}}</a>
+                            <button type="submit" id="addfooter" class="btn btn-primary">{{ trans('messages.save')}}</button>
+                            <a id="footerupdate" class="btn btn-primary"
+                            style="display: none; color: #fff;">{{ trans('messages.update')}}</a>
                         </div>
                     </form>
                 </div>
@@ -271,9 +271,9 @@
                         <div class="card-secondary">
                             <a class="btn btn-secondary text-white cancel">{{ trans('messages.Cancel')}}</a>
                             <button id="addpopup"
-                            type="submit" class="btn btn-success" style="background: background: #258934">{{ trans('messages.save')}}</button>
-                            <a id="popupupdate" class="btn btn-success"
-                            style="display: none; color: #fff; background: #258934;">{{ trans('messages.update')}}</a>
+                            type="submit" class="btn btn-primary">{{ trans('messages.save')}}</button>
+                            <a id="popupupdate" class="btn btn-primary"
+                            style="display: none; color: #fff;">{{ trans('messages.update')}}</a>
                         </div>
                     </form>
                 </div>
@@ -318,7 +318,7 @@
                                     <td><label class="switch"><input type="checkbox" class="status"
                                                                      id="{{$banner->id}}" <?php if ($banner->published == 1) echo "checked" ?>><span
                                                 class="slider round"></span></label></td>
-
+                                   
                                     <td>
                                         <div class="dropdown">
                                             <button class="btn btn-outline-secondary dropdown-toggle" type="button"
@@ -402,9 +402,9 @@
                 },
                 success: function (data) {
                     if (data == 1) {
-                        toastr.success('Banner publicado con éxito');
+                        toastr.success('Banner published successfully');
                     } else {
-                        toastr.success('Banner anulado correctamente');
+                        toastr.success('Banner unpublished successfully');
                     }
                 }
             });
@@ -413,12 +413,12 @@
         $(document).on('click', '.delete', function () {
             var id = $(this).attr("id");
             Swal.fire({
-                title: '¿Estás seguro de eliminar este banner?',
-                text: "¡No podrás revertir esto!",
+                title: 'Are you sure delete this banner?',
+                text: "You won't be able to revert this!",
                 showCancelButton: true,
-                confirmButtonColor: '#258934',
-                cancelButtonColor: 'dark',
-                confirmButtonText: '¡Sí, bórralo!'
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.value) {
                     $.ajaxSetup({
@@ -431,7 +431,7 @@
                         method: 'POST',
                         data: {id: id},
                         success: function () {
-                            toastr.success('Banner eliminado correctamente');
+                            toastr.success('Banner deleted successfully');
                             location.reload();
                         }
                     });
@@ -440,7 +440,7 @@
         });
 
   $(document).on('click', '.edit', function () {
-
+          
             var id = $(this).attr("id");
             $.ajaxSetup({
                 headers: {
@@ -452,30 +452,30 @@
                 method: 'POST',
                 data: {id: id},
                 success: function (data) {
-
+                 
                     // console.log(data);
                     if(data.banner_type=='Main Banner'){
-
-                        $('#main-banner').show();
+                        
+                        $('#main-banner').show(); 
                         $('#banner-table').hide();
                     $('#add').hide();
                     $('#update').show();
                     $('#id').val(data.id);
                         $('#url').val(data.url);
-                        $('#cate-table').hide();
-
+                        $('#cate-table').hide(); 
+                      
                     }
                     else if(data.banner_type=='Footer Banner')
                     {
-
-                      $('#secondary-banner').show();
+                        
+                      $('#secondary-banner').show(); 
                       $('#banner-table').hide();
                     $('#addfooter').hide();
                     $('#footerupdate').show();
                     $('#id').val(data.id);
                         $('#footerurl').val(data.url);
-                        $('#cate-table').hide();
-
+                        $('#cate-table').hide(); 
+                       
 
                     }
                     else{
@@ -485,10 +485,10 @@
                     $('#popupupdate').show();
                     $('#id').val(data.id);
                         $('#popupurl').val(data.url);
-                        $('#cate-table').hide();
+                        $('#cate-table').hide();  
                     }
-
-
+                    
+                  
                 }
             });
         });
@@ -497,7 +497,7 @@
             var id = $('#id').val();
             var name = $('#url').val();
             var type =  $('#type').val();
-
+           
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
@@ -511,7 +511,7 @@
                     id: id,
                     url: name,
                     banner_type: type,
-
+                   
                 },
                 success: function (data) {
                     console.log(data);
@@ -533,14 +533,14 @@
                             }
                         },
                     });
-                    toastr.success('Banner principal actualizado correctamente.');
-
-
+                    toastr.success('Main Banner updated Successfully.');
+                  
+                    
                     location.reload();
                 }
             });
             $('#save').hide();
-
+            
         });
         $('#footerupdate').on('click', function () {
             $('#footerupdate').attr("disabled", true);
@@ -548,7 +548,7 @@
             var name = $('#footerurl').val();
             var type =  $('#footertype').val();
             console.log(type)
-
+           
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
@@ -562,10 +562,10 @@
                     id: id,
                     url: name,
                     banner_type: type,
-
+                   
                 },
                 success: function (data) {
-
+                  
                     $('#url').val('');
                     $.ajax({
                         type: 'get',
@@ -584,22 +584,22 @@
                             }
                         },
                     });
-                    toastr.success('Banner secundario actualizado correctamente.');
-
-
+                    toastr.success('Secondary Banner updated Successfully.');
+                  
+                    
                     location.reload();
                 }
             });
             $('#save').hide();
-
+            
         });
         $('#popupupdate').on('click', function () {
             $('#popupupdate').attr("disabled", true);
             var id = $('#id').val();
             var name = $('#popupurl').val();
             var type =  $('#popuptype').val();
-
-
+            
+           
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
@@ -613,10 +613,10 @@
                     id: id,
                     url: name,
                     banner_type: type,
-
+                   
                 },
                 success: function (data) {
-
+                  
                     $('#url').val('');
                     $.ajax({
                         type: 'get',
@@ -635,21 +635,21 @@
                             }
                         },
                     });
-                    toastr.success('Banner emergente actualizado correctamente.');
-
-
+                    toastr.success('Popup Banner updated Successfully.');
+                  
+                    
                     location.reload();
                 }
             });
             $('#save').hide();
-
+            
         });
-
+       
     </script>
 
     @include('shared-partials.image-process._script',[
      'id'=>'main-banner-image-modal',
-     'height'=>590,
+     'height'=>390,
      'width'=>960,
      'multi_image'=>false,
      'route'=>route('image-upload')

@@ -1,5 +1,5 @@
 @extends('layouts.front-end.app')
-@section('title','Recuperar Contraseña')
+@section('title','Forgot Password')
 @push('css_or_js')
     <style>
         .text-primary{
@@ -12,13 +12,14 @@
     <div class="container py-4 py-lg-5 my-4">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
-                <h2 class="h3 mb-4">¿Olvidaste tu contraseña?</h2>
-                <p class="font-size-md">Cambie su contraseña en tres sencillos pasos. Esto ayuda a mantener su nueva contraseña
-                     seguro.</p>
+                <h2 class="h3 mb-4">Forgot your password?</h2>
+                <p class="font-size-md">Change your password in three easy steps. This helps to keep your new password
+                    secure.</p>
                 <ol class="list-unstyled font-size-md">
-                    <li><span class="text-primary mr-2">1.</span>Complete su dirección de correo electrónico abajo.</li>
-                    <li><span class="text-primary mr-2">2.</span>Le enviaremos un código temporal por correo electrónico.</li>
-                    <li><span class="text-primary mr-2">3.</span>Utilice el código para cambiar su contraseña en nuestro sitio web seguro.
+                    <li><span class="text-primary mr-2">1.</span>Fill in your email address below.</li>
+                    <li><span class="text-primary mr-2">2.</span>We'll email you a temporary code.</li>
+                    <li><span class="text-primary mr-2">3.</span>Use the code to change your password on our secure
+                        website.
                     </li>
                 </ol>
                 <div class="card py-2 mt-4">
@@ -26,11 +27,11 @@
                           method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="recover-email">Ingrese su dirección de correo electrónico</label>
+                            <label for="recover-email">Enter your email address</label>
                             <input class="form-control" type="email" name="email" id="recover-email" required>
-                            <div class="invalid-feedback">Proporcione una dirección de correo electrónico válida.</div>
+                            <div class="invalid-feedback">Please provide valid email address.</div>
                         </div>
-                        <button class="btn btn-primary" type="submit">Obtener nueva contraseña</button>
+                        <button class="btn btn-primary" type="submit">Get new password</button>
                     </form>
                 </div>
             </div>

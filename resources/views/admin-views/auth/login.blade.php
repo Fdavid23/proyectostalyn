@@ -41,7 +41,7 @@
         @php($e_commerce_logo=\App\Model\BusinessSetting::where(['type'=>'company_web_logo'])->first()->value)
         <a class="d-flex justify-content-center mb-5" href="index.html">
             <img class="z-index-2"  src="{{asset("storage/app/public/company/".$e_commerce_logo)}}" alt="Logo"
-                 style="width: 15rem;">
+                 style="width: 8rem;">
         </a>
 
         <div class="row justify-content-center">
@@ -55,7 +55,7 @@
 
                             <div class="text-center">
                                 <div class="mb-5">
-                                    <h1 class="display-4">Iniciar Seción</h1>
+                                    <h1 class="display-4">Sign in</h1>
                                     {{--<p>Don't have an account yet?
                                         <a href="authentication-signup-basic.html">
                                             Sign up here
@@ -74,11 +74,11 @@
 
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
-                                <label class="input-label" for="signinSrEmail">Ingrese su Email</label>
+                                <label class="input-label" for="signinSrEmail">Your email</label>
 
                                 <input type="email" class="form-control form-control-lg" name="email" id="signinSrEmail"
-                                       tabindex="1" placeholder="@gmail.com" aria-label="email@address.com"
-                                       required data-msg="Por favor, introduce una dirección de correo electrónico válida.">
+                                       tabindex="1" placeholder="email@address.com" aria-label="email@address.com"
+                                       required data-msg="Please enter a valid email address.">
                             </div>
                             <!-- End Form Group -->
 
@@ -86,16 +86,16 @@
                             <div class="js-form-message form-group">
                                 <label class="input-label" for="signupSrPassword" tabindex="0">
                                     <span class="d-flex justify-content-between align-items-center">
-                                      Contraseña
-                                      <a class="input-label-secondary" href="javascript:">Recuperar Contraseña?</a>
+                                      Password
+                                      <a class="input-label-secondary" href="javascript:">Forgot Password?</a>
                                     </span>
                                 </label>
 
                                 <div class="input-group input-group-merge">
                                     <input type="password" class="js-toggle-password form-control form-control-lg"
-                                           name="password" id="signupSrPassword" placeholder="8+  caracteres requeridos"
+                                           name="password" id="signupSrPassword" placeholder="8+ characters required"
                                            aria-label="8+ characters required" required
-                                           data-msg="Su contraseña es inválida. Inténtalo de nuevo."
+                                           data-msg="Your password is invalid. Please try again."
                                            data-hs-toggle-password-options='{
                                                      "target": "#changePassTarget",
                                             "defaultClass": "tio-hidden-outlined",
@@ -117,23 +117,20 @@
                                     <input type="checkbox" class="custom-control-input" id="termsCheckbox"
                                            name="remember">
                                     <label class="custom-control-label text-muted" for="termsCheckbox">
-                                     Recordarme
+                                        Remember me
                                     </label>
                                 </div>
                             </div>
                             <!-- End Checkbox -->
 
-                            <button type="submit" class="btn btn-outline-success" style="width: 220px; ">Ingresar </button>
-                            <a href="{{route('home')}}" type="submit" class="btn btn-outline-dark" style="width: 220px" >Salir </a>
-
-
+                            <button type="submit" class="btn btn-lg btn-block btn-primary">Sign in</button>
                         </form>
                         <!-- End Form -->
                     </div>
                 </div>
                 <!-- End Card -->
 
-
+             
             </div>
         </div>
     </div>

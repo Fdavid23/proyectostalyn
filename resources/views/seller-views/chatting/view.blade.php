@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Ver Chat')
+@section('title','Chat View')
 @push('css_or_js')
     <link href="{{asset('public/assets/back-end')}}/css/select2.min.css" rel="stylesheet"/>
     <link href="{{asset('public/assets/back-end/css/croppie.css')}}" rel="stylesheet">
@@ -9,14 +9,14 @@
 @section('content')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-            <li class="breadcrumb-item" aria-current="page">Ver Mensaje</li>
+            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item" aria-current="page">Message view</li>
         </ol>
     </nav>
     <!-- Page Heading -->
     <div class="container">
         <div class="d-sm-flex align-items-center justify-content-between mb-2">
-            <h1 class="h3 mb-0 text-black-50">Ver mensaje de usuario</h1>
+            <h1 class="h3 mb-0 text-black-50">View User Message</h1>
         </div>
 
         <!-- Content Row -->
@@ -36,19 +36,19 @@
                             <div class=" col-md-9 col-lg-9 hidden-xs hidden-sm">
                                 <strong style="margin-right: 20px">{{$contact->subject}}</strong>
                                 @if($contact->seen==1)
-                                    <label style="color: green; border: 1px solid;padding: 2px;border-radius: 10px">Visto</label>
+                                    <label style="color: green; border: 1px solid;padding: 2px;border-radius: 10px">Seen</label>
                                 @else
-                                    <label style="color: red; border: 1px solid;padding: 2px;border-radius: 10px">Aún no visto</label>
+                                    <label style="color: red; border: 1px solid;padding: 2px;border-radius: 10px">Not Seen Yet</label>
                                 @endif
                                 <br>
                                 <table class="table table-user-information">
                                     <tbody>
                                     <tr>
-                                        <td>Nombre de usuario:</td>
+                                        <td>User name:</td>
                                         <td>{{$contact->name}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Número de teléfono móvil:</td>
+                                        <td>Mobile Number:</td>
                                         <td>{{$contact->mobile_number}}</td>
                                     </tr>
                                     <tr>
@@ -56,7 +56,7 @@
                                         <td>{{$contact->email}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Mensaje</td>
+                                        <td>Message</td>
                                         <td><p style="font-width:16px;"> {{$contact->message}}</p></td>
                                     </tr>
                                     </tbody>
@@ -68,7 +68,7 @@
                             <div class="form-group" style="display: none">
                                 <div class="row">
                                     <div class="col-md-10">
-                                        <h4>Realimentación</h4>
+                                        <h4>Feedback</h4>
                                         <textarea class="form-control " name="feedback" id="" rows="5"
                                                   placeholder="Please send a Feedback">{{$contact->feedback}}</textarea>
                                     </div>
@@ -78,7 +78,7 @@
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-success float-right">
-                                    <i class="fa fa-check"></i> Visto
+                                    <i class="fa fa-check"></i> Seen
                                 </button>
                             </div>
                         </form>

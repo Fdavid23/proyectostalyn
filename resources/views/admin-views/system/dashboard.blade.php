@@ -1,6 +1,6 @@
 @extends('layouts.back-end.app')
 
-@section('title','Panel de control')
+@section('title','Dashboard')
 
 @push('css_or_js')
 
@@ -13,7 +13,7 @@
             <div class="row align-items-center">
                 <div class="col-12" style="height: 25px">
                     <label class="badge badge-soft-success float-right">
-
+                        Software Version : 2.0
                     </label>
                 </div>
 
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="col-sm-auto">
-                    <a class="btn btn-success" style="background: #258934" href="">
+                    <a class="btn btn-primary" href="">
                         <i class="tio-premium-outlined mr-1"></i> {{trans('messages.Products')}}
                     </a>
                 </div>
@@ -44,7 +44,7 @@
                 <!-- Card -->
                 <a class="card card-hover-shadow h-100" href="{{route('admin.orders.list',['status'=>'all'])}}">
                     <div class="card-body">
-                        <h6 class="card-subtitle">Total de pedidos</h6>
+                        <h6 class="card-subtitle">Total Orders</h6>
 
                         <div class="row align-items-center gx-2 mb-1">
                             <div class="col-6">

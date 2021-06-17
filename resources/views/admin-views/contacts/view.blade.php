@@ -7,7 +7,7 @@
 @endpush
 
 @section('content')
-<div class="content container-fluid">
+<div class="content container-fluid"> 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">  {{trans('messages.Dashboard')}}</a></li>
@@ -31,7 +31,7 @@
                                 <img onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'" style="height: 8rem; width: 9rem;" class="img-circle"
                                      src="{{asset('public/assets/front-end')}}/img/contacts/blank.jpg"
                                      alt="User Pic">
-
+                                     
                             </div>
 
 
@@ -80,8 +80,8 @@
 
                             <div class="card-footer pl-0">
                                 @if($contact->seen==0)
-                                <button type="submit" class="btn btn-success " style="background: #258934">
-                                    <i class="fa fa-check"></i>{{trans('messages.Seen')}}
+                                <button type="submit" class="btn btn-primary ">
+                                    <i class="fa fa-check"></i>{{trans('messages.Seen')}} 
                                 </button>
                                 @endif
                             </div>

@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-sm-auto">
-                    <a class="btn btn-success" href="{{route('admin.dashboard')}}">
+                    <a class="btn btn-primary" href="{{route('admin.dashboard')}}">
                         <i class="tio-home mr-1"></i> {{trans('messages.Dashboard')}}
                     </a>
                 </div>
@@ -163,7 +163,7 @@
                             </div>
 
                             <div class="d-flex justify-content-end">
-                                <button type="button" onclick="form_alert('admin-profile-form','Want to update admin info ?')" class="btn btn-success" style="background: #258934"> {{trans('messages.Save')}} {{trans('messages.changes')}}</button>
+                                <button type="button" onclick="form_alert('admin-profile-form','Want to update admin info ?')" class="btn btn-primary">{{trans('messages.Save')}} {{trans('messages.changes')}}</button>
                             </div>
 
                             <!-- End Form -->
@@ -228,7 +228,7 @@
                             <!-- End Form Group -->
 
                             <div class="d-flex justify-content-end">
-                                <button type="button"onclick="form_alert('changePasswordForm','Want to update admin password ?')"  class="btn btn-success" style="background: #258934">{{trans('messages.Save')}} {{trans('messages.changes')}} </button>
+                                <button type="button"onclick="form_alert('changePasswordForm','Want to update admin password ?')"  class="btn btn-primary">{{trans('messages.Save')}} {{trans('messages.changes')}} </button>
                             </div>
                         </form>
                         <!-- End Form -->

@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Idioma')
+@section('title','Language')
 @push('css_or_js')
     <!-- Custom styles for this page -->
     <link href="{{asset('public/assets/back-end')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -11,9 +11,6 @@
             height: 23px;
         }
 
-    .page-item.active .page-link {
-    background-color: #258934 !important;
-}
         .switch input {
             opacity: 0;
             width: 0;
@@ -45,11 +42,11 @@
         }
 
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #377dff;
         }
 
         input:focus + .slider {
-            box-shadow: 0 0 1px #258934;
+            box-shadow: 0 0 1px #377dff;
         }
 
         input:checked + .slider:before {
@@ -88,7 +85,7 @@
             </div>
 
             <div class="col-md-4">
-                <button class="btn btn-success btn-icon-split float-right"  style="background: #258934" data-toggle="modal"
+                <button class="btn btn-primary btn-icon-split float-right" data-toggle="modal"
                         data-target="#lang-modal">
                         <i class="tio-add-circle"></i>
                     <span class="text">{{trans('messages.add_new_language')}}</span>
@@ -108,10 +105,10 @@
                         <table id="dataTable" class="display table table-hover " style="width:100%">
                             <thead>
                             <tr>
-
+                                <th scope="col">{{ trans('messages.SL#')}}</th>
                                 <th scope="col">{{trans('messages.Id')}}</th>
                                 <th scope="col">{{trans('messages.name')}}</th>
-                                <th scope="col">{{trans('messages.Code')}}</th>
+                                <th scope="col">{{trans('messages.Code')}}Code</th>
                                 <th scope="col">{{trans('messages.status')}}</th>
                                 <th scope="col" class="text-right">{{trans('messages.action')}}</th>
                             </tr>
@@ -121,7 +118,7 @@
                             @foreach(json_decode($language['value'],true) as $key =>$data)
                                 <tr>
                                     <td>{{$key+1}}</td>
-
+                                    <td>{{$data['id']}}</td>
                                     <td>{{$data['name']}}</td>
                                     <td>{{$data['code']}}</td>
                                     <td>
@@ -188,7 +185,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('messages.close')}}</button>
-                        <button type="submit" class="btn btn-success" style="background: #258934">{{trans('messages.Add')}} <i class="fa fa-plus"></i></button>
+                        <button type="submit" class="btn btn-primary">{{trans('messages.Add')}} <i class="fa fa-plus"></i></button>
                     </div>
                 </form>
             </div>

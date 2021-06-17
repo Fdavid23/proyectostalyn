@@ -59,11 +59,11 @@
                     </div>
 
                     <a class="btn btn-outline-secondary btn-sm" href="{{route('shop-cart')}}">
-                        Expandir Carrito<i class="czi-arrow-right ml-1 mr-n1"></i>
+                        Expand cart<i class="czi-arrow-right ml-1 mr-n1"></i>
                     </a>
                 </div>
                 <a class="btn btn-primary btn-sm btn-block" href="{{route('checkout-details')}}">
-                    <i class="czi-card mr-2 font-size-base align-middle"></i>Verificar
+                    <i class="czi-card mr-2 font-size-base align-middle"></i>Checkout
                 </a>
             @else
                 <div class="widget-cart-item">

@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Preguntas Frecuentes')
+@section('title','FAQ')
 
 @push('css_or_js')
     <meta property="og:image" content="{{asset('storage/app/public/company')}}/{{$web_config['web_logo']->value}}"/>
@@ -77,7 +77,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 sidebar_heading text-center mb-2">
-                <h1 class="h3  mb-0 folot-left headerTitle">PREGUNTAS FRECUENTES</h1>
+                <h1 class="h3  mb-0 folot-left headerTitle">{{trans('messages.frequently_asked_question')}}</h1>
             </div>
         </div>
         <hr>
@@ -150,12 +150,12 @@
 $(document).on('click', '.delete', function () {
     var id = $(this).attr("id");
     Swal.fire({
-        title: '¿Estás seguro de eliminar este banner?',
-        text: "¡No podrás revertir esto!",
+        title: 'Are you sure delete this banner?',
+        text: "You won't be able to revert this!",
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: '¡Sí, bórralo!'
+        confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.value) {
             $.ajaxSetup({
@@ -168,7 +168,7 @@ $(document).on('click', '.delete', function () {
                 method: 'POST',
                 data: {id: id},
                 success: function () {
-                    toastr.success('Banner eliminado correctamente');
+                    toastr.success('Banner deleted successfully');
                     location.reload();
                 }
             });

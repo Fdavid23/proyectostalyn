@@ -160,7 +160,7 @@
                     $company_mobile_logo =$web_config['mob_logo']->value;
                 @endphp
                 <div class="topbar-text dropdown disable-autohide mr-3">
-                    <a class="topbar-link dropdown-toggle" href="" data-toggle="dropdown">
+                    <a class="topbar-link dropdown-toggle" href="#" data-toggle="dropdown">
                         @foreach(json_decode($language['value'],true) as $data)
                             @if($data['code']==$locale)
                                 <img class="mr-2" width="20"
@@ -217,7 +217,7 @@
     <div class="navbar-sticky bg-light mobile-head">
         <div class="navbar navbar-expand-md navbar-light">
             <div class="container ">
-                <a class="navbar-brand d-none d-sm-block mr-3 flex-shrink-0 tab-logo" href="{{route('admin.auth.login')}}"
+                <a class="navbar-brand d-none d-sm-block mr-3 flex-shrink-0 tab-logo" href="{{route('home')}}"
                    style="min-width: 7rem;">
                     <img width="250" height="60" style="height: 60px!important;"
                          src="{{asset("storage/app/public/company/$company_web_logo")}}"
@@ -286,7 +286,7 @@
                                 </div>
                                 <div class="navbar-tool-text">
                                     <small>Hello, {{auth('customer')->user()->f_name}}</small>
-                                 Panel
+                                    Dashboard
                                 </div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -445,7 +445,6 @@
                     </ul>
                     <!-- Primary menu-->
                     <ul class="navbar-nav">
-
                         <li class="nav-item dropdown {{request()->is('/')?'active':''}}">
                             <a class="nav-link" href="{{route('home')}}">{{ trans('messages.Home')}}</a>
                         </li>
@@ -469,10 +468,25 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li class="nav-item dropdown {{request()->is('/')?'active':''}}">
-                            <a class="nav-link"  href="{{ route('contacts') }}">Contacto</a>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        style="color: white;margin-top: 5px;">
+                                    <b>{{ trans('messages.Seller')}}  {{ trans('messages.zone')}} </b>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
+                                     style="min-width: 165px !important;">
+                                    <a class="dropdown-item" href="{{route('shop.apply')}}">
+                                        <b>{{ trans('messages.Become a')}} {{ trans('messages.Seller')}}</b>
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{route('seller.auth.login')}}">
+                                        <b>{{ trans('messages.Seller')}}  {{ trans('messages.login')}} </b>
+                                    </a>
+                                </div>
+                            </div>
                         </li>
-
                     </ul>
                 </div>
             </div>

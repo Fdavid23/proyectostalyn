@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Orden Completa')
+@section('title','Order Complete')
 
 @push('css_or_js')
     <style>
@@ -98,7 +98,7 @@
                             </div>
 
                             <span class="font-weight-bold d-block mt-4" style="font-size: 17px;">{{trans('messages.Hello')}}, {{auth('customer')->user()->f_name}}</span>
-                            <span>¡Su pedido ha sido confirmado y se enviará de acuerdo con el método que seleccionó!</span>
+                            <span>You order has been confirmed and will be shipped according to the method you selected!</span>
                             @php($order=\App\Model\Order::with(['details'])->where('id',$order_id)->first())
 
                             <div class="payment border-top mt-3 mb-3 border-bottom table-responsive">
@@ -140,7 +140,7 @@
                                                         </span>
                                                         <br>
                                                         <small>
-                                                            Cantidad : {{$detail['qty']}}
+                                                            QTY : {{$detail['qty']}}
                                                         </small>
                                                         <div class="product-qty">
                                                             @foreach(json_decode($detail['variation'],true) as $key1 =>$variation)

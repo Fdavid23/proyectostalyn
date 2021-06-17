@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Atributo')
+@section('title','Attribute')
 @push('css_or_js')
     <!-- Custom styles for this page -->
     <link href="{{asset('public/assets/back-end')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -31,12 +31,12 @@
                             <input type="hidden" id="id">
                             <label for="name">{{ trans('messages.Attribute')}} {{ trans('messages.Name')}} </label>
                             <input type="text" name="name" class="form-control" id="name"
-                                   placeholder="Nombre del atributo">
+                                   placeholder="Enter Attribute Name">
                         </div>
 
-                        <a id="add"  class="btn btn-success btn-sm" style="color: white; background: #258934">{{ trans('messages.Add')}} <i
+                        <a id="add" class="btn btn-primary btn-sm" style="color: white">{{ trans('messages.Add')}} <i
                                 class="fa fa-plus"></i></a>
-                        <a id="update" class="btn btn-success btn-sm" style="display: none; color: #fff; background: #258934">{{ trans('messages.Update')}} <i
+                        <a id="update" class="btn btn-primary btn-sm" style="display: none; color: #fff;">{{ trans('messages.Update')}} <i
                                 class="fa fa-edit"></i></a>
                     </form>
                 </div>
@@ -134,7 +134,7 @@
                 Swal.fire({
                     icon: 'Error',
                     title: 'Attribute',
-                    text: 'Todos los campos de entrada son obligatorios'
+                    text: 'All input field is required'
                 });
                 return false;
             }
@@ -150,7 +150,7 @@
                     name: name,
                 },
                 success: function () {
-                    toastr.success('Atributo insertado correctamente.');
+                    toastr.success('Attribute inserted Successfully.');
                     $('#name').val('');
                     fetch_attribute();
 
@@ -176,7 +176,7 @@
                 },
                 success: function () {
                     $('#name').val('');
-                    toastr.success('Atributo actualizado correctamente');
+                    toastr.success('Attribute updated successfully');
                     $('#update').hide();
                     $('#add').show();
                     fetch_attribute();
@@ -188,12 +188,12 @@
         $(document).on('click', '.delete', function () {
             var id = $(this).attr("id");
             Swal.fire({
-                title: '¿Estás seguro de eliminar esto?',
-                text: "¡No podrás revertir esto!",
+                title: 'Are you sure to delete this?',
+                text: "You won't be able to revert this!",
                 showCancelButton: true,
-                confirmButtonColor: '#258934',
-                cancelButtonColor: 'Dark',
-                confirmButtonText: '¡Sí, bórralo!'
+                confirmButtonColor: 'primary',
+                cancelButtonColor: 'secondary',
+                confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.value) {
                     $.ajaxSetup({
@@ -207,7 +207,7 @@
                         data: {id: id},
                         success: function () {
                             fetch_attribute();
-                            toastr.success('Atributo eliminado correctamente');
+                            toastr.success('Attribute deleted successfully');
                         }
                     });
                 }

@@ -1,25 +1,25 @@
 @extends('layouts.back-end.app')
-@section('title','Editar Marca')
+@section('title','Brand Edit')
 <style>
     #brand-image-modal .modal-content{
              width: 1116px !important;
            margin-left: -264px !important;
        }
-
+      
        @media(max-width:768px){
            #brand-image-modal .modal-content{
                width: 698px !important;
    margin-left: -75px !important;
        }
-
-
+       
+     
        }
        @media(max-width:375px){
            #brand-image-modal .modal-content{
              width: 367px !important;
            margin-left: 0 !important;
        }
-
+      
        }
 
   @media(max-width:500px){
@@ -27,7 +27,7 @@
              width: 400px !important;
            margin-left: 0 !important;
        }
-
+     
       }
   }
 </style>
@@ -41,8 +41,8 @@
 <div class="content container-fluid">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Panel de control</a></li>
-            <li class="breadcrumb-item" aria-current="page">Actualiza Marca</li>
+            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item" aria-current="page">Brand Update</li>
         </ol>
     </nav>
     <!-- Page Heading -->
@@ -69,7 +69,7 @@
                                     <button type="button" class="btn bg-secondary text-light btn-sm" data-toggle="modal"
                                             data-target="#brand-image-modal" data-whatever="@mdo"
                                             id="image-count-brand-image-modal">
-                                            <i class="tio-add-circle"></i> Subir
+                                            <i class="tio-add-circle"></i> Upload
                                     </button>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-success" style=" background:#258934">{{ trans('messages.update')}}</button>
+                            <button type="submit" class="btn btn-primary">{{ trans('messages.update')}}</button>
                         </div>
                     </form>
                 </div>

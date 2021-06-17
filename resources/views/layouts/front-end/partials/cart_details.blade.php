@@ -75,14 +75,14 @@
                 @endforeach
             @else
                 <div class="d-flex justify-content-center align-items-center">
-                    <h4 class="text-danger">Carrito vacío</h4>
+                    <h4 class="text-danger">Cart Empty</h4>
                 </div>
             @endif
         </div>
         <div class="row pt-2">
             <div class="col-12">
                 <select class="form-control" id="shipping_method_id" onchange="set_shipping_id(this.value)">
-                    <option value="0">Eliga un Método de Envio</option>
+                    <option value="0">Choose Shipping Method</option>
                     @foreach(\App\Model\ShippingMethod::where(['status'=>1])->get() as $shipping)
                         <option
                             value="{{$shipping['id']}}" {{session()->has('shipping_method_id')?session('shipping_method_id')==$shipping['id']?'selected':'':''}}>
@@ -95,13 +95,13 @@
 
             <div class="col-6">
                 <a href="{{route('home')}}" class="btn btn-primary">
-                    <i class="fa fa-backward"></i> Continuar Comprando
+                    <i class="fa fa-backward"></i> Continue Shopping
                 </a>
             </div>
 
             <div class="col-6">
                 <a href="{{route('checkout-details')}}" class="btn btn-primary pull-right">
-                    Continuar con compra <i class="fa fa-forward"></i>
+                    Checkout <i class="fa fa-forward"></i>
                 </a>
             </div>
         </div>

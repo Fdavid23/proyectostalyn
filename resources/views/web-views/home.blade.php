@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title',' Garage&Republik' )
+@section('title','Welcome To '. $web_config['name']->value.' Home')
 
 @push('css_or_js')
     <meta property="og:image" content="{{asset('storage/app/public/company')}}/{{$web_config['web_logo']->value}}"/>
@@ -25,7 +25,7 @@
 
         .cz-countdown-hours {
             color: white !important;
-            background-color: {{$web_config['secondary_color']}};
+            background-color: {{$web_config['primary_color']}};
             padding: 0px 6px;
             border-radius: 3px;
             margin-right: 3px !important;
@@ -217,8 +217,8 @@
 @section('content')
     <!-- Hero (Banners + Slider)-->
     <section class="bg-transparent mt-4 mb-4">
-        <div class="container" >
-            <div class="row " >
+        <div class="container">
+            <div class="row ">
                 <div class="col-12">
                     <div class="banner_card">
                         <div class="row">
@@ -232,16 +232,16 @@
                                             </li>
                                         @endforeach
                                     </ol>
-                                    <div class="carousel-inner" >
+                                    <div class="carousel-inner">
                                         @foreach($main_banner as $key=>$banner)
-                                            <div class="carousel-item {{$key==0?'active':''}}" >
-                                                <a href="">
-                                                    <img class="d-block w-100" style="max-height: 520px; height: 520px;"
+                                            <div class="carousel-item {{$key==0?'active':''}}">
+                                                <a href="{{$banner['url']}}">
+                                                    <img class="d-block w-100" style="max-height: 390px"
                                                          onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"
                                                          src="{{asset('storage/app/public/banner')}}/{{$banner['photo']}}"
                                                          alt="">
                                                 </a>
-                                                   </div>
+                                            </div>
                                         @endforeach
                                     </div>
                                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
@@ -260,7 +260,7 @@
                                 <div class="cz-carousel">
                                     <div class="d-flex flex-nowrap">
                                         @foreach(\App\Model\Banner::where('banner_type','Footer Banner')->where('published',1)->orderBy('id','desc')->take(3)->get() as $banner)
-                                            <!-- <div class="footer_banner">
+                                            <div class="footer_banner">
                                                 <a data-toggle="modal" data-target="#quick_banner{{$banner->id}}"
                                                    style="cursor: pointer;">
                                                     <img class="d-block mx-auto footer_banner_img"
@@ -269,7 +269,7 @@
                                                          width="315">
                                                 </a>
 
-                                            </div> -->
+                                            </div>
                                             <div class="modal fade" id="quick_banner{{$banner->id}}" tabindex="-1"
                                                  role="dialog" aria-labelledby="exampleModalLongTitle"
                                                  aria-hidden="true">
@@ -664,7 +664,7 @@
                         @endif
                     @endif
                 </div>
-                {{-- <div class="container mt-2">
+                <div class="container mt-2">
                     <div class="row p-0">
                         <div class="col-md-3 p-0 text-center mobile-padding">
                             <img style="height: 29px;" src="{{asset("storage/app/public/png/delivery.png")}}" alt="">
@@ -684,7 +684,7 @@
                             <div class="deal-title">Authentic<br><span>Payment</span></div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
             <div class="col-xl-9 col-md-8 pb-4">
                 <div class="row">

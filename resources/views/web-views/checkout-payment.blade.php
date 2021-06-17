@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Método de pago Elegir')
+@section('title','Payment Method Choose')
 
 @push('css_or_js')
 
@@ -101,15 +101,15 @@
                         <div class="col-6">
                             <a class="btn btn-secondary btn-block" href="{{route('checkout-shipping')}}">
                                 <i class="czi-arrow-left mt-sm-0 mr-1"></i>
-                                <span class="d-none d-sm-inline">Volver a Envíos</span>
-                                <span class="d-inline d-sm-none">Atrás</span>
+                                <span class="d-none d-sm-inline">Back to Shipping</span>
+                                <span class="d-inline d-sm-none">Back</span>
                             </a>
                         </div>
                         <div class="col-6">
                             <a class="btn btn-primary btn-block"
                                href="{{route('checkout-review')}}">
-                                <span class="d-none d-sm-inline">Revise su orden</span>
-                                <span class="d-inline d-sm-none">Revisar orden</span>
+                                <span class="d-none d-sm-inline">Review your order</span>
+                                <span class="d-inline d-sm-none">Review order</span>
                                 <i class="czi-arrow-right mt-sm-0 ml-1"></i>
                             </a>
                         </div>
@@ -129,7 +129,7 @@
                 url: '{{ url('/') }}/customer/set-payment-method/' + name,
                 success: function () {
                     $('#' + name).prop('checked', true);
-                    toastr.success(name.replace(/_/g, " ") + ' ha sido seleccionado con éxito');
+                    toastr.success(name.replace(/_/g, " ") + ' has been selected successfully');
                 }
             });
         }

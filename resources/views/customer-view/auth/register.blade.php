@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Registro')
+@section('title','Register')
 
 @push('css_or_js')
 <style>

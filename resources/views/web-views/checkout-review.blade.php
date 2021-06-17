@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Revisar Pedido')
+@section('title','Review Order')
 
 @push('css_or_js')
     <style>
@@ -48,7 +48,7 @@
                                         <a href="javascript:">{{$products['name']}}</a>
                                     </h3>
                                     <small>
-                                        Cantidad : {{$cart['quantity']}}
+                                        QTY : {{$cart['quantity']}}
                                     </small>
                                     @foreach($cart['variations'] as $key1 =>$variation)
                                         <div class="font-size-sm"><span
@@ -70,7 +70,7 @@
                     <div class="bg-secondary rounded-lg px-4 pt-4 pb-2">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h4 class="h6">Datos del :</h4>
+                                <h4 class="h6">{{ trans('messages.Ship')}} {{ trans('messages.to')}} :</h4>
                                 @php($data=session('customer_info'))
                                 @php($address=\App\Model\ShippingAddress::find($data['address_id']))
                                 @if(isset($address))
@@ -129,14 +129,14 @@
                                href="{{route('checkout-payment')}}">
                                 <i class="czi-arrow-left mt-sm-0 mr-1"></i>
                                 <span
-                                    class="d-none d-sm-inline">Regresar a {{ trans('messages.Payment')}}  </span>
+                                    class="d-none d-sm-inline">{{ trans('messages.Back')}} {{ trans('messages.to')}} {{ trans('messages.Payment')}}  </span>
                                 <span class="d-inline d-sm-none">{{ trans('messages.Back')}}</span></a>
                         </div>
                         <div class="col-6">
                             @if(session('payment_method')=='cash_on_delivery')
                                 <a class="btn btn-primary btn-block" href="{{route('checkout-complete')}}">
                                     <span
-                                        class="d-none d-sm-inline">Completar {{ trans('messages.Order')}}</span>
+                                        class="d-none d-sm-inline">{{ trans('messages.Complete')}} {{ trans('messages.Order')}}</span>
                                     <span class="d-inline d-sm-none">{{ trans('messages.Complete')}}</span>
                                     <i class="czi-arrow-right mt-sm-0 ml-1"></i>
                                 </a>
@@ -234,7 +234,7 @@
 
                                 <button class="btn btn-primary btn-block" type="button"
                                         onclick="$('.razorpay-payment-button').click()">
-                                    <i class="czi-card"></i> Pagar ahora
+                                    <i class="czi-card"></i> Pay Now
                                 </button>
                             @endif
                         </div>

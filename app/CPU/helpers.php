@@ -48,7 +48,7 @@ class Helpers
 
     public static function get_image_path($type)
     {
-        $path = asset('storage/app/public/');
+        $path = asset('storage/app/public/brand');
         return $path;
     }
 

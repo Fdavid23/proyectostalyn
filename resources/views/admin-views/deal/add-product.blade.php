@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Producto de oferta')
+@section('title','Deal Product')
 @push('css_or_js')
     <link href="{{asset('public/assets/back-end/css/croppie.css')}}" rel="stylesheet">
     <link href="{{asset('public/assets/back-end/css/tags-input.min.css')}}" rel="stylesheet">
@@ -10,7 +10,7 @@
 @endpush
 
 @section('content')
-<div class="content container-fluid">
+<div class="content container-fluid"> 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{ trans('messages.Dashboard')}}</a></li>
@@ -70,7 +70,7 @@
 
                         <div class="card-footer">
                             <button type="submit"
-                                    class="btn btn-success float-right" style="background: #258934">{{ trans('messages.add')}}</button>
+                                    class="btn btn-primary float-right">{{ trans('messages.add')}}</button>
                         </div>
                     </form>
                 </div>
@@ -108,7 +108,7 @@
                                     <td>
                                         <a href="{{route('admin.deal.delete-product',[$de_p['id']])}}"
                                            class="btn btn-danger btn-sm">
-                                           {{ trans ('Borrar')}}
+                                           {{ trans ('Delete')}}
                                         </a>
                                     </td>
                                 </tr>
@@ -164,7 +164,7 @@
                     status: status
                 },
                 success: function () {
-                    toastr.success('Estado actualizado con éxito');
+                    toastr.success('Status updated successfully');
                 }
             });
         });

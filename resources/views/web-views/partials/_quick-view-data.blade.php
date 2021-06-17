@@ -226,7 +226,7 @@ $productReviews = \App\CPU\ProductManager::get_product_review($product->id);
                             @endfor
                         @endif
                     </div>
-                    <span class="d-inline-block font-size-sm text-body align-middle mt-1 ml-1 mr-2 pl-2 pr-2">{{$overallRating[1]}} Reviewsertt</span>
+                    <span class="d-inline-block font-size-sm text-body align-middle mt-1 ml-1 mr-2 pl-2 pr-2">{{$overallRating[1]}} Reviews</span>
                     <span style="width: 0px;height: 10px;border: 0.5px solid #707070; margin-top: 6px"></span>
                     <span class="d-inline-block font-size-sm text-body align-middle mt-1 ml-1 mr-2 pl-2 pr-2">{{$countOrder}} orders  </span>
                     <span style="width: 0px;height: 10px;border: 0.5px solid #707070; margin-top: 6px">    </span>

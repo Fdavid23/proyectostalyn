@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Acerca de')
+@section('title','About Us')
 @section('content')
 <div class="content container-fluid">
     <nav aria-label="breadcrumb">
@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <input class="btn btn-success btn-block" style="background: #258934" type="submit" name="btn" value="submit">
+                                <input class="btn btn-primary btn-block" type="submit" name="btn" value="submit">
                             </div>
                         </div>
                     </div>

@@ -79,12 +79,12 @@
                                     </a>
                                 </li>
 
-                                <li class="nav-item {{Request::is('admin/orders/list/processed')?'active':''}}">
-                                    <a class="nav-link " href="{{route('admin.orders.list',['processed'])}}" title="">
+                                <li class="nav-item {{Request::is('admin/orders/list/processing')?'active':''}}">
+                                    <a class="nav-link " href="{{route('admin.orders.list',['processing'])}}" title="">
                                         <span class="tio-circle nav-indicator-icon"></span>
-                                        <span class="text-truncate">{{trans('messages.Processed')}}
+                                        <span class="text-truncate">{{trans('messages.Processing')}}
                                             <span class="badge badge-warning badge-pill ml-1">
-                                                {{\App\Model\Order::where(['order_status'=>'processed'])->count()}}
+                                                {{\App\Model\Order::where(['order_status'=>'processing'])->count()}}
                                             </span>
                                         </span>
                                     </a>
@@ -246,13 +246,13 @@
                 <span class="text-truncate">{{trans('messages.Seller Products')}}</span>
             </a>
         </li>
-
+     
       </ul>
   </li>
 @endif
 
 
-{{-- @if(\App\CPU\Helpers::module_permission_check('employee'))
+@if(\App\CPU\Helpers::module_permission_check('employee'))
 
 
 <li class="nav-item">
@@ -296,14 +296,14 @@
 
 @endif
 
-@endif --}}
+@endif
    {{--to do--}}
-   {{-- @if(\App\CPU\Helpers::module_permission_check('seller'))
+   @if(\App\CPU\Helpers::module_permission_check('seller'))                
    <li class="nav-item">
        <small class="nav-subtitle" title="Layouts">    {{trans('messages.seller_section')}}</small>
            <small class="tio-more-horizontal nav-subtitle-replacer"></small>
        </li>
-
+     
 
        <li class="navbar-vertical-aside-has-menu {{Request::is('admin/seller*')?'active':''}}">
            <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle" href="javascript:"
@@ -326,13 +326,13 @@
                     <span class="text-truncate">{{trans('messages.Withdraw')}} {{trans('messages.List')}}</span>
                 </a>
             </li>
-
-
+            
+               
            </ul>
        </li>
 
-       @endif --}}
-{{--
+       @endif
+{{--    
     @if(\App\CPU\Helpers::module_permission_check('seller'))
         <div class="sidebar-heading">
             {{trans('messages.seller_section')}}

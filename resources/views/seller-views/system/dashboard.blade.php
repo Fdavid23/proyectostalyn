@@ -38,7 +38,7 @@
                 <!-- Card -->
                 <a class="card card-hover-shadow h-100" href="{{route('seller.orders.list',['pending'])}}">
                     <div class="card-body">
-                        <h6 class="card-subtitle">Ordenes Pendientes</h6>
+                        <h6 class="card-subtitle">Pending Orders</h6>
 
                         <div class="row align-items-center gx-2 mb-1">
                             <div class="col-6">

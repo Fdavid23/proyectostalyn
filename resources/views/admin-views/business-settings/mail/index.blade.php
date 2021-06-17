@@ -1,5 +1,5 @@
  @extends('layouts.back-end.app')
- @section('title','Configuración de correo')
+ @section('title','Mail Config')
 @push('css_or_js')
 
 @endpush
@@ -22,7 +22,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body" style="padding: 20px">
-
+                  
                     @php($config=\App\Model\BusinessSetting::where(['type'=>'mail_config'])->first())
                     @php($data=json_decode($config['value'],true))
                     <form action="{{route('admin.business-settings.mail.update')}}"
@@ -70,9 +70,9 @@
                                 <input type="text" class="form-control" name="password" value="{{$data['password']}}">
                             </div>
 
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Save')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Save')}}</button>
                         @else
-                            <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Configure')}}</button>
+                            <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Configure')}}</button>
                         @endif
                     </form>
                 </div>

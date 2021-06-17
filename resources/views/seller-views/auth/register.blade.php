@@ -83,26 +83,26 @@
                             <h5 class="black">{{trans('messages.Seller')}} {{trans('messages.Info')}} </h5>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="f_name" placeholder="Primer Nombre" required>
+                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" name="f_name" placeholder="First Name" required>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-user" id="exampleLastName" name="l_name" placeholder="Segundo Nombre" required>
+                                    <input type="text" class="form-control form-control-user" id="exampleLastName" name="l_name" placeholder="Last Name" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="email" placeholder="Email" required>
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="email" placeholder="Email Address" required>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputPhone" name="phone" placeholder="Número Telefónico" required>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputPhone" name="phone" placeholder="Phone Number" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" class="form-control form-control-user" minlength="6" id="exampleInputPassword" name="password" placeholder="Contraseña" required>
+                                    <input type="password" class="form-control form-control-user" minlength="6" id="exampleInputPassword" name="password" placeholder="Password" required>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="password" class="form-control form-control-user" minlength="6" id="exampleRepeatPassword" placeholder="Repita Contraseña" required>
+                                    <input type="password" class="form-control form-control-user" minlength="6" id="exampleRepeatPassword" placeholder="Repeat Password" required>
                                     <div class="pass invalid-feedback">{{trans('messages.Repeat')}}  {{trans('messages.password')}} {{trans('messages.not match')}} .</div>
                                 </div>
                             </div>
@@ -118,10 +118,10 @@
                             <h5 class="black">{{trans('messages.Shop')}} {{trans('messages.Info')}}</h5>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0 ">
-                                    <input type="text" class="form-control form-control-user" id="shop_name" name="shop_name" placeholder="Nombre de Tienda" required>
+                                    <input type="text" class="form-control form-control-user" id="shop_name" name="shop_name" placeholder="Shop Name" required>
                                 </div>
                                 <div class="col-sm-6">
-                                    <textarea name="shop_address" class="form-control" id="shop_address"rows="1" placeholder="Dirección de Tienda"></textarea>
+                                    <textarea name="shop_address" class="form-control" id="shop_address"rows="1" placeholder="shop address"></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-3 mb-4">
@@ -135,7 +135,7 @@
                         </form>
                         <hr>
                         <div class="text-center">
-                            <a class="small"  href="{{route('seller.auth.login')}}">¿Ya tienes una cuenta? ¡Acceso!</a>
+                            <a class="small"  href="{{route('seller.auth.login')}}">Already have an account? Login!</a>
                         </div>
                     </div>
                 </div>

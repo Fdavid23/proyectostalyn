@@ -1,6 +1,6 @@
 @extends('layouts.back-end.app')
-@section('title','Cliente')
-@section('title','Detalles del cliente')
+@section('title','Customer')
+@section('title','Customer Details')
 
 @push('css_or_js')
 
@@ -17,30 +17,30 @@
                             <li class="breadcrumb-item">
                                 <a class="breadcrumb-link"
                                    href="{{route('admin.customer.list')}}">
-                                   Clientes
+                                    Customers
                                 </a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Detalles del cliente</li>
+                            <li class="breadcrumb-item active" aria-current="page">Customer details</li>
                         </ol>
                     </nav>
 
                     <div class="d-sm-flex align-items-sm-center">
-                        <h1 class="page-header-title">ID  del cliente #{{$customer['id']}}</h1>
+                        <h1 class="page-header-title">Customer ID #{{$customer['id']}}</h1>
                         <span class="ml-2 ml-sm-3">
                         <i class="tio-date-range">
-                        </i>Se unió en: {{date('d M Y H:i:s',strtotime($customer['created_at']))}}
+                        </i> Joined At : {{date('d M Y H:i:s',strtotime($customer['created_at']))}}
                         </span>
                     </div>
                     <div class="row border-top pt-3">
                         <div class="col-12">
-                            <a href="{{route('admin.dashboard')}}" class="btn btn-success" style="background: #258934">
-                                <i class="tio-home-outlined"></i> Panel de control
+                            <a href="{{route('admin.dashboard')}}" class="btn btn-primary">
+                                <i class="tio-home-outlined"></i> Dashboard
                             </a>
                         </div>
                     </div>
                 </div>
 
-
+             
             </div>
         </div>
         <!-- End Page Header -->
@@ -88,7 +88,7 @@
                                         <a href="{{route('admin.orders.details',['id'=>$order['id']])}}">{{$order['id']}}</a>
                                     </td>
                                     <td> {{\App\CPU\BackEndHelper::usd_to_currency($order['order_amount']).' '.\App\CPU\BackEndHelper::currency_symbol()}}</td>
-
+                                   
                                     <td>
                                         <!-- Dropdown -->
                                         <div class="dropdown">
@@ -100,10 +100,10 @@
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <a class="dropdown-item"
                                                    href="{{route('admin.orders.details',['id'=>$order['id']])}}"><i
-                                                        class="tio-visible"></i> Ver</a>
+                                                        class="tio-visible"></i> View</a>
                                                 <a class="dropdown-item" target="_blank"
                                                    href="{{route('admin.orders.generate-invoice',[$order['id']])}}"><i
-                                                        class="tio-download"></i> Factura</a>
+                                                        class="tio-download"></i> Invoice</a>
                                             </div>
                                         </div>
                                         <!-- End Dropdown -->
@@ -127,16 +127,16 @@
                 <div class="card">
                     <!-- Header -->
                     <div class="card-header">
-                        <h4 class="card-header-title">Cliente</h4>
+                        <h4 class="card-header-title">Customer</h4>
                     </div>
                     <!-- End Header -->
 
                     <!-- Body -->
-
-
-
+                
+                        
+                   
                     @if($customer)
-
+                   
                         <div class="card-body">
                             <div class="media align-items-center" href="javascript:">
                                 <div class="avatar avatar-circle mr-3">
@@ -148,7 +148,7 @@
                                 </div>
                                 <div class="media-body">
                                 <span
-                                    class="text-body text-hover-success" >{{$customer['f_name'].' '.$customer['l_name']}}</span>
+                                    class="text-body text-hover-primary">{{$customer['f_name'].' '.$customer['l_name']}}</span>
                                 </div>
                                 <div class="media-body text-right">
                                     {{--<i class="tio-chevron-right text-body"></i>--}}
@@ -162,8 +162,7 @@
                                     <i class="tio-shopping-basket-outlined"></i>
                                 </div>
                                 <div class="media-body">
-
-                                    <span class="text-body text-hover-primary"> {{\App\Model\Order::where('customer_id',$order['customer_id'])->count()}} Pedidos</span>
+                                    <span class="text-body text-hover-primary"> {{\App\Model\Order::where('customer_id',$customer['customer_id'])->count()}} orders</span>
                                 </div>
                                 <div class="media-body text-right">
                                     {{--<i class="tio-chevron-right text-body"></i>--}}
@@ -173,7 +172,7 @@
                             <hr>
 
                             <div class="d-flex justify-content-between align-items-center">
-                                <h5>Información del cliente</h5>
+                                <h5>Contact info</h5>
                             </div>
 
                             <ul class="list-unstyled list-unstyled-py-2">
@@ -189,14 +188,14 @@
 
                             <hr>
 
-
+                            
 
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5>{{trans('messages.shipping_address')}}</h5>
-
+                              
                             </div>
-
-
+                          
+                             
                             <span class="d-block">
                                 @if(isset($order))
                                 {{trans('messages.Name')}} :
@@ -207,13 +206,13 @@
                             <strong>{{$order->shipping ? $order->shipping['zip']  : "Empty"}}</strong><br>
                             {{trans('messages.Phone')}}:
                             <strong>{{$order->shipping ? $order->shipping['phone']  : "Empty"}}</strong>
-
+                              
                             </span>
                             @endif
-
+                            
                         </div>
                 @endif
-
+            
                 <!-- End Body -->
                 </div>
                 <!-- End Card -->

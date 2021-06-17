@@ -37,7 +37,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="h3 text-dark mb-0 headerTitle text-uppercase">Vendedor</h3>
+                <h3 class="h3 text-dark mb-0 headerTitle text-uppercase">SELLER</h3>
                 {{-- <div class="row">
                     <div class="col-md-6">
 
@@ -111,7 +111,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="card-header">
-                                Escribe algo
+                                Write Something
                             </div>
                             <div class="modal-body">
                                 <form action="{{route('messages_store')}}" method="post" id="chat-form">
@@ -122,7 +122,7 @@
                                     <textarea name="message" class="form-control"></textarea>
                                     <br>
                                     <button class="btn btn-primary" style="color: white;">
-                                        Enviar
+                                        Send
                                     </button>
                                 </form>
                             </div>
@@ -130,7 +130,7 @@
                                 <a href="{{route('chat-with-seller')}}" class="btn btn-primary">
                                     {{trans('messages.go_to')}} {{trans('messages.chatbox')}}
                                 </a>
-                                <button type="button" class="btn btn-secondary pull-right" data-dismiss="modal">Cerrar
+                                <button type="button" class="btn btn-secondary pull-right" data-dismiss="modal">Close
                                 </button>
                             </div>
                         </div>

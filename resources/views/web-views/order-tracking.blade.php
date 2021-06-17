@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Seguir_Pedido)
+@section('title','Track Order')
 
 @push('css_or_js')
     <meta property="og:image" content="{{asset('storage/app/public/company')}}/{{$web_config['web_logo']->value}}"/>
@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                             <div class="pt-2 pl-sm-3 mx-auto mx-sm-0 text-center">
-                                <div class="text-muted mb-2">Quantitygfgjfgjg:</div>{{$product['qty']}}
+                                <div class="text-muted mb-2">Quantity:</div>{{$product['qty']}}
                             </div>
                             <div class="pt-2 pl-sm-2 mx-auto mx-sm-0 text-center">
                                 <div class="text-muted mb-2">Tax:
@@ -180,14 +180,14 @@
                             <div class="nav-link ">
                                 <div class="align-items-center">
                                     <div class="media-tab-media"
-                                         style="margin: 0 auto; @if(($orderDetails['order_status']=='processed') || ($orderDetails['order_status']=='processed') || ($orderDetails['order_status']=='delivered')) background: #4bcc02; color: white; @endif ">
-                                        @if(($orderDetails['order_status']=='processed') || ($orderDetails['order_status']=='processed') || ($orderDetails['order_status']=='delivered'))
+                                         style="margin: 0 auto; @if(($orderDetails['order_status']=='processing') || ($orderDetails['order_status']=='processed') || ($orderDetails['order_status']=='delivered')) background: #4bcc02; color: white; @endif ">
+                                        @if(($orderDetails['order_status']=='processing') || ($orderDetails['order_status']=='processed') || ($orderDetails['order_status']=='delivered'))
                                             <i class="czi-check"></i>
                                         @endif
                                     </div>
                                     <div class="media-body" style="text-align: center;">
                                         <div class="media-tab-subtitle text-muted font-size-xs mb-1">Second step</div>
-                                        <h6 class="media-tab-title text-nowrap mb-0">Processed order</h6>
+                                        <h6 class="media-tab-title text-nowrap mb-0">Processing order</h6>
                                     </div>
                                 </div>
                             </div>

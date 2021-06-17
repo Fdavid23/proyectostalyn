@@ -41,13 +41,13 @@
 
     <style>
         .dropdown-item:hover, .dropdown-item:focus {
-            color: #258934;
+            color: darkblue;
             text-decoration: none;
             background-color: rgba(0, 0, 0, 0)
         }
 
         .dropdown-item.active, .dropdown-item:active {
-            color: #258934;
+            color: darkblue;
             text-decoration: none;
             background-color: rgba(0, 0, 0, 0)
         }

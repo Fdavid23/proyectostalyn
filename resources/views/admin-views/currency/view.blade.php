@@ -44,11 +44,11 @@
           }
 
           input:checked + .slider {
-              background-color: #258934;
+              background-color: #377dff;
           }
 
           input:focus + .slider {
-              box-shadow: 0 0 1px #258934;
+              box-shadow: 0 0 1px #377dff;
           }
 
           input:checked + .slider:before {
@@ -87,15 +87,15 @@
         </ol>
     </nav>
     <!-- Page Heading -->
-
-
+    
+   
     <div class="d-sm-flex align-items-center justify-content-between mb-2">
         <h4 class="mb-0 text-black-50">{{trans('messages.Currency')}}</h4>
-        <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#addCurrency" style="background: #258934">
+        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addCurrency">
             <i class="tio-add-circle"></i> {{trans('messages.Add')}} {{trans('messages.New')}} {{trans('messages.Currency')}}
         </button>
     </div>
-
+  
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -119,7 +119,7 @@
                             <div class="col-md-6">
                                 <div class="form-group mb-2">
                                     <input type="hidden" name="type" value="system_default_currency">
-                                    <button type="submit" class="btn btn-success mb-2" style="background: #258934">{{trans('messages.Save')}}</button>
+                                    <button type="submit" class="btn btn-primary mb-2">{{trans('messages.Save')}}</button>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
             </div>
         </div>
     </div>
-
+   
 
     <div class="row" style="margin-top: 20px">
         <div class="col-md-12">
@@ -141,7 +141,7 @@
                             <h5>{{trans('messages.Currency')}} {{trans('messages.table')}} </h5>
                         </div>
                         <div>
-
+                           
 
                             <!-- Modal -->
                             <div class="modal fade" id="addCurrency" tabindex="-1" role="dialog">
@@ -240,7 +240,7 @@
                                                                   value="{{$data->symbol}}">
                                                        </div>
                                                    </div>
-
+                        
                                                </div>
                                                <div class="form-group">
                                                    <div class="row">
@@ -256,10 +256,10 @@
                                                        </div>
                                                    </div>
                                                </div>
-
+                        
                                                <div class="form-group text-center">
-                                                   <button type="submit" id="add" class="btn btn-success"
-                                                           style="color: white; background: #258934">Guardar
+                                                   <button type="submit" id="add" class="btn btn-primary"
+                                                           style="color: white">Save
                                                    </button>
                                                </div>
                                            </form>
@@ -280,9 +280,9 @@
                                         </label>
                                     </td>
                                     <td>
-                                        <a type="button" class="btn btn-success btn-sm btn-xs edit"  style="background: #258934" data-toggle="modal"
-                                           data-target="#editCurrency{{$data->id}}">Editar</a>
-
+                                        <a type="button" class="btn btn-primary btn-sm btn-xs edit" data-toggle="modal"
+                                           data-target="#editCurrency{{$data->id}}">Edit</a>
+                                        
                                     </td>
                                 </tr>
                             @endforeach

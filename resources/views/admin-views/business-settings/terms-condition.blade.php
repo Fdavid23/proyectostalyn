@@ -43,11 +43,11 @@
         }
 
         input:checked + .slider {
-            background-color: #258934;
+            background-color: #2196F3;
         }
 
         input:focus + .slider {
-            box-shadow: 0 0 1px #258934;
+            box-shadow: 0 0 1px #2196F3;
         }
 
         input:checked + .slider:before {
@@ -103,7 +103,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
-                                <input class="form-control btn-success" style="background: #258934" type="submit" name="btn">
+                                <input class="form-control btn-primary" type="submit" name="btn">
                             </div>
                         </div>
                         @endforeach

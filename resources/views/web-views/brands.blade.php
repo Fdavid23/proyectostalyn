@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','Página de todas las marcas')
+@section('title','All Brands Page')
 
 @push('css_or_js')
     <meta property="og:image" content="{{asset('storage/app/public/company')}}/{{$web_config['web_logo']->value}}"/>
@@ -45,7 +45,7 @@
     <div class="container pb-5 mb-2 mb-md-4">
         <div class="row">
             <div class="col-md-12 p-3">
-                <h4>Marcas</h4>
+                <h4>Brands</h4>
             </div>
         </div>
         <div class="row">

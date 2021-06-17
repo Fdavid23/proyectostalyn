@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label for="si-email">{{trans('messages.email_address')}}</label>
                                 <input class="form-control" type="email" name="email" id="si-email"
-                                       placeholder="@gmail.com"
+                                       placeholder="johndoe@example.com"
                                        required>
                                 <div class="invalid-feedback">{{trans('messages.please_provide_valid_email')}}.</div>
                             </div>

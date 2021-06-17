@@ -1,5 +1,5 @@
 @extends('layouts.back-end.app')
-@section('title','Añadir Marca')
+@section('title','Brand Add')
 <style>
      #brand-image-modal .modal-content{
               width: 1116px !important;
@@ -7,23 +7,23 @@
         }
         #image-count-brand-image-modal{
             width: 100%;
-
+          
         }
-
+       
         @media(max-width:768px){
             #brand-image-modal .modal-content{
                 width: 698px !important;
     margin-left: -75px !important;
         }
-
-
+        
+      
         }
         @media(max-width:375px){
             #brand-image-modal .modal-content{
               width: 367px !important;
             margin-left: 0 !important;
         }
-
+       
         }
 
    @media(max-width:500px){
@@ -31,7 +31,7 @@
               width: 400px !important;
             margin-left: 0 !important;
         }
-
+      
         .btn-for-m{
             margin-bottom: 10px;
         }
@@ -76,7 +76,7 @@
                             <div class="row">
                                 <div class="col-md-10">
                                     <label for="name">{{ trans('messages.name')}}</label>
-                                    <input type="text" name="name" required class="form-control" id="name" placeholder="">
+                                    <input type="text" name="name" required class="form-control" id="name" placeholder="Ex : LUX">
                                 </div>
                                 <div class="col-md-2 ">
                                     <label for="name">{{ trans('messages.brand_logo')}}</label>
@@ -90,7 +90,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-success" style="background: #258934">{{ trans('messages.save')}}</button>
+                            <button type="submit" class="btn btn-primary">{{ trans('messages.save')}}</button>
                         </div>
                     </form>
                 </div>
@@ -118,7 +118,7 @@
                                }'>
                             <thead class="thead-light">
                             <tr>
-                                <th scope="col">ID</th>
+                                <th scope="col">{{ trans('messages.sl')}}</th>
                                 <th scope="col">{{ trans('messages.name')}}</th>
                                 <th scope="col">{{ trans('messages.image')}}</th>
                                 <th scope="col" style="width: 50px">{{ trans('messages.action')}}</th>
@@ -195,12 +195,12 @@
         $(document).on('click', '.delete', function () {
             var id = $(this).attr("id");
             Swal.fire({
-                title: '¿Estás seguro de eliminar es marca?',
-                text: "¡No podrás revertir esto!",
+                title: 'Are you sure to delete is brand?',
+                text: "You won't be able to revert this!",
                 showCancelButton: true,
-                confirmButtonColor: '#258934',
-                cancelButtonColor: 'Dark',
-                confirmButtonText: '¡Sí, bórralo!'
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.value) {
                     $.ajaxSetup({
@@ -213,7 +213,7 @@
                         method: 'POST',
                         data: {id: id},
                         success: function () {
-                            toastr.success('Marca eliminada correctamente');
+                            toastr.success('Brand deleted successfully');
                             location.reload();
                         }
                     });

@@ -43,11 +43,11 @@
     }
 
     input:checked + .slider {
-        background-color: #258934;
+        background-color: #377dff;
     }
 
     input:focus + .slider {
-        background-color: #258934;
+        background-color: #377dff;
     }
 
     input:checked + .slider:before {
@@ -71,8 +71,8 @@
 <div class="content container-fluid"> <!-- Page Heading -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Panel de control</a></li>
-            <li class="breadcrumb-item" aria-current="page">Método de envío</li>
+            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item" aria-current="page">Shipping Method</li>
         </ol>
     </nav>
     <!-- Page Heading -->
@@ -119,7 +119,7 @@
 
                         <div class="card-footer">
                             <button type="submit"
-                                    class="btn btn-success " style="background: #258934">{{trans('messages.Submit')}}</button>
+                                    class="btn btn-primary ">{{trans('messages.Submit')}}</button>
                         </div>
                     </form>
                 </div>
@@ -192,8 +192,8 @@
                                                 href="{{route('admin.business-settings.shipping-method.edit',[$method['id']])}}">{{trans('messages.Edit')}}</a>
                                                     <a class="dropdown-item delete" style="cursor: pointer;"
                                                       id="{{ $method['id'] }}">{{trans('messages.Delete')}}</a>
-
-
+                                             
+                                                
                                             </div>
                                         </div>
                                     </td>
@@ -242,7 +242,7 @@
                     status: status
                 },
                 success: function () {
-                    toastr.success('Estado actualizado con éxito');
+                    toastr.success('Status updated successfully');
                     setInterval(function () {
                         location.reload();
                     },2000);
@@ -252,12 +252,12 @@
         $(document).on('click', '.delete', function () {
             var id = $(this).attr("id");
             Swal.fire({
-                title: '¿Estás seguro de eliminar esto?',
-                text: "¡No podrás revertir esto!",
+                title: 'Are you sure delete this ?',
+                text: "You won't be able to revert this!",
                 showCancelButton: true,
-                confirmButtonColor: '#258934',
-                cancelButtonColor: 'dark',
-                confirmButtonText: '¡Sí, bórralo!'
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.value) {
                     $.ajaxSetup({
@@ -270,7 +270,7 @@
                         method: 'POST',
                         data: {id: id},
                         success: function () {
-                            toastr.success('');
+                            toastr.success('Shipping Method deleted successfully');
                             location.reload();
                         }
                     });
